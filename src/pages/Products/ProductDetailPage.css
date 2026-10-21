@@ -1,0 +1,1022 @@
+/**
+ * Suyash Pharma - Dedicated Corporate Product Detail Page Styles
+ * Color Rhythm:
+ * - Breadcrumbs & Hero: Solid Soft Mint (#EBF5EE)
+ * - Specifications: Neutral (#F8FAF9) with white clinical editorial cards
+ * - Related Products: Crisp White (#FFFFFF)
+ * - Typography: Deep Navy (#082245)
+ * - Accents: Suyash Green (#1B6A3E)
+ * - Strictly NO GRADIENTS, NO NEON, NO GLASSMORPHISM.
+ */
+
+.sp-product-detail-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8FAF9;
+  color: #082245;
+  font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.sp-product-detail-main {
+  flex: 1 0 auto;
+}
+
+.sp-detail-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. BREADCRUMB / BACK BAR
+   ========================================================================== */
+.sp-detail-breadcrumb-bar {
+  background-color: #EBF5EE;
+  padding: 104px 0 14px 0;
+  border-bottom: 1px solid #D5E5DA;
+}
+
+.sp-breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sp-back-to-products-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1B6A3E;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sp-back-to-products-btn:hover {
+  color: #0E4927;
+  transform: translateX(-3px);
+}
+
+.sp-breadcrumb-sep {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.sp-breadcrumb-category {
+  color: #64748B;
+  font-weight: 600;
+}
+
+.sp-breadcrumb-current {
+  color: #082245;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   2. PRODUCT DETAIL HERO (BALANCED 48% / 52% SPLIT)
+   ========================================================================== */
+.sp-detail-hero-section {
+  background-color: #EBF5EE;
+  padding: 36px 0 60px 0;
+  border-bottom: 1px solid #D5E5DA;
+}
+
+.sp-detail-hero-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* LEFT: Image Stage (48%) */
+.sp-detail-media-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-detail-main-stage {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #D2E2D6;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(8, 34, 69, 0.04);
+}
+
+.sp-detail-main-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.2s ease;
+  filter: drop-shadow(0 8px 16px rgba(8, 34, 69, 0.08));
+}
+
+/* Thumbnails Strip (Only genuine product images, zero yellow reference sheets) */
+.sp-detail-gallery-strip {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sp-gallery-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.sp-gallery-thumb:hover {
+  border-color: #1B6A3E;
+  transform: translateY(-2px);
+}
+
+.sp-gallery-thumb.active {
+  border-color: #1B6A3E;
+  box-shadow: 0 0 0 2px rgba(27, 106, 62, 0.25);
+}
+
+.sp-thumb-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* RIGHT: Content Column (52%) */
+.sp-detail-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp-detail-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sp-detail-pill-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #1B6A3E;
+  background-color: #FFFFFF;
+  border: 1px solid #C8DEC0;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.sp-detail-pill-segment {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #082245;
+  background-color: rgba(8, 34, 69, 0.08);
+  padding: 3px 9px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.sp-detail-title {
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: #082245;
+}
+
+.sp-detail-badge-title {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+}
+
+.sp-detail-generic-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1B6A3E;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sp-detail-overview-intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+/* Quick Specifications Panel */
+.sp-detail-quick-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  border: 1px solid #D5E5DA;
+  padding: 14px 18px;
+  margin: 4px 0 8px 0;
+}
+
+.sp-quick-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sp-spec-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.sp-spec-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #082245;
+  line-height: 1.3;
+}
+
+/* Perfectly Aligned Dual CTA Buttons */
+.sp-detail-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.sp-btn-get-query {
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #1B6A3E;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(27, 106, 62, 0.20);
+  font-family: inherit;
+}
+
+.sp-btn-get-query:hover {
+  background-color: #155D34;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 106, 62, 0.30);
+}
+
+.sp-btn-whatsapp-direct {
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #167A43;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(22, 122, 67, 0.18);
+}
+
+.sp-btn-whatsapp-direct:hover {
+  background-color: #0F5E33;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. VERIFIED PRODUCT SPECIFICATIONS & OVERVIEW (6-BLOCK EDITORIAL GRID)
+   ========================================================================== */
+.sp-detail-specs-section {
+  background-color: #F8FAF9;
+  padding: 64px 0 80px 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.sp-specs-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px auto;
+}
+
+.sp-specs-sec-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #1B6A3E;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sp-specs-sec-title {
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 800;
+  color: #082245;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.sp-specs-header-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 14px auto;
+  width: 80px;
+  height: 2px;
+  background-color: #1B6A3E;
+  position: relative;
+}
+
+.sp-specs-sec-desc {
+  font-size: 15px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* 6-Block Editorial Grid */
+.sp-specs-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.sp-editorial-spec-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(8, 34, 69, 0.03);
+}
+
+.sp-spec-card-num-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sp-spec-num {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1B6A3E;
+  background-color: #EBF5EE;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.sp-spec-category-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.sp-spec-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #082245;
+  margin: 0;
+}
+
+.sp-spec-card-divider {
+  height: 1px;
+  background-color: #F1F5F9;
+  margin: 12px 0 14px 0;
+}
+
+.sp-spec-card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+.sp-spec-mini-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sp-mini-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid #F8FAF9;
+}
+
+.sp-mini-key {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sp-mini-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #082245;
+}
+
+.sp-spec-alert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  background-color: #FFF7ED;
+  color: #C2410C;
+  border: 1px solid #FED7AA;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sp-spec-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sp-spec-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.sp-bullet-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #1B6A3E;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   4. REDESIGNED RELATED PRODUCTS SECTION (STRICTLY CONTAINED)
+   ========================================================================== */
+.sp-related-products-section {
+  background-color: #FFFFFF;
+  padding: 64px 0 80px 0;
+}
+
+.sp-related-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px auto;
+}
+
+.sp-related-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #1B6A3E;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sp-related-main-title {
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 800;
+  color: #082245;
+  margin: 0 0 12px 0;
+}
+
+.sp-related-sub {
+  font-size: 15px;
+  color: #64748B;
+  margin: 0;
+}
+
+.sp-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.sp-related-card {
+  background-color: #F8FAF9;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-related-card:hover {
+  transform: translateY(-4px);
+  border-color: #1B6A3E;
+  box-shadow: 0 10px 24px rgba(8, 34, 69, 0.07);
+}
+
+.sp-related-media-box {
+  height: 210px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid #EDF2F7;
+}
+
+.sp-related-img-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-related-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.25s ease;
+}
+
+.sp-related-card:hover .sp-related-img {
+  transform: scale(1.03);
+}
+
+.sp-related-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sp-related-segment {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sp-related-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.sp-related-title a {
+  text-decoration: none;
+  color: #082245;
+  transition: color 0.18s ease;
+}
+
+.sp-related-title a:hover {
+  color: #1B6A3E;
+}
+
+.sp-related-generic {
+  font-size: 12px;
+  color: #1B6A3E;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  line-height: 1.35;
+}
+
+.sp-related-desc {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #475569;
+  margin: 0 0 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sp-related-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #EEF2F6;
+}
+
+.sp-related-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #1B6A3E;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease;
+}
+
+.sp-related-card:hover .sp-related-view-btn {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   5. PRODUCT QUERY ENQUIRY MODAL STYLES
+   ========================================================================== */
+.sp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(8, 34, 69, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: spModalFade 0.2s ease;
+}
+
+@keyframes spModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sp-query-modal-dialog {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
+  border: 1px solid #E2E8F0;
+}
+
+.sp-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.sp-modal-close-btn:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+.sp-modal-header {
+  margin-bottom: 20px;
+}
+
+.sp-modal-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #1B6A3E;
+  background-color: #EBF5EE;
+  padding: 3px 9px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.sp-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #082245;
+  margin: 0 0 4px 0;
+}
+
+.sp-modal-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+.sp-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.sp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sp-form-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #334155;
+}
+
+.sp-form-input,
+.sp-form-textarea {
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  color: #082245;
+  outline: none;
+  background-color: #FFFFFF;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.sp-form-input:focus,
+.sp-form-textarea:focus {
+  border-color: #1B6A3E;
+}
+
+.sp-input-readonly {
+  background-color: #F8FAF9;
+  font-weight: 700;
+  color: #1B6A3E;
+  border-color: #D5E5DA;
+  cursor: default;
+}
+
+.sp-btn-submit-query {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #1B6A3E;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 6px;
+  font-family: inherit;
+}
+
+.sp-btn-submit-query:hover {
+  background-color: #155D34;
+}
+
+/* Modal Choice View */
+.sp-choice-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sp-choice-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #EBF5EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.sp-choice-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #082245;
+  margin: 0 0 6px 0;
+}
+
+.sp-choice-desc {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+.sp-choice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sp-choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s ease;
+  font-family: inherit;
+}
+
+.sp-choice-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sp-choice-wa {
+  background-color: #167A43;
+  color: #FFFFFF;
+}
+
+.sp-choice-wa:hover {
+  background-color: #0F5E33;
+}
+
+.sp-choice-mail {
+  background-color: #082245;
+  color: #FFFFFF;
+}
+
+.sp-choice-mail:hover {
+  background-color: #05152D;
+}
+
+.sp-choice-text strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.sp-choice-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.sp-email-status-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #EBF5EE;
+  border: 1px solid #C8DEC0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #1B6A3E;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.sp-choice-footer {
+  text-align: center;
+}
+
+.sp-btn-back-form {
+  background: none;
+  border: none;
+  color: #64748B;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sp-btn-back-form:hover {
+  color: #082245;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sp-detail-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sp-detail-main-stage {
+    height: 380px;
+  }
+
+  .sp-specs-grid-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sp-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-detail-breadcrumb-bar {
+    padding-top: 92px;
+  }
+
+  .sp-specs-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-detail-main-stage {
+    height: 300px;
+  }
+
+  .sp-detail-quick-specs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-detail-title {
+    font-size: 26px;
+  }
+
+  .sp-query-modal-dialog {
+    padding: 24px 18px;
+  }
+
+  .sp-detail-action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sp-btn-get-query,
+  .sp-btn-whatsapp-direct {
+    width: 100%;
+  }
+}

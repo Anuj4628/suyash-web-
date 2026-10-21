@@ -1,0 +1,595 @@
+/* ==========================================================================
+   SUYASH PHARMA - SECTION 2: ABOUT / INTRODUCTION SECTION (PREMIUM REDESIGN)
+   Inspired by the editorial multi-photo collage visual language.
+   Palette: Solid Medium Pharma Green (#D6E6D8), Deep Navy Blue (#082245),
+   Solid Suyash Green (#228B22), White Surface (#FFFFFF).
+   ABSOLUTELY NO GRADIENTS. Solid colors only throughout.
+   ========================================================================== */
+
+.sp-about-section {
+  position: relative;
+  width: 100%;
+  background-color: #D6E6D8;
+  color: #082245;
+  padding: clamp(90px, 9vw, 120px) 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Container & Grid Composition (48% Collage / 52% Content)
+   -------------------------------------------------------------------------- */
+.sp-about-container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}
+
+.sp-about-grid {
+  display: grid;
+  grid-template-columns: 48fr 52fr;
+  align-items: center;
+  column-gap: clamp(48px, 6vw, 84px);
+  row-gap: 52px;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: Custom 4-Photo Asymmetric Pharmaceutical Collage
+   -------------------------------------------------------------------------- */
+.sp-about-visual-col {
+  position: relative;
+  width: 100%;
+}
+
+.sp-collage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+/* Top-Left Offset Solid Deep Navy Accent Tab */
+.sp-collage-tab-tl {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 130px;
+  height: 130px;
+  background-color: #082245;
+  border-radius: 52px 14px 14px 14px;
+  z-index: 1;
+}
+
+/* Bottom-Right Offset Solid Deep Navy Curved Anchor */
+.sp-collage-bar-br {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+  width: 140px;
+  height: 70px;
+  background-color: #082245;
+  border-radius: 14px 14px 52px 14px;
+  z-index: 1;
+}
+
+/* Botanical/Leaf Motif (Bottom-Left) */
+.sp-collage-leaf-accent {
+  position: absolute;
+  bottom: 8px;
+  left: -28px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* 4-Image Grid Layout */
+.sp-collage-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-collage-cell {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(8, 34, 69, 0.08);
+}
+
+/* 1. Team Cell (Top-Left, Rounded Top-Left) */
+.sp-cell-team {
+  aspect-ratio: 4 / 3.1;
+  border-radius: 44px 12px 12px 12px;
+}
+
+.sp-cell-team .sp-collage-img {
+  object-position: 45% 25%;
+}
+
+/* 2. Quality Scientist Cell (Top-Right, Rounded Top-Right) */
+.sp-cell-quality {
+  aspect-ratio: 3 / 3.8;
+  border-radius: 12px 44px 12px 12px;
+}
+
+.sp-cell-quality .sp-collage-img {
+  object-position: center 25%;
+}
+
+/* 3. Clinical Collaboration Cell (Bottom-Left, Rounded Bottom-Left) */
+.sp-cell-collab {
+  aspect-ratio: 4 / 3.1;
+  border-radius: 12px 12px 12px 44px;
+}
+
+.sp-cell-collab .sp-collage-img {
+  object-position: center 25%;
+}
+
+/* 4. Products Showcase Cell (Bottom-Right, Rounded Bottom-Right) */
+.sp-cell-products {
+  aspect-ratio: 3 / 2.7;
+  border-radius: 12px 12px 44px 12px;
+}
+
+.sp-cell-products .sp-collage-img {
+  object-position: center center;
+}
+
+.sp-collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sp-collage-cell:hover .sp-collage-img {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   Center Circular Pharmaceutical Brand Seal
+   -------------------------------------------------------------------------- */
+.sp-collage-center-seal {
+  position: absolute;
+  top: 50%;
+  left: 57.5%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.sp-seal-circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #082245;
+  border: 3px solid #D6E6D8;
+  box-shadow: 0 4px 16px rgba(8, 34, 69, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-seal-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spSealRotate 24s linear infinite;
+}
+
+@keyframes spSealRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sp-seal-text {
+  font-family: var(--font-family-sans);
+  font-size: 7.2px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  fill: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.sp-seal-core {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: Editorial Content & Typography
+   -------------------------------------------------------------------------- */
+.sp-about-content-col {
+  position: relative;
+  width: 100%;
+  max-width: 590px;
+}
+
+/* 1. Eyebrow */
+.sp-about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #228B22;
+  margin-bottom: 20px;
+}
+
+.sp-eyebrow-slash {
+  color: #082245;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+/* 2. Main Heading */
+.sp-about-heading {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: #082245;
+  margin: 0 0 24px 0;
+}
+
+.sp-about-highlight {
+  color: #228B22;
+  font-weight: 800;
+}
+
+/* 3. Introduction Copy */
+.sp-about-body {
+  margin-bottom: 24px;
+}
+
+.sp-about-p1,
+.sp-about-p2 {
+  font-family: var(--font-family-body);
+  font-size: clamp(0.98rem, 1.1vw, 1.05rem);
+  line-height: 1.66;
+  color: #1E293B;
+  font-weight: 400;
+  margin: 0 0 14px 0;
+}
+
+.sp-about-p2 {
+  margin-bottom: 0;
+}
+
+/* 4. Compact Company Statistics Row (Subtle Vertical Dividers) */
+.sp-about-stats-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.6vw, 30px);
+  padding: 20px 0;
+  border-top: 1px solid rgba(8, 34, 69, 0.18);
+  border-bottom: 1px solid rgba(8, 34, 69, 0.18);
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.sp-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sp-stat-num {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #082245;
+  text-transform: uppercase;
+}
+
+.sp-stat-item:first-child .sp-stat-num {
+  color: #228B22;
+}
+
+.sp-stat-text {
+  font-family: var(--font-family-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #334155;
+  margin-top: 4px;
+}
+
+/* Subtle Vertical Divider */
+.sp-stat-divider {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(8, 34, 69, 0.2);
+  flex-shrink: 0;
+}
+
+/* 5. Unique Brand Marker: Trust & Pillar Chain */
+.sp-about-pillars {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #082245;
+  background-color: rgba(8, 34, 69, 0.06);
+  border: 1px solid rgba(8, 34, 69, 0.14);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 26px;
+}
+
+.sp-pillar-tag {
+  color: #082245;
+}
+
+.sp-pillar-arrow {
+  color: #228B22;
+  font-weight: 800;
+}
+
+/* 6. Primary CTA (Solid Suyash Green -> Deep Navy Hover) */
+.sp-about-actions {
+  margin-top: 4px;
+}
+
+.sp-btn-about {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-family-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #228B22;
+  border: 1px solid #228B22;
+  padding: 13px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  white-space: nowrap;
+}
+
+.sp-btn-about:hover {
+  background-color: #082245;
+  border-color: #082245;
+  transform: translateY(-2px);
+}
+
+.sp-btn-arrow-icon {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.sp-btn-about:hover .sp-btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   RESTRAINED ENTRANCE ANIMATION (500ms - 800ms Subtle Stagger)
+   -------------------------------------------------------------------------- */
+.sp-about-visual-col,
+.sp-about-eyebrow,
+.sp-about-heading,
+.sp-about-body,
+.sp-about-stats-row,
+.sp-about-pillars,
+.sp-about-actions {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.sp-about-section.is-visible .sp-about-visual-col {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 60ms;
+}
+
+.sp-about-section.is-visible .sp-about-eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 140ms;
+}
+
+.sp-about-section.is-visible .sp-about-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 220ms;
+}
+
+.sp-about-section.is-visible .sp-about-body {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 300ms;
+}
+
+.sp-about-section.is-visible .sp-about-stats-row {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 380ms;
+}
+
+.sp-about-section.is-visible .sp-about-pillars {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 440ms;
+}
+
+.sp-about-section.is-visible .sp-about-actions {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 500ms;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
+   (1440px, 1366px, 1280px, 1024px, 768px, 390px, 375px, 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .sp-about-grid {
+    grid-template-columns: 48fr 52fr;
+    column-gap: 40px;
+  }
+
+  .sp-about-heading {
+    font-size: clamp(2.0rem, 3.0vw, 2.6rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .sp-about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+  }
+
+  .sp-about-visual-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sp-collage-wrapper {
+    max-width: 500px;
+  }
+
+  .sp-about-content-col {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .sp-about-section {
+    padding: 68px 0;
+  }
+
+  .sp-collage-tab-tl {
+    width: 90px;
+    height: 90px;
+    top: -10px;
+    left: -10px;
+    border-radius: 36px 10px 10px 10px;
+  }
+
+  .sp-collage-bar-br {
+    width: 100px;
+    height: 50px;
+    bottom: -10px;
+    right: -10px;
+    border-radius: 10px 10px 36px 10px;
+  }
+
+  .sp-collage-leaf-accent {
+    left: -14px;
+    bottom: 0;
+    transform: scale(0.85);
+  }
+
+  .sp-seal-circle {
+    width: 72px;
+    height: 72px;
+  }
+
+  .sp-seal-text {
+    font-size: 6px;
+  }
+
+  .sp-seal-core svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sp-cell-team {
+    border-radius: 32px 10px 10px 10px;
+  }
+
+  .sp-cell-quality {
+    border-radius: 10px 32px 10px 10px;
+  }
+
+  .sp-cell-collab {
+    border-radius: 10px 10px 10px 32px;
+  }
+
+  .sp-cell-products {
+    border-radius: 10px 10px 32px 10px;
+  }
+
+  .sp-about-heading {
+    font-size: 1.9rem;
+  }
+
+  .sp-about-stats-row {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .sp-stat-num {
+    font-size: 1.15rem;
+  }
+
+  .sp-stat-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .sp-about-actions {
+    width: 100%;
+  }
+
+  .sp-btn-about {
+    width: 100%;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .sp-about-visual-col,
+  .sp-about-eyebrow,
+  .sp-about-heading,
+  .sp-about-body,
+  .sp-about-stats-row,
+  .sp-about-pillars,
+  .sp-about-actions,
+  .sp-btn-about,
+  .sp-btn-arrow-icon,
+  .sp-collage-img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .sp-seal-svg {
+    animation: none !important;
+  }
+}

@@ -102,8 +102,19 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-page);
   line-height: 1.55;
-  overflow-x: hidden;
+  overflow-x: clip;
   min-height: 100vh;
+}
+
+/* Ensure all anchor target sections leave space for the sticky navbar */
+[id] {
+  scroll-margin-top: calc(var(--nav-height-desktop, 104px) + 20px);
+}
+
+@media (max-width: 900px) {
+  [id] {
+    scroll-margin-top: calc(var(--nav-height-mobile, 80px) + 16px);
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

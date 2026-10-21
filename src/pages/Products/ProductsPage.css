@@ -1,0 +1,705 @@
+/**
+ * Suyash Pharma - Dedicated Corporate Products Page Styles
+ * Color Rhythm:
+ * - Hero: Solid Dark Green (#1B6A3E)
+ * - Intro & Search: Solid Light Mint (#EBF5EE)
+ * - Product Grid: Light Neutral (#F8FAF9) with crisp white cards
+ * - Typography: Deep Navy (#082245)
+ * - Accents: Suyash Green (#1B6A3E / #155D34)
+ * - Strictly NO GRADIENTS, NO NEON, NO GLASSMORPHISM.
+ */
+
+.sp-products-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8FAF9;
+  color: #082245;
+  font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.sp-products-main-content {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   2. HERO SECTION (SOLID DARK GREEN #1B6A3E)
+   ========================================================================== */
+.sp-catalog-hero-section {
+  position: relative;
+  background-color: #1B6A3E;
+  color: #FFFFFF;
+  padding: 130px 24px 80px 24px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sp-catalog-watermark {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  font-size: clamp(80px, 15vw, 210px);
+  font-weight: 900;
+  color: #FFFFFF;
+  opacity: 0.04;
+  letter-spacing: 0.05em;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 1;
+}
+
+.sp-catalog-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-catalog-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.sp-catalog-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-catalog-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sp-catalog-hero-marker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.sp-catalog-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #A3E6BA;
+  text-transform: uppercase;
+}
+
+.sp-catalog-hero-title {
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 800;
+  line-height: 1.14;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.sp-catalog-hero-desc {
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.90);
+  max-width: 620px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.sp-catalog-hero-actions {
+  margin-top: 12px;
+}
+
+.sp-catalog-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  color: #1B6A3E;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 15px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.sp-catalog-hero-cta:hover {
+  background-color: #EBF5EE;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+}
+
+.sp-catalog-cta-arrow {
+  transition: transform 0.2s ease;
+}
+
+.sp-catalog-hero-cta:hover .sp-catalog-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Media Hero Card */
+.sp-catalog-hero-media-wrap {
+  position: relative;
+}
+
+.sp-catalog-hero-image-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  background-color: #0F3D23;
+  aspect-ratio: 4 / 3;
+}
+
+.sp-catalog-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sp-catalog-hero-image-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.sp-catalog-hero-stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #082245;
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.sp-stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: #A3E6BA;
+}
+
+.sp-stat-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.sp-stat-text span {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   3. PRODUCT INTRO & SEARCH / FILTER SECTION (MINT #EBF5EE)
+   ========================================================================== */
+.sp-catalog-intro-section {
+  background-color: #EBF5EE;
+  padding: 60px 24px 44px 24px;
+  border-bottom: 1px solid #D5E5DA;
+}
+
+.sp-catalog-intro-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sp-catalog-section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px auto;
+}
+
+.sp-catalog-sec-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #1B6A3E;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sp-catalog-sec-title {
+  font-size: clamp(32px, 3.8vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #082245;
+  margin: 0 0 12px 0;
+  line-height: 1.16;
+}
+
+.sp-catalog-header-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px auto;
+  width: 80px;
+  height: 2px;
+  background-color: #1B6A3E;
+  position: relative;
+}
+
+.sp-divider-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #082245;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.sp-catalog-sec-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+/* Search and Filter Box */
+.sp-search-filter-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-search-bar-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 4px 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(8, 34, 69, 0.05);
+}
+
+.sp-search-bar-box:focus-within {
+  border-color: #1B6A3E;
+  box-shadow: 0 0 0 4px rgba(27, 106, 62, 0.12);
+}
+
+.sp-search-icon {
+  color: #64748B;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.sp-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #082245;
+  padding: 12px 0;
+  background: transparent;
+  font-family: inherit;
+}
+
+.sp-search-input::placeholder {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.sp-search-clear-btn {
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.sp-search-clear-btn:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+/* Filter Chips Row */
+.sp-filter-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.sp-filter-btn {
+  background-color: #FFFFFF;
+  color: #334155;
+  border: 1px solid #CBD5E1;
+  border-radius: 24px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.sp-filter-btn:hover {
+  border-color: #1B6A3E;
+  color: #1B6A3E;
+  background-color: #F8FAF9;
+}
+
+.sp-filter-btn.active {
+  background-color: #1B6A3E;
+  color: #FFFFFF;
+  border-color: #1B6A3E;
+  box-shadow: 0 2px 8px rgba(27, 106, 62, 0.25);
+}
+
+/* Results Count Meta */
+.sp-result-meta-row {
+  display: flex;
+  justify-content: center;
+}
+
+.sp-result-count {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #1B6A3E;
+  background-color: rgba(27, 106, 62, 0.10);
+  padding: 4px 14px;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   4. ALL 13 PRODUCTS CATALOGUE GRID (DESKTOP: 3 PER ROW, 13TH CENTERED)
+   ========================================================================== */
+.sp-catalog-grid-section {
+  background-color: #F8FAF9;
+  padding: 64px 24px 96px 24px;
+}
+
+.sp-catalog-grid-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 3-Column Desktop Grid */
+.sp-all-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Centering the 13th Product on 3-Column Desktop */
+@media (min-width: 1025px) {
+  .sp-catalogue-card.is-centered-last {
+    grid-column: 2 / span 1;
+  }
+}
+
+/* Catalogue Card Component */
+.sp-catalogue-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #D5E2D8;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(8, 34, 69, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  position: relative;
+  outline: none;
+}
+
+.sp-catalogue-card:hover,
+.sp-catalogue-card:focus-visible {
+  border-color: #1B6A3E;
+  box-shadow: 0 10px 26px rgba(8, 34, 69, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Top Meta Row */
+.sp-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sp-card-num {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1B6A3E;
+  background-color: #EBF5EE;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.sp-card-segment-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+/* Generous Product Image Stage (55-65% visual presence) */
+.sp-card-media-stage {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  background-color: #FFFFFF;
+  margin-bottom: 16px;
+  position: relative;
+  border-radius: 12px;
+}
+
+.sp-card-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.sp-card-product-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 6px 12px rgba(8, 34, 69, 0.08));
+}
+
+.sp-catalogue-card:hover .sp-card-product-img {
+  transform: scale(1.04);
+}
+
+/* Product Content Body */
+.sp-card-content-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.sp-card-title-group {
+  margin-bottom: 10px;
+}
+
+.sp-card-product-name {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+}
+
+.sp-card-title-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.18s ease;
+}
+
+.sp-card-title-link:hover {
+  color: #1B6A3E !important;
+}
+
+.sp-card-badge-title {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-weight: 800;
+}
+
+.sp-card-generic-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B6A3E;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.sp-card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 20px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Bottom CTA */
+.sp-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.sp-card-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1B6A3E;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sp-card-arrow {
+  transition: transform 0.2s ease;
+}
+
+.sp-catalogue-card:hover .sp-card-view-btn {
+  color: #0E4927;
+}
+
+.sp-catalogue-card:hover .sp-card-arrow {
+  transform: translateX(4px);
+}
+
+/* No Results State */
+.sp-no-products-found {
+  text-align: center;
+  padding: 64px 24px;
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.sp-no-results-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #EBF5EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+}
+
+.sp-no-results-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #082245;
+  margin: 0 0 10px 0;
+}
+
+.sp-no-results-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #64748B;
+  margin: 0 0 22px 0;
+}
+
+.sp-reset-search-btn {
+  background-color: #1B6A3E;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sp-reset-search-btn:hover {
+  background-color: #155D34;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sp-catalog-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sp-catalog-hero-media-wrap {
+    max-width: 540px;
+  }
+
+  .sp-all-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-catalog-hero-section {
+    padding: 110px 20px 60px 20px;
+  }
+
+  .sp-all-products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sp-card-media-stage {
+    height: 230px;
+  }
+
+  .sp-filter-chips-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sp-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-catalogue-card {
+    padding: 18px;
+  }
+
+  .sp-card-product-name {
+    font-size: 19px;
+  }
+
+  .sp-catalog-sec-title {
+    font-size: 28px;
+  }
+}

@@ -9,9 +9,10 @@
  */
 
 import suyashShowcaseImg from '../assets/images/hero/suyash-products-showcase.jpg';
-import slide2Img from '../assets/images/hero/slide-2-quality-lab.jpg';
-import slide4Img from '../assets/images/hero/slide-4-partnership.jpg';
+import slideQualityTestingImg from '../assets/images/hero/slide-quality-testing.jpg';
+import slideLeadershipPartnershipImg from '../assets/images/hero/slide-leadership-partnership.jpg';
 import slide1Img from '../assets/images/hero/slide-1-healthcare-trust.jpg';
+import slideAdvancingHealthcareImg from '../assets/images/hero/slide-advancing-healthcare.jpg';
 
 export const heroSlides = [
   {
@@ -58,13 +59,13 @@ export const heroSlides = [
     },
     secondaryCta: null,
     keywords: ["QUALITY", "CONSISTENCY", "SAFETY", "RELIABILITY"],
-    image: slide2Img,
+    image: slideQualityTestingImg,
     imageConfig: {
       fit: "cover",
-      position: "center center",
-      positionMobile: "center center"
+      position: "center 22%",
+      positionMobile: "center 20%"
     },
-    imageAlt: "Pharmaceutical scientist performing quality-control analysis in advanced testing laboratory",
+    imageAlt: "Pharmaceutical analytical chemist conducting multi-channel precision testing in state-of-the-art quality control laboratory",
     caption: "QUALITY CONTROL & CONSISTENCY",
     isShowcase: false
   },
@@ -87,20 +88,21 @@ export const heroSlides = [
       label: "Get a Quote",
       href: "#quote"
     },
-    image: slide4Img,
+    keywords: ["Healthcare Leadership", "Strategic Trust", "Patient Priority", "Global Standards"],
+    image: slideLeadershipPartnershipImg,
     imageConfig: {
       fit: "cover",
-      position: "center center",
-      positionMobile: "center center"
+      position: "42% 24%",
+      positionMobile: "35% 20%"
     },
-    imageAlt: "Pharmaceutical leadership and healthcare partners in clinical research collaboration",
+    imageAlt: "Suyash Pharma leadership and clinical stakeholders in corporate strategic review boardroom",
     caption: "TRUSTED HEALTHCARE PARTNERSHIP",
     isShowcase: false
   },
   {
     id: 4,
     slideNumber: "04",
-    slideCode: "SP-CLINICAL // 04",
+    slideCode: "SP-PURPOSE // 04",
     eyebrow: "SUYASH PHARMA",
     headline: [
       { text: "ADVANCING", highlight: false },
@@ -116,14 +118,15 @@ export const heroSlides = [
       label: "Get in Touch",
       href: "#contact"
     },
-    image: slide1Img,
+    keywords: ["Sterile Injectables", "Precision Formulation", "Quality Assured", "Hospital Care"],
+    image: slideAdvancingHealthcareImg,
     imageConfig: {
       fit: "cover",
       position: "center center",
       positionMobile: "center center"
     },
-    imageAlt: "Authentic healthcare specialist consulting attentively with patient in clean clinical office",
-    caption: "HUMAN HEALTH & TRUST",
+    imageAlt: "Sterile pharmaceutical injectable vials and researcher working in precision cleanroom laboratory",
+    caption: "ADVANCING HEALTHCARE WITH PURPOSE",
     isShowcase: false
   }
 ];

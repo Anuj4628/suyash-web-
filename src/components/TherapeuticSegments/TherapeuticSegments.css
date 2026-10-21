@@ -1,0 +1,533 @@
+/* ==========================================================================
+   SUYASH PHARMA - SECTION 5: THERAPEUTIC FOCUS (THERAPEUTIC SEGMENTS)
+   - Background: Solid Clean Suyash Green (#1B6A3E, matching Product Portfolio)
+   - Centered Editorial Section Header with Symmetrical Flanking Accent Lines
+   - Three Mathematically Aligned Pharmaceutical Cards on Crisp White Surfaces
+     Card 01: Crisp White Card with Deep Navy Top Border Accent (#082245)
+     Card 02: Crisp White Card with Suyash Brand Green Top Border Accent (#1E824C)
+     Card 03: Crisp White Card with Forest Green Top Border Accent (#15803D)
+   - STRICTLY NO GRADIENTS, NO GLOW, NO GLASSMORPHISM
+   - Premium Cursor-Driven 3D Tilt Interaction (2–4 Degrees) with Smooth Return
+   - Fully Responsive Across All Breakpoints (Desktop 3-Col, Tablet, Mobile)
+   ========================================================================== */
+
+.sp-therapeutic-section {
+  position: relative;
+  width: 100%;
+  background-color: #1B6A3E; /* Solid Suyash Green Background */
+  padding: clamp(88px, 8vw, 128px) 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sp-therapeutic-container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.8vw, 44px);
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. SECTION EDITORIAL HEADER (Perfectly Centered Horizontally)
+   -------------------------------------------------------------------------- */
+.sp-therapeutic-header {
+  margin: 0 auto clamp(48px, 5.5vw, 68px) auto;
+  max-width: 820px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.sp-therapeutic-header.is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow Label with Balanced Symmetrical Accent Lines */
+.sp-therapeutic-eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.sp-therapeutic-eyebrow-line {
+  width: 38px;
+  height: 2px;
+  background-color: #D4EDDA; /* Crisp Soft Mint */
+  border-radius: 2px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.sp-therapeutic-eyebrow {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(0.96rem, 1.15vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #D4EDDA; /* Crisp Soft Mint */
+  line-height: 1;
+}
+
+/* Main Section Heading */
+.sp-therapeutic-title {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(2.1rem, 3.2vw, 3rem);
+  font-weight: 800;
+  color: #FFFFFF; /* Crisp Solid White */
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+/* Concise, Clean Centered Intro */
+.sp-therapeutic-intro {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(0.96rem, 1.1vw, 1.08rem);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. 3-COLUMN THERAPEUTIC GRID (Unified System Alignment)
+   -------------------------------------------------------------------------- */
+.sp-therapeutic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 2.5vw, 36px);
+  width: 100%;
+  align-items: stretch; /* All cards stretch to identical height */
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE THERAPEUTIC CARD (Precision Alignment Architecture)
+   -------------------------------------------------------------------------- */
+.sp-segment-card {
+  background-color: #FFFFFF; /* All cards on crisp white surface */
+  border-radius: 20px;
+  border: 1px solid rgba(8, 34, 69, 0.08);
+  box-shadow: 0 10px 30px -6px rgba(8, 34, 69, 0.16);
+  padding: clamp(34px, 3.2vw, 42px) clamp(28px, 2.6vw, 36px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 460px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  
+  /* Scroll stagger animation & base transition physics */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 400ms ease;
+  will-change: opacity, transform, box-shadow;
+}
+
+.sp-segment-card.is-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle elevation and shadow on hover */
+.sp-segment-card:hover,
+.sp-segment-card.is-hovered {
+  box-shadow: 0 24px 52px -10px rgba(8, 34, 69, 0.32), 0 8px 18px -4px rgba(8, 34, 69, 0.12);
+}
+
+/* Background Abstract Clinical Motif (Subtle, non-literal) */
+.sp-card-motif {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Card Top Stage (Strict Mathematical Row Alignment)
+   -------------------------------------------------------------------------- */
+.sp-segment-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 26px;
+  min-height: 38px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.sp-segment-num-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sp-segment-num {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.sp-segment-count {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sp-segment-label {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Card Body Stage (Equal Height Title & Description Boxes)
+   -------------------------------------------------------------------------- */
+.sp-segment-card-body {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+
+/* Fixed minimum height title slot ensures identical description starting baseline */
+.sp-segment-title {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(1.3rem, 1.5vw, 1.52rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  color: #082245; /* Deep Suyash Navy */
+  min-height: 5.6rem; /* Accommodates 3 lines consistently */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sp-segment-title-line {
+  display: block;
+}
+
+/* Fixed minimum height description slot ensures identical CTA starting baseline */
+.sp-segment-desc {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(0.88rem, 0.95vw, 0.93rem);
+  line-height: 1.62;
+  margin: 0;
+  color: #475569; /* Slate Gray */
+  min-height: 82px;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Card Footer Stage (Aligned CTA Link)
+   -------------------------------------------------------------------------- */
+.sp-segment-card-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto; /* Locks footer to the bottom across all cards */
+  padding-top: 18px;
+  border-top: 1px solid #F1F5F9;
+  box-sizing: border-box;
+}
+
+.sp-segment-action-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-decoration: none;
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #082245;
+  transition: color 240ms ease;
+  outline: none;
+}
+
+.sp-action-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), stroke 240ms ease;
+}
+
+.sp-segment-card:hover .sp-action-arrow,
+.sp-segment-card.is-hovered .sp-action-arrow {
+  transform: translateX(5px);
+}
+
+/* --------------------------------------------------------------------------
+   THEME 01: Crisp White Card with Deep Navy Top Border Accent (#082245)
+   -------------------------------------------------------------------------- */
+.sp-card-theme-navy {
+  background-color: #FFFFFF;
+  border-top: 4px solid #082245;
+}
+
+.sp-card-theme-navy .sp-segment-num {
+  color: #082245;
+}
+
+.sp-card-theme-navy .sp-segment-count {
+  background-color: #EBF2F7;
+  color: #082245;
+}
+
+.sp-card-theme-navy .sp-segment-label {
+  color: #082245;
+  background-color: #EBF2F7;
+}
+
+.sp-card-theme-navy:hover,
+.sp-card-theme-navy.is-hovered {
+  border-color: rgba(8, 34, 69, 0.22);
+}
+
+.sp-card-theme-navy:hover .sp-segment-action-link,
+.sp-card-theme-navy.is-hovered .sp-segment-action-link {
+  color: #1E824C;
+}
+
+.sp-card-theme-navy:hover .sp-action-arrow,
+.sp-card-theme-navy.is-hovered .sp-action-arrow {
+  stroke: #1E824C;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 02: Crisp White Card with Suyash Green Top Border Accent (#1E824C)
+   -------------------------------------------------------------------------- */
+.sp-card-theme-white {
+  background-color: #FFFFFF;
+  border-top: 4px solid #1E824C;
+}
+
+.sp-card-theme-white .sp-segment-num {
+  color: #1E824C;
+}
+
+.sp-card-theme-white .sp-segment-count {
+  background-color: #EBF7EE;
+  color: #1E824C;
+}
+
+.sp-card-theme-white .sp-segment-label {
+  color: #1E824C;
+  background-color: #EBF7EE;
+}
+
+.sp-card-theme-white:hover,
+.sp-card-theme-white.is-hovered {
+  border-color: rgba(30, 130, 76, 0.28);
+}
+
+.sp-card-theme-white:hover .sp-segment-action-link,
+.sp-card-theme-white.is-hovered .sp-segment-action-link {
+  color: #1E824C;
+}
+
+.sp-card-theme-white:hover .sp-action-arrow,
+.sp-card-theme-white.is-hovered .sp-action-arrow {
+  stroke: #1E824C;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 03: Crisp White Card with Forest Green Top Border Accent (#15803D)
+   -------------------------------------------------------------------------- */
+.sp-card-theme-mint {
+  background-color: #FFFFFF;
+  border-top: 4px solid #15803D;
+}
+
+.sp-card-theme-mint .sp-segment-num {
+  color: #15803D;
+}
+
+.sp-card-theme-mint .sp-segment-count {
+  background-color: #EBF7EE;
+  color: #15803D;
+}
+
+.sp-card-theme-mint .sp-segment-label {
+  color: #15803D;
+  background-color: #EBF7EE;
+}
+
+.sp-card-theme-mint:hover,
+.sp-card-theme-mint.is-hovered {
+  border-color: rgba(21, 128, 61, 0.28);
+}
+
+.sp-card-theme-mint:hover .sp-segment-action-link,
+.sp-card-theme-mint.is-hovered .sp-segment-action-link {
+  color: #15803D;
+}
+
+.sp-card-theme-mint:hover .sp-action-arrow,
+.sp-card-theme-mint.is-hovered .sp-action-arrow {
+  stroke: #15803D;
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .sp-therapeutic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* Third card spans both columns on tablet for balanced rhythm */
+  .sp-segment-card:nth-child(3) {
+    grid-column: span 2;
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-therapeutic-section {
+    padding: clamp(64px, 8.5vw, 88px) 0;
+  }
+
+  .sp-therapeutic-header {
+    margin-bottom: 40px;
+  }
+
+  .sp-therapeutic-eyebrow-wrap {
+    gap: 10px;
+  }
+
+  .sp-therapeutic-eyebrow-line {
+    width: 24px;
+  }
+
+  .sp-therapeutic-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .sp-segment-card:nth-child(3) {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
+  .sp-segment-card {
+    min-height: auto;
+    padding: 30px 24px;
+    border-radius: 18px;
+  }
+
+  .sp-segment-title {
+    min-height: auto;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .sp-segment-desc {
+    min-height: auto;
+  }
+
+  .sp-card-motif {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-therapeutic-title {
+    font-size: 1.85rem;
+  }
+
+  .sp-therapeutic-intro {
+    font-size: 0.94rem;
+  }
+
+  .sp-segment-card {
+    padding: 26px 20px;
+  }
+
+  .sp-segment-title {
+    font-size: 1.15rem;
+  }
+
+  .sp-segment-desc {
+    font-size: 0.86rem;
+  }
+
+  .sp-segment-card-top {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .sp-segment-num {
+    font-size: 1.4rem;
+  }
+
+  .sp-segment-count,
+  .sp-segment-label {
+    font-size: 0.64rem;
+    padding: 4px 7px;
+  }
+}
+
+/* Reduced Motion Preference: Accessible immediate display without movement */
+@media (prefers-reduced-motion: reduce) {
+  .sp-therapeutic-header,
+  .sp-segment-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .sp-action-arrow,
+  .sp-card-motif {
+    transition: none !important;
+    transform: none !important;
+  }
+}

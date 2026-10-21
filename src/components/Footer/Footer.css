@@ -1,0 +1,654 @@
+/* ==========================================================================
+   SUYASH PHARMA - FINAL CTA + CORPORATE FOOTER + FLOATING UTILITIES
+   - Solid Deep Suyash Navy (#082245 / #051833)
+   - Solid Mature Suyash Green (#1E824C) & Soft Mint (#D4EDDA)
+   - STRICTLY NO GRADIENTS, NO GLOW, NO GLASSMORPHISM
+   - Clean 4-Column Layout + Bottom Bar + Persistent Floating Contact
+   ========================================================================== */
+
+/* ==========================================================================
+   1. FINAL PRE-FOOTER CTA SECTION
+   ========================================================================== */
+.sp-final-cta-section {
+  position: relative;
+  width: 100%;
+  background-color: #082245; /* Deep Solid Suyash Navy */
+  padding: clamp(72px, 6.5vw, 96px) 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sp-cta-container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.8vw, 44px);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Subtle Line Motif Watermark */
+.sp-cta-watermark {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.sp-cta-content-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-cta-text-block {
+  max-width: 680px;
+}
+
+.sp-cta-eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sp-cta-eyebrow-line {
+  width: 24px;
+  height: 2px;
+  background-color: #1E824C;
+}
+
+.sp-cta-eyebrow {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #D4EDDA; /* Crisp Soft Mint */
+  line-height: 1;
+}
+
+.sp-cta-title {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px 0;
+}
+
+.sp-cta-description {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 580px;
+}
+
+/* Dual Primary CTA Buttons */
+.sp-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.sp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.sp-cta-btn .sp-btn-arrow {
+  width: 17px;
+  height: 17px;
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sp-cta-btn:hover .sp-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Primary Button: Solid Suyash Green */
+.sp-cta-btn-primary {
+  background-color: #1E824C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(30, 130, 76, 0.28);
+}
+
+.sp-cta-btn-primary:hover {
+  background-color: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 130, 76, 0.38);
+}
+
+/* Secondary Button: Clean Outlined Navy */
+.sp-cta-btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+}
+
+.sp-cta-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   2. MAIN CORPORATE PHARMACEUTICAL FOOTER
+   ========================================================================== */
+.sp-main-footer {
+  position: relative;
+  width: 100%;
+  background-color: #05162D; /* Deeper Solid Suyash Navy */
+  padding: clamp(72px, 6vw, 92px) 0 36px 0;
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+.sp-footer-container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.8vw, 44px);
+  box-sizing: border-box;
+}
+
+.sp-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1.1fr 1.2fr;
+  gap: clamp(32px, 4vw, 56px);
+  box-sizing: border-box;
+}
+
+.sp-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column Headings */
+.sp-footer-heading {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 22px 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.sp-footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background-color: #1E824C; /* Green accent underline */
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 1: Brand & Logo (Clickable back to top)
+   -------------------------------------------------------------------------- */
+.sp-footer-logo-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sp-footer-logo-plate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding: 8px 16px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.sp-footer-logo-link:hover .sp-footer-logo-plate {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+.sp-footer-logo-img {
+  height: 84px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  /* Original brand colors preserved identical to navbar */
+}
+
+.sp-footer-statement {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 20px 0;
+  max-width: 320px;
+}
+
+.sp-footer-trust-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #D4EDDA; /* Soft Mint */
+  text-transform: uppercase;
+}
+
+.sp-trust-sep {
+  color: #1E824C;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 2: Quick Links
+   -------------------------------------------------------------------------- */
+.sp-footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sp-footer-nav-item {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+  display: inline-block;
+}
+
+.sp-footer-nav-item:hover {
+  color: #48C774;
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 3: Our Focus Links
+   -------------------------------------------------------------------------- */
+.sp-footer-focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-footer-focus-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  transition: transform 200ms ease;
+}
+
+.sp-footer-focus-item:hover {
+  transform: translateX(4px);
+}
+
+.sp-focus-title {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.35;
+  transition: color 200ms ease;
+}
+
+.sp-footer-focus-item:hover .sp-focus-title {
+  color: #48C774;
+}
+
+.sp-focus-tag {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1E824C;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 4: Verified Contact Information
+   -------------------------------------------------------------------------- */
+.sp-contact-items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sp-contact-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sp-contact-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #178A4A; /* Mature Medium-Dark Suyash Green */
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sp-contact-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sp-contact-label {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.sp-contact-link {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.sp-contact-link:hover {
+  color: #2BB673;
+  text-decoration: underline;
+}
+
+.sp-email-link {
+  word-break: break-all;
+}
+
+.sp-contact-address {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+  font-style: normal;
+}
+
+.sp-footer-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #D4EDDA;
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.sp-footer-directions-btn:hover {
+  color: #48C774;
+  transform: translateX(3px);
+}
+
+.sp-contact-whatsapp-row {
+  margin-top: 6px;
+}
+
+.sp-footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: #178A4A; /* Mature Solid Medium-Dark Suyash Green */
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px; /* Slightly rounded, professional */
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); /* Subtle soft shadow, no neon glow */
+  transition: background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.sp-footer-whatsapp-btn:hover {
+  background-color: #136F3B; /* Slightly darker green */
+  transform: translateY(-2px); /* Subtle 2px upward movement */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER BOTTOM BAR
+   -------------------------------------------------------------------------- */
+.sp-footer-bottom-bar {
+  margin-top: clamp(48px, 5vw, 64px);
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sp-copyright-text {
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. PERSISTENT FLOATING CONTACT SYSTEM (WhatsApp & Phone)
+   ========================================================================== */
+.sp-floating-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.sp-float-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 220ms ease, background-color 200ms ease, box-shadow 220ms ease;
+  user-select: none;
+}
+
+.sp-float-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Floating WhatsApp Button (Mature solid green circle, clean white icon, soft subtle shadow) */
+.sp-float-wa {
+  background-color: #178A4A; /* Mature Medium-Dark Suyash Green */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.sp-float-wa:hover {
+  background-color: #136F3B; /* Slightly darker green */
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+/* Floating Phone Call Button (Deep navy circle, clean white phone icon, simple thin white border) */
+.sp-float-phone {
+  background-color: #082245; /* Deep Suyash Navy */
+  border: 1.5px solid #FFFFFF; /* Simple thin white border */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.sp-float-phone:hover {
+  background-color: #05162D;
+  border-color: #FFFFFF;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+/* Desktop Hover Tooltip */
+.sp-float-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #082245;
+  color: #FFFFFF;
+  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease, transform 180ms ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sp-float-btn:hover .sp-float-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
+   (1440px, 1366px, 1280px, 1024px, 768px, 430px, 390px, 375px, 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .sp-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .sp-cta-content-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-final-cta-section {
+    padding: clamp(56px, 8vw, 72px) 0;
+  }
+
+  .sp-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .sp-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sp-main-footer {
+    padding: 56px 0 32px 0;
+  }
+
+  .sp-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sp-footer-statement {
+    max-width: 100%;
+  }
+
+  .sp-footer-bottom-bar {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sp-floating-contact {
+    bottom: 20px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .sp-float-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sp-float-tooltip {
+    display: none; /* No tooltips on mobile touch devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-cta-title {
+    font-size: 1.85rem;
+  }
+
+  .sp-footer-logo-plate {
+    padding: 7px 14px 8px;
+  }
+
+  .sp-footer-logo-img {
+    height: 74px;
+    max-width: 120px;
+  }
+}

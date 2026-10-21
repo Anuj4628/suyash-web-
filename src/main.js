@@ -3,8 +3,8 @@
  */
 
 import './styles/global.css';
-import { renderHomePage } from './pages/Home/Home.js';
+import { router } from './router.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderHomePage();
+  router.init();
 });

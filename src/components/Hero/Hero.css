@@ -1,0 +1,687 @@
+/* ==========================================================================
+   SUYASH PHARMA - REFINED INTERNATIONAL PHARMACEUTICAL HERO
+   Two-Zone Diagonal Split Composition (Matching Reference Image)
+   Left: Deep Navy (#082245), Subtle Grid, Aligned Typography, Metrics, Pagination
+   Right: Bright Clinical Laboratory Environment, Marble Countertop, 4 Real Products
+   Divider: Solid Suyash Green (#228B22) Slanted Line (56.5% 0 -> 42% 100)
+   ========================================================================== */
+
+.sp-hero-editorial {
+  position: relative;
+  width: 100%;
+  height: clamp(620px, 86vh, 840px);
+  min-height: 600px;
+  max-height: 840px;
+  overflow: hidden;
+  background-color: #082245;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   Slides Track & Structure
+   -------------------------------------------------------------------------- */
+.sp-hero-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sp-editorial-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sp-editorial-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT ZONE: Clinical Product Showcase / Visual Area (~44% Top, ~58% Bottom)
+   -------------------------------------------------------------------------- */
+.sp-right-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #F0F4F8;
+}
+
+/* Slide 03: Clinical Laboratory Countertop Environment */
+.sp-showcase-env {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sp-showcase-backdrop-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 62%;
+  transform: scale(1.0);
+  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1);
+  filter: contrast(1.02) brightness(0.99);
+}
+
+/* Standard Editorial Photo for Slides 01, 02, 04 */
+.sp-photo-env {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sp-slide-editorial-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  transform: scale(1.0);
+  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle Brand Watermark Leaf */
+.sp-watermark-leaf {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sp-watermark-leaf-right {
+  top: 12%;
+  right: clamp(40px, 8vw, 120px);
+  width: clamp(140px, 16vw, 220px);
+  height: clamp(140px, 16vw, 220px);
+}
+
+.sp-watermark-leaf-left {
+  top: 20%;
+  left: clamp(34%, 38vw, 42%);
+  width: clamp(180px, 20vw, 260px);
+  height: clamp(180px, 20vw, 260px);
+}
+
+/* --------------------------------------------------------------------------
+   THE REAL SUYASH PHARMA PRODUCTS SHOWCASE (On Marble Countertop)
+   -------------------------------------------------------------------------- */
+.sp-showcase-products-wrap {
+  position: absolute;
+  right: clamp(16px, 3vw, 56px);
+  bottom: 0;
+  height: clamp(420px, 86%, 720px);
+  width: auto;
+  max-width: min(48vw, 720px);
+  aspect-ratio: 1024 / 903;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.sp-showcase-products-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: contrast(1.02) brightness(1.0);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 100%);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sp-showcase-products-wrap:hover .sp-showcase-products-img {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* --------------------------------------------------------------------------
+   LEFT ZONE: Deep Navy Branded Content Area (~58% Top, ~48% Bottom)
+   -------------------------------------------------------------------------- */
+.sp-left-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: #082245;
+  clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
+  overflow: hidden;
+}
+
+/* Subtle Low-Contrast Technical Grid Pattern */
+.sp-navy-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+/* ONE SINGLE CONSISTENT CONTENT CONTAINER (Aligned Vertically) */
+.sp-left-content-inner {
+  position: relative;
+  width: 100%;
+  max-width: min(580px, 45vw);
+  height: 100%;
+  padding-left: clamp(32px, 5vw, 76px);
+  padding-right: clamp(16px, 2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 4;
+}
+
+/* 1. Eyebrow */
+.sp-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #85C27E;
+  margin-bottom: 22px;
+}
+
+.sp-eyebrow-dash {
+  width: 26px;
+  height: 2px;
+  background-color: #228B22;
+  border-radius: 2px;
+}
+
+/* 2. Headline */
+.sp-editorial-headline {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.5rem, 4.3vw, 4.0rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+}
+
+.sp-headline-mask {
+  display: block;
+  overflow: hidden;
+  line-height: 1.05;
+}
+
+.sp-headline-inner {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* Solid Darker Brand Green (Zero Neon, Zero Glowing Gradients) */
+.sp-word-highlight {
+  color: #228B22;
+  display: inline-block;
+  font-weight: 800;
+}
+
+/* 3. Description */
+.sp-hero-desc {
+  font-family: var(--font-family-body);
+  font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+  line-height: 1.58;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 400;
+  margin: 0 0 28px 0;
+  max-width: 540px;
+  will-change: transform, opacity;
+}
+
+/* 4. CTA Buttons */
+.sp-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  will-change: transform, opacity;
+}
+
+.sp-btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-family-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 180ms ease;
+  white-space: nowrap;
+}
+
+.sp-btn-hero-primary {
+  background-color: #228B22;
+  color: #FFFFFF;
+  border: 1px solid #228B22;
+  box-shadow: 0 2px 8px rgba(8, 34, 69, 0.2);
+}
+
+.sp-btn-hero-primary:hover {
+  background-color: #197019;
+  border-color: #197019;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(8, 34, 69, 0.3);
+}
+
+.sp-btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+}
+
+.sp-btn-hero-secondary:hover {
+  background-color: #228B22;
+  border-color: #228B22;
+  transform: translateY(-2px);
+}
+
+.sp-btn-arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.sp-btn-hero:hover .sp-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* 5. Portfolio Metrics (Aligned with vertical line separators) */
+.sp-portfolio-metrics-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 16px);
+  margin-bottom: 26px;
+  width: 100%;
+  max-width: 100%;
+  will-change: transform, opacity;
+}
+
+.sp-portfolio-metric-col {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 0.8vw, 10px);
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.sp-metric-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sp-metric-text-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sp-metric-header {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-family-sans);
+  font-size: clamp(0.74rem, 0.86vw, 0.88rem);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.sp-metric-num {
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.sp-metric-label {
+  font-weight: 800;
+  color: #228B22;
+}
+
+.sp-metric-detail {
+  font-size: clamp(0.66rem, 0.72vw, 0.74rem);
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.sp-metric-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.16);
+  flex-shrink: 0;
+}
+
+/* Keywords Row for Slide 02 */
+.sp-keywords-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.sp-keyword-pill {
+  font-family: var(--font-family-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+/* 6. Slider Navigation (01 02 03 04 ━━━━ Aligned directly in same container) */
+.sp-slider-nav-aligned {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 2px;
+}
+
+.sp-nav-steps {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-step-btn {
+  font-family: var(--font-family-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.42);
+  background: transparent;
+  padding: 2px 4px;
+  cursor: pointer;
+  transition: color 180ms ease;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+.sp-step-btn:hover {
+  color: #FFFFFF;
+}
+
+.sp-step-btn.is-active {
+  color: #228B22;
+}
+
+.sp-nav-progress-rail {
+  width: 110px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-nav-progress-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #228B22;
+  border-radius: 2px;
+  will-change: width;
+}
+
+/* --------------------------------------------------------------------------
+   THE CRISP GREEN DIAGONAL DIVIDER LINE
+   -------------------------------------------------------------------------- */
+.sp-hero-diagonal-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* --------------------------------------------------------------------------
+   Minimal Arrow Navigation Controls (Positioned at Bottom-Right of Hero)
+   -------------------------------------------------------------------------- */
+.sp-hero-arrows {
+  position: absolute;
+  bottom: 28px;
+  right: clamp(24px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.sp-arrow-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  background: rgba(8, 34, 69, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.sp-arrow-nav-btn:hover {
+  background-color: #228B22;
+  border-color: #228B22;
+  transform: scale(1.05);
+}
+
+.sp-arrow-nav-btn:active {
+  transform: scale(0.96);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
+   (1440px, 1366px, 1280px, 1024px, 768px, 390px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1366px) {
+  .sp-editorial-headline {
+    font-size: clamp(2.3rem, 3.8vw, 3.6rem);
+  }
+}
+
+@media (max-width: 1200px) {
+  .sp-left-stage {
+    clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
+  }
+  .sp-hero-diagonal-svg line {
+    x1: 58;
+    x2: 48;
+  }
+  .sp-showcase-products-wrap {
+    right: 20px;
+    max-width: 46vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sp-hero-editorial {
+    height: 720px;
+  }
+  .sp-left-stage {
+    clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
+  }
+  .sp-hero-diagonal-svg line {
+    x1: 60;
+    x2: 50;
+  }
+  .sp-showcase-products-wrap {
+    width: auto;
+    max-width: 46vw;
+    right: 14px;
+    height: clamp(380px, 82%, 620px);
+  }
+}
+
+@media (max-width: 860px) {
+  .sp-hero-editorial {
+    height: auto;
+    min-height: auto;
+    padding: 0 0 40px 0;
+  }
+
+  .sp-editorial-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sp-left-stage {
+    position: relative;
+    clip-path: none;
+    -webkit-clip-path: none;
+    padding: 40px 0 32px 0;
+    width: 100%;
+  }
+
+  .sp-left-content-inner {
+    max-width: 100%;
+    padding-left: clamp(24px, 5vw, 48px);
+    padding-right: clamp(24px, 5vw, 48px);
+  }
+
+  .sp-hero-diagonal-svg {
+    display: none;
+  }
+
+  .sp-right-stage {
+    position: relative;
+    width: 100%;
+    height: 380px;
+  }
+
+  .sp-showcase-env {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sp-showcase-products-wrap {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
+    width: 94%;
+    max-width: 520px;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .sp-showcase-products-img {
+    object-position: center bottom;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .sp-hero-arrows {
+    bottom: 16px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sp-portfolio-metrics-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .sp-metric-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-editorial-headline {
+    font-size: 2.1rem;
+  }
+
+  .sp-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sp-btn-hero {
+    width: 100%;
+  }
+
+  .sp-right-stage {
+    height: 310px;
+  }
+
+  .sp-showcase-products-wrap {
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .sp-editorial-headline {
+    font-size: 1.95rem;
+  }
+
+  .sp-right-stage {
+    height: 280px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sp-headline-inner,
+  .sp-showcase-backdrop-photo,
+  .sp-slide-editorial-photo,
+  .sp-showcase-products-img,
+  .sp-hero-actions {
+    transition: opacity 200ms ease !important;
+    transform: none !important;
+  }
+}
+

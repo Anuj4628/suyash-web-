@@ -1,0 +1,18 @@
+# Robots.txt for Suyash Pharma (https://suyashpharma.com)
+# Allow complete search engine crawling of all public pharmaceutical pages, products, assets, and metadata.
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /src/assets/
+Allow: /products/
+Allow: /about
+Allow: /quality
+Allow: /therapeutic-segments
+Allow: /contact
+
+# Disallow non-indexable utility endpoints
+Disallow: /404
+
+# XML Sitemap Location
+Sitemap: https://suyashpharma.com/sitemap.xml

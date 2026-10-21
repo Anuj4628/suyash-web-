@@ -67,8 +67,8 @@ export function renderNavbar(activePage = 'home') {
               src="${logoUrl}" 
               alt="Suyash Pharma - Your Health, Our Priority" 
               class="sp-brand-logo"
-              width="145"
-              height="94"
+              width="155"
+              height="100"
               loading="eager"
             />
           </a>

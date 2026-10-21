@@ -72,8 +72,8 @@ export function renderHero() {
               <span>${slide.eyebrow}</span>
             </div>
 
-            <!-- 2. Large Editorial Headline -->
-            <h1 class="sp-editorial-headline">
+            <!-- 2. Large Editorial Headline (H1 for Primary Hero Slide, H2 for Secondary Slides) -->
+            <${index === 0 ? 'h1' : 'h2'} class="sp-editorial-headline">
               ${slide.headline.map(item => `
                 <span class="sp-headline-mask">
                   <span class="sp-headline-inner ${item.highlight ? 'sp-word-highlight' : ''}">
@@ -81,7 +81,7 @@ export function renderHero() {
                   </span>
                 </span>
               `).join('')}
-            </h1>
+            </${index === 0 ? 'h1' : 'h2'}>
 
             <!-- 3. Supporting Paragraph -->
             <p class="sp-hero-desc">
@@ -182,7 +182,7 @@ export function initHeroCarousel() {
 
   let currentIndex = 0;
   const totalSlides = slides.length;
-  const AUTOPLAY_DURATION = 6.0;
+  const AUTOPLAY_DURATION = 4.2;
   let progressTween = null;
   let isTransitioning = false;
   let activeTransitionTl = null;

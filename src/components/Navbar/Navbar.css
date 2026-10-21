@@ -134,9 +134,9 @@
 }
 
 .sp-brand-logo {
-  height: 94px;
+  height: 100px;
   width: auto;
-  max-width: 145px;
+  max-width: 155px;
   object-fit: contain;
   display: block;
   image-rendering: -webkit-optimize-contrast;
@@ -400,8 +400,8 @@
     font-size: 1rem;
   }
   .sp-brand-logo {
-    height: 82px;
-    max-width: 130px;
+    height: 88px;
+    max-width: 138px;
   }
 }
 
@@ -427,8 +427,8 @@
   }
 
   .sp-brand-logo {
-    height: 64px;
-    max-width: 105px;
+    height: 68px;
+    max-width: 112px;
   }
 
   .sp-decor-left,

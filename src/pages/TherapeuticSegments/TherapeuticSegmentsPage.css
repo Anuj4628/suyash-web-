@@ -1,0 +1,341 @@
+/* ==========================================================================
+   SUYASH PHARMA - DEDICATED THERAPEUTIC SEGMENTS PAGE STYLING
+   ========================================================================== */
+
+.sp-therapeutic-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+.sp-therapeutic-main-content {
+  flex: 1;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (SOLID DEEP SUYASH GREEN #165331)
+   ========================================================================== */
+
+.sp-tseg-hero-section {
+  position: relative;
+  background-color: #165331;
+  color: #FFFFFF;
+  padding: 130px 24px 80px;
+  overflow: hidden;
+}
+
+.sp-tseg-watermark {
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(100px, 16vw, 240px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.035);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.sp-tseg-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-tseg-hero-content {
+  max-width: 820px;
+}
+
+.sp-tseg-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sp-tseg-hero-marker {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #5EDC8C;
+}
+
+.sp-tseg-hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+.sp-tseg-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(32px, 5.2vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+.sp-tseg-hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 32px;
+}
+
+.sp-tseg-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sp-tseg-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sp-tseg-jump-btn:hover {
+  background-color: #5EDC8C;
+  color: #082245;
+  border-color: #5EDC8C;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   2. CHAPTER SECTIONS
+   ========================================================================== */
+
+.sp-tseg-chapter {
+  padding: 80px 24px;
+}
+
+.sp-tseg-chapter-alt {
+  background-color: #F8FAF8;
+}
+
+.sp-tseg-chapter-header {
+  margin-bottom: 40px;
+}
+
+.sp-tseg-chapter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #1E824C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sp-tseg-chapter-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(26px, 3.6vw, 38px);
+  font-weight: 800;
+  color: #082245;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.sp-tseg-chapter-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #374151;
+  max-width: 820px;
+  margin: 0;
+}
+
+.sp-tseg-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .sp-tseg-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sp-tseg-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Product Mini Card */
+.sp-tseg-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sp-tseg-card:hover {
+  transform: translateY(-4px);
+  border-color: #1E824C;
+  box-shadow: 0 12px 32px rgba(8, 34, 69, 0.08);
+}
+
+.sp-tseg-card-img-wrap {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #F9FAFB;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.sp-tseg-card-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.sp-tseg-card-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1E824C;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sp-tseg-card-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #082245;
+  margin: 0 0 6px;
+}
+
+.sp-tseg-card-generic {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #4B5563;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.sp-tseg-card-strength {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #EBF5EE;
+  color: #1E824C;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.sp-tseg-card-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1E824C;
+}
+
+/* ==========================================================================
+   3. THERAPEUTIC FAQ SECTION
+   ========================================================================== */
+
+.sp-tseg-faq-section {
+  padding: 80px 24px;
+  background-color: #EBF5EE;
+}
+
+.sp-tseg-faq-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.sp-tseg-faq-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(26px, 3.6vw, 36px);
+  font-weight: 800;
+  color: #082245;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.sp-tseg-faq-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #374151;
+  margin: 0;
+}
+
+.sp-tseg-faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-tseg-faq-item {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(8, 34, 69, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.sp-tseg-faq-q {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #082245;
+  margin: 0 0 10px;
+}
+
+.sp-tseg-faq-a {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4B5563;
+  margin: 0;
+}

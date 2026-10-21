@@ -1,9 +1,9 @@
 /* ==========================================================================
-   SUYASH PHARMA - FINAL CTA + CORPORATE FOOTER + FLOATING UTILITIES
-   - Solid Deep Suyash Navy (#082245 / #051833)
-   - Solid Mature Suyash Green (#1E824C) & Soft Mint (#D4EDDA)
-   - STRICTLY NO GRADIENTS, NO GLOW, NO GLASSMORPHISM
-   - Clean 4-Column Layout + Bottom Bar + Persistent Floating Contact
+   SUYASH PHARMA - FINAL CTA + REDESIGNED CORPORATE FOOTER + FLOATING UTILITIES
+   - Solid Deep Suyash Navy (#082245 / #05162D)
+   - Solid Mature Suyash Green (#24881A / #178A4A) & Soft Mint (#D4EDDA)
+   - STRICTLY ZERO GRADIENTS, NO GLOW, NO GLASSMORPHISM
+   - Systematic 4-Column Layout, Balanced Padding, Full Responsiveness
    ========================================================================== */
 
 /* ==========================================================================
@@ -13,10 +13,10 @@
   position: relative;
   width: 100%;
   background-color: #082245; /* Deep Solid Suyash Navy */
-  padding: clamp(72px, 6.5vw, 96px) 0;
+  padding: clamp(64px, 6vw, 88px) 0;
   box-sizing: border-box;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sp-cta-container {
@@ -44,13 +44,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 36px;
   position: relative;
   z-index: 2;
 }
 
 .sp-cta-text-block {
-  max-width: 680px;
+  max-width: 660px;
 }
 
 .sp-cta-eyebrow-wrap {
@@ -63,43 +63,44 @@
 .sp-cta-eyebrow-line {
   width: 24px;
   height: 2px;
-  background-color: #1E824C;
+  background-color: #24881A;
 }
 
 .sp-cta-eyebrow {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #D4EDDA; /* Crisp Soft Mint */
+  color: #D4EDDA;
   line-height: 1;
 }
 
 .sp-cta-title {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
 }
 
 .sp-cta-description {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
-  line-height: 1.55;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: clamp(0.94rem, 1.1vw, 1.05rem);
+  line-height: 1.58;
   color: rgba(255, 255, 255, 0.88);
   margin: 0;
-  max-width: 580px;
+  max-width: 560px;
 }
 
 /* Dual Primary CTA Buttons */
 .sp-cta-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
@@ -108,23 +109,23 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 32px;
+  padding: 14px 28px;
   border-radius: 8px;
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.9rem;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), background-color 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   outline: none;
   white-space: nowrap;
 }
 
 .sp-cta-btn .sp-btn-arrow {
-  width: 17px;
-  height: 17px;
-  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  width: 16px;
+  height: 16px;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sp-cta-btn:hover .sp-btn-arrow {
@@ -133,22 +134,22 @@
 
 /* Primary Button: Solid Suyash Green */
 .sp-cta-btn-primary {
-  background-color: #1E824C;
+  background-color: #24881A;
   color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(30, 130, 76, 0.28);
+  box-shadow: 0 4px 14px rgba(36, 136, 26, 0.25);
 }
 
 .sp-cta-btn-primary:hover {
-  background-color: #166534;
+  background-color: #1B6A14;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30, 130, 76, 0.38);
+  box-shadow: 0 8px 20px rgba(36, 136, 26, 0.35);
 }
 
 /* Secondary Button: Clean Outlined Navy */
 .sp-cta-btn-secondary {
   background-color: transparent;
   color: #FFFFFF;
-  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .sp-cta-btn-secondary:hover {
@@ -157,6 +158,7 @@
   transform: translateY(-2px);
 }
 
+
 /* ==========================================================================
    2. MAIN CORPORATE PHARMACEUTICAL FOOTER
    ========================================================================== */
@@ -164,7 +166,8 @@
   position: relative;
   width: 100%;
   background-color: #05162D; /* Deeper Solid Suyash Navy */
-  padding: clamp(72px, 6vw, 92px) 0 36px 0;
+  padding-top: clamp(68px, 6vw, 84px);
+  padding-bottom: clamp(36px, 4vw, 48px);
   box-sizing: border-box;
   color: #FFFFFF;
 }
@@ -177,10 +180,12 @@
   box-sizing: border-box;
 }
 
+/* 4-Column Balanced Grid */
 .sp-footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.9fr 1.1fr 1.2fr;
-  gap: clamp(32px, 4vw, 56px);
+  grid-template-columns: 1.35fr 0.85fr 1.05fr 1.25fr;
+  gap: clamp(32px, 3.8vw, 54px);
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
@@ -189,18 +194,18 @@
   flex-direction: column;
 }
 
-/* Column Headings */
+/* Uniform Column Headings */
 .sp-footer-heading {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.84rem;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin: 0 0 22px 0;
+  margin: 0 0 20px 0;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .sp-footer-heading::after {
@@ -208,74 +213,78 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 28px;
+  width: 24px;
   height: 2px;
-  background-color: #1E824C; /* Green accent underline */
+  background-color: #24881A; /* Subtle green accent line */
 }
 
 /* --------------------------------------------------------------------------
-   COLUMN 1: Brand & Logo (Clickable back to top)
+   COLUMN 1: BRAND (Large Original Logo, Statement, Value Line)
    -------------------------------------------------------------------------- */
 .sp-footer-logo-link {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
 }
 
+/* Logo Plate: Clean White Container displaying original logo with 100% color fidelity */
 .sp-footer-logo-plate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #FFFFFF;
-  padding: 8px 16px 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: fit-content;
+  max-width: 250px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: transform 220ms ease, box-shadow 220ms ease;
+  box-sizing: border-box;
 }
 
 .sp-footer-logo-link:hover .sp-footer-logo-plate {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 .sp-footer-logo-img {
-  height: 84px;
-  width: auto;
-  max-width: 140px;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 145 / 94;
   object-fit: contain;
   display: block;
-  /* Original brand colors preserved identical to navbar */
 }
 
 .sp-footer-statement {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
   font-size: 0.88rem;
   line-height: 1.62;
   color: rgba(255, 255, 255, 0.78);
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   max-width: 320px;
 }
 
-.sp-footer-trust-pills {
+.sp-footer-brand-values {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
   color: #D4EDDA; /* Soft Mint */
   text-transform: uppercase;
 }
 
-.sp-trust-sep {
-  color: #1E824C;
+.sp-value-bullet {
+  color: #24881A;
 }
 
 /* --------------------------------------------------------------------------
-   COLUMN 2: Quick Links
+   COLUMN 2: QUICK LINKS
    -------------------------------------------------------------------------- */
 .sp-footer-nav-list {
   list-style: none;
@@ -286,76 +295,70 @@
   gap: 12px;
 }
 
-.sp-footer-nav-item {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+.sp-footer-nav-link {
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
   transition: color 200ms ease, transform 200ms ease;
   display: inline-block;
+  width: fit-content;
 }
 
-.sp-footer-nav-item:hover {
+.sp-footer-nav-link:hover {
   color: #48C774;
   transform: translateX(4px);
 }
 
 /* --------------------------------------------------------------------------
-   COLUMN 3: Our Focus Links
+   COLUMN 3: OUR FOCUS (Clean Text Blocks)
    -------------------------------------------------------------------------- */
 .sp-footer-focus-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.sp-footer-focus-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  text-decoration: none;
-  transition: transform 200ms ease;
-}
-
-.sp-footer-focus-item:hover {
-  transform: translateX(4px);
-}
-
-.sp-focus-title {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.35;
-  transition: color 200ms ease;
-}
-
-.sp-footer-focus-item:hover .sp-focus-title {
-  color: #48C774;
-}
-
-.sp-focus-tag {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #1E824C;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* --------------------------------------------------------------------------
-   COLUMN 4: Verified Contact Information
-   -------------------------------------------------------------------------- */
-.sp-contact-items-wrap {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.sp-contact-entry {
+.sp-focus-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sp-focus-title {
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 200ms ease;
+  display: block;
+}
+
+.sp-focus-title:hover {
+  color: #48C774;
+}
+
+.sp-focus-tag {
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #24881A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 4: CONTACT US (Structured Vertical Contact System)
+   -------------------------------------------------------------------------- */
+.sp-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sp-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -366,32 +369,40 @@
   height: 32px;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #178A4A; /* Mature Medium-Dark Suyash Green */
+  color: #24881A; /* Solid Suyash Green */
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-.sp-contact-text-group {
+.sp-contact-content {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
 .sp-contact-label {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.48);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sp-contact-phones {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .sp-contact-link {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.92rem;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.9rem;
   font-weight: 600;
   color: #FFFFFF;
   text-decoration: none;
@@ -399,8 +410,12 @@
 }
 
 .sp-contact-link:hover {
-  color: #2BB673;
-  text-decoration: underline;
+  color: #48C774;
+}
+
+.sp-phone-sep {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
 }
 
 .sp-email-link {
@@ -408,10 +423,10 @@
 }
 
 .sp-contact-address {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.86rem;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.84rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.8);
   font-style: normal;
 }
 
@@ -419,55 +434,77 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 8px;
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.78rem;
+  margin-top: 6px;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #D4EDDA;
   text-decoration: none;
-  transition: color 200ms ease, transform 200ms ease;
+  transition: color 200ms ease;
+  width: fit-content;
+}
+
+.sp-dir-arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+  font-weight: 800;
 }
 
 .sp-footer-directions-btn:hover {
   color: #48C774;
-  transform: translateX(3px);
 }
 
+.sp-footer-directions-btn:hover .sp-dir-arrow {
+  transform: translateX(4px);
+}
+
+/* WhatsApp Action Button inside Contact Column */
 .sp-contact-whatsapp-row {
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .sp-footer-whatsapp-btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   background-color: #178A4A; /* Mature Solid Medium-Dark Suyash Green */
   color: #FFFFFF;
   text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 8px; /* Slightly rounded, professional */
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); /* Subtle soft shadow, no neon glow */
-  transition: background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  transition: background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  width: fit-content;
+}
+
+.sp-footer-whatsapp-btn .sp-dir-arrow {
+  font-size: 0.95rem;
+  transition: transform 200ms ease;
 }
 
 .sp-footer-whatsapp-btn:hover {
-  background-color: #136F3B; /* Slightly darker green */
-  transform: translateY(-2px); /* Subtle 2px upward movement */
+  background-color: #136F3B;
+  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
+.sp-footer-whatsapp-btn:hover .sp-dir-arrow {
+  transform: translateX(3px);
+}
+
+
 /* --------------------------------------------------------------------------
-   FOOTER BOTTOM BAR
+   STREAMLINED FOOTER BOTTOM BAR
    -------------------------------------------------------------------------- */
 .sp-footer-bottom-bar {
-  margin-top: clamp(48px, 5vw, 64px);
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: clamp(36px, 4vw, 52px);
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,12 +512,14 @@
 }
 
 .sp-copyright-text {
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.58);
   margin: 0;
   text-align: center;
+  letter-spacing: 0.02em;
 }
+
 
 /* ==========================================================================
    3. PERSISTENT FLOATING CONTACT SYSTEM (WhatsApp & Phone)
@@ -516,32 +555,33 @@
   transform: translateY(-2px);
 }
 
-/* Floating WhatsApp Button (Mature solid green circle, clean white icon, soft subtle shadow) */
+/* Floating WhatsApp Button */
 .sp-float-wa {
-  background-color: #178A4A; /* Mature Medium-Dark Suyash Green */
+  background-color: #178A4A; /* Medium-Dark Green */
+  color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .sp-float-wa:hover {
-  background-color: #136F3B; /* Slightly darker green */
+  background-color: #136F3B;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
 }
 
-/* Floating Phone Call Button (Deep navy circle, clean white phone icon, simple thin white border) */
+/* Floating Phone Call Button */
 .sp-float-phone {
   background-color: #082245; /* Deep Suyash Navy */
-  border: 1.5px solid #FFFFFF; /* Simple thin white border */
+  color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .sp-float-phone:hover {
   background-color: #05162D;
-  border-color: #FFFFFF;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
 }
 
-/* Desktop Hover Tooltip */
+/* Tooltip for desktop */
 .sp-float-tooltip {
   position: absolute;
   right: calc(100% + 12px);
@@ -549,106 +589,111 @@
   transform: translateY(-50%);
   background-color: #082245;
   color: #FFFFFF;
-  font-family: var(--font-family-sans, 'Inter', -apple-system, sans-serif);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 5px 10px;
-  border-radius: 4px;
+  font-family: var(--font-family-sans, 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
   white-space: nowrap;
-  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 180ms ease, transform 180ms ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.sp-float-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #082245;
 }
 
 .sp-float-btn:hover .sp-float-tooltip {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(-4px);
 }
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
-   (1440px, 1366px, 1280px, 1024px, 768px, 430px, 390px, 375px, 360px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .sp-footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
 
+/* ==========================================================================
+   RESPONSIVE DESIGN (BREAKPOINTS AUDIT)
+   ========================================================================== */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
   .sp-cta-content-grid {
     flex-direction: column;
     align-items: flex-start;
     gap: 28px;
   }
-}
-
-@media (max-width: 768px) {
-  .sp-final-cta-section {
-    padding: clamp(56px, 8vw, 72px) 0;
-  }
-
-  .sp-cta-actions {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .sp-cta-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .sp-main-footer {
-    padding: 56px 0 32px 0;
-  }
 
   .sp-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 
   .sp-footer-statement {
     max-width: 100%;
   }
+}
 
-  .sp-footer-bottom-bar {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+/* Mobile & Small Tablets (Up to 768px) */
+@media (max-width: 768px) {
+  .sp-final-cta-section {
+    padding: 56px 0;
+  }
+
+  .sp-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .sp-cta-btn {
+    width: 100%;
+  }
+
+  .sp-main-footer {
+    padding-top: 54px;
+    padding-bottom: 36px;
+  }
+
+  .sp-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
   }
 
   .sp-floating-contact {
-    bottom: 20px;
-    right: 16px;
+    bottom: 18px;
+    right: 18px;
     gap: 10px;
   }
 
   .sp-float-btn {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
   }
 
   .sp-float-tooltip {
-    display: none; /* No tooltips on mobile touch devices */
+    display: none;
   }
 }
 
+/* Small Screens (<= 480px) */
 @media (max-width: 480px) {
-  .sp-cta-title {
-    font-size: 1.85rem;
-  }
-
   .sp-footer-logo-plate {
-    padding: 7px 14px 8px;
+    max-width: 220px;
+    padding: 10px 16px;
   }
 
   .sp-footer-logo-img {
-    height: 74px;
-    max-width: 120px;
+    max-width: 190px;
+  }
+
+  .sp-footer-whatsapp-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

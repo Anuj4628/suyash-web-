@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Primary Brand Landing Page -->
+  <url>
+    <loc>https://suyashpharma.com/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Suyash Pharma -->
+  <url>
+    <loc>https://suyashpharma.com/about</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Complete Pharmaceutical Products Portfolio Catalogue -->
+  <url>
+    <loc>https://suyashpharma.com/products</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Dedicated Quality Assurance & Standards Page -->
+  <url>
+    <loc>https://suyashpharma.com/quality</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Dedicated Therapeutic Segments & Clinical Scope Page -->
+  <url>
+    <loc>https://suyashpharma.com/therapeutic-segments</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Corporate Contact & Regional Office in Nallasopara -->
+  <url>
+    <loc>https://suyashpharma.com/contact</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ====================================================================
+       INDIVIDUAL VERIFIED PRODUCT DETAIL PAGES (ALL 13 PRODUCTS)
+       ==================================================================== -->
+
+  <!-- 01. CEFFTOB™ (Ceftazidime 1000mg & Tobramycin 120mg for Injection) -->
+  <url>
+    <loc>https://suyashpharma.com/products/cefftob</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 02. SPTIK™-1.5GM (Ceftizoxime Injection I.P. 1.5gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/sptik-1-5gm</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 03. TIGRIXA-100 (Tigecycline for Injection USP 100mg Lyophilized) -->
+  <url>
+    <loc>https://suyashpharma.com/products/tigrixa-100</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 04. SPNEM™ (Meropenem Injection IP 2.0 gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/spnem</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 05. GTVITA-SP (Glutathione for Injection 1200 mg/vial With Vitamin C Ampoule) -->
+  <url>
+    <loc>https://suyashpharma.com/products/gtvita-sp</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 06. SPARAZONE-3GM (Cefoperazone & Sulbactam for Injection 3 gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/sparazone-3gm</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 07. SPNEM-SB (Meropenem & Sulbactam for Injection 750 mg) -->
+  <url>
+    <loc>https://suyashpharma.com/products/spnem-sb</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 08. SULBOFORTE-2GM (Sulbactam for Injection 2.0 gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/sulboforte-2gm</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 09. SPNEM-TZ (Meropenem & Tazobactam for Injection 1.125gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/spnem-tz</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 10. SPNEM-SB 1.5GM (Meropenem & Sulbactam for Injection 1.5 gm) -->
+  <url>
+    <loc>https://suyashpharma.com/products/spnem-sb-1-5gm</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 11. YSPAN-40MG (Pantoprazole for Injection 40mg) -->
+  <url>
+    <loc>https://suyashpharma.com/products/yspan-40mg</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 12. Sfrome-2gm (Cefpirome Sulphate Injection IP 2000 mg) -->
+  <url>
+    <loc>https://suyashpharma.com/products/sfrome-2gm</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 13. CPFOXIME-500 (Cefuroxime Axetil Tablets I.P. 500 mg) -->
+  <url>
+    <loc>https://suyashpharma.com/products/cpfoxime-500</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

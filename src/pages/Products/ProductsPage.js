@@ -189,6 +189,51 @@ export function renderProductsPage() {
           </div>
         </section>
 
+        <!-- ================================================================
+             4B. PHARMACEUTICAL PORTFOLIO FAQ SECTION
+             ================================================================ -->
+        <section class="sp-catalog-faq-section" id="products-faq" aria-labelledby="catalogFaqHeading">
+          <div class="sp-catalog-grid-container">
+            <header class="sp-catalog-faq-header">
+              <span class="sp-catalog-sec-badge">FREQUENTLY ASKED QUESTIONS</span>
+              <h2 class="sp-catalog-faq-title" id="catalogFaqHeading">PHARMACEUTICAL PORTFOLIO FAQ</h2>
+              <p class="sp-catalog-faq-desc">
+                Key questions and answers regarding Suyash Pharma formulations, dosage forms, distribution, and hospital supply across India.
+              </p>
+            </header>
+
+            <div class="sp-catalog-faq-grid">
+              <article class="sp-catalog-faq-card">
+                <h3 class="sp-catalog-faq-q">What pharmaceutical products does Suyash Pharma offer?</h3>
+                <p class="sp-catalog-faq-a">
+                  Suyash Pharma provides a focused portfolio of hospital-grade injectable formulations, including carbapenems (Meropenem 2.0 gm), synergistic beta-lactamase inhibitor combinations (Meropenem + Sulbactam, Meropenem + Tazobactam, Cefoperazone + Sulbactam 3 gm), advanced cephalosporins (Ceftazidime + Tobramycin, Ceftizoxime, Cefpirome), glycylcyclines (Tigecycline 100mg), parenteral proton pump inhibitors (Pantoprazole 40mg), and supportive therapies (Glutathione 1200mg + Vitamin C).
+                </p>
+              </article>
+
+              <article class="sp-catalog-faq-card">
+                <h3 class="sp-catalog-faq-q">What dosage forms and administration routes are available?</h3>
+                <p class="sp-catalog-faq-a">
+                  The portfolio primarily features sterile dry powder for injection and lyophilized powder for intravenous (IV) infusion or deep intramuscular (IM) injection packaged in single-dose glass vials, alongside oral film-coated tablets such as Cefuroxime Axetil 500mg.
+                </p>
+              </article>
+
+              <article class="sp-catalog-faq-card">
+                <h3 class="sp-catalog-faq-q">How can institutional buyers or distributors inquire about Suyash Pharma products?</h3>
+                <p class="sp-catalog-faq-a">
+                  Commercial inquiries, hospital supply orders, and distribution requests can be submitted through our product detail enquiry modal, via direct WhatsApp dispatch to +91 8928252638, or by emailing our corporate office at suyashpharma1@gmail.com.
+                </p>
+              </article>
+
+              <article class="sp-catalog-faq-card">
+                <h3 class="sp-catalog-faq-q">Where is Suyash Pharma located and where does it distribute?</h3>
+                <p class="sp-catalog-faq-a">
+                  Suyash Pharma is located at Shop No. A/02,03 Ground Floor, Max Avenue CHS Ltd, Ostwal Nagari, Nallasopara East, Maharashtra 401209. We supply pharmaceutical products and hospital formulations across Nallasopara, Vasai-Virar, Palghar, the Mumbai Metropolitan Region, Maharashtra, and across India.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <!-- 5. Pre-Footer Corporate CTA & Global Footer -->

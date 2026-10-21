@@ -46,7 +46,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   RIGHT ZONE: Clinical Product Showcase / Visual Area (~44% Top, ~58% Bottom)
+   RIGHT ZONE: Universal Hero Visual Slot (100% Full Height & Width)
+   Occupies 100% height and width of slide visual container.
+   Fallback background: #082245 (prevents any light/white gap or flash).
    -------------------------------------------------------------------------- */
 .sp-right-stage {
   position: absolute;
@@ -55,62 +57,44 @@
   height: 100%;
   z-index: 1;
   overflow: hidden;
-  background-color: #F0F4F8;
+  background-color: #082245;
 }
 
-/* Slide 03: Clinical Laboratory Countertop Environment */
-.sp-showcase-env {
+.sp-hero-visual-frame {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 64%;
   height: 100%;
   overflow: hidden;
+  background-color: #082245;
 }
 
-.sp-showcase-backdrop-photo {
+.sp-hero-visual-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: right 62%;
+  object-fit: var(--img-fit, cover);
+  object-position: var(--img-pos, center center);
+  display: block;
+  filter: contrast(1.02) brightness(1.0);
   transform: scale(1.0);
-  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1);
-  filter: contrast(1.02) brightness(0.99);
+  transform-origin: center center;
+  transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-/* Standard Editorial Photo for Slides 01, 02, 04 */
-.sp-photo-env {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.sp-hero-visual-frame:hover .sp-hero-visual-img {
+  transform: scale(1.015);
 }
 
-.sp-slide-editorial-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 72% center;
-  transform: scale(1.0);
-  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Subtle Brand Watermark Leaf */
+/* Subtle Brand Watermark Leaf on Navy */
 .sp-watermark-leaf {
   position: absolute;
   pointer-events: none;
   z-index: 2;
-}
-
-.sp-watermark-leaf-right {
-  top: 12%;
-  right: clamp(40px, 8vw, 120px);
-  width: clamp(140px, 16vw, 220px);
-  height: clamp(140px, 16vw, 220px);
 }
 
 .sp-watermark-leaf-left {
@@ -121,40 +105,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   THE REAL SUYASH PHARMA PRODUCTS SHOWCASE (On Marble Countertop)
-   -------------------------------------------------------------------------- */
-.sp-showcase-products-wrap {
-  position: absolute;
-  right: clamp(16px, 3vw, 56px);
-  bottom: 0;
-  height: clamp(420px, 86%, 720px);
-  width: auto;
-  max-width: min(48vw, 720px);
-  aspect-ratio: 1024 / 903;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  z-index: 3;
-  pointer-events: auto;
-}
-
-.sp-showcase-products-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: right bottom;
-  filter: contrast(1.02) brightness(1.0);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 100%);
-  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.sp-showcase-products-wrap:hover .sp-showcase-products-img {
-  transform: translateY(-4px) scale(1.01);
-}
-
-/* --------------------------------------------------------------------------
-   LEFT ZONE: Deep Navy Branded Content Area (~58% Top, ~48% Bottom)
+   LEFT ZONE: Deep Navy Branded Content Area (~46% Top, ~36% Bottom)
    -------------------------------------------------------------------------- */
 .sp-left-stage {
   position: absolute;
@@ -163,8 +114,8 @@
   height: 100%;
   z-index: 3;
   background-color: #082245;
-  clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
+  clip-path: polygon(0 0, 48% 0, 36% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 48% 0, 36% 100%, 0 100%);
   overflow: hidden;
 }
 
@@ -183,10 +134,10 @@
 .sp-left-content-inner {
   position: relative;
   width: 100%;
-  max-width: min(580px, 45vw);
+  max-width: min(520px, 40vw);
   height: 100%;
-  padding-left: clamp(32px, 5vw, 76px);
-  padding-right: clamp(16px, 2vw, 32px);
+  padding-left: clamp(28px, 4.5vw, 68px);
+  padding-right: clamp(14px, 1.8vw, 24px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -317,103 +268,52 @@
   transform: translateX(4px);
 }
 
-/* 5. Portfolio Metrics (Aligned with vertical line separators) */
-.sp-portfolio-metrics-row {
-  display: flex;
-  align-items: center;
-  gap: clamp(8px, 1.2vw, 16px);
-  margin-bottom: 26px;
-  width: 100%;
-  max-width: 100%;
-  will-change: transform, opacity;
-}
-
-.sp-portfolio-metric-col {
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 0.8vw, 10px);
-  flex-shrink: 1;
-  min-width: 0;
-}
-
-.sp-metric-icon-wrap {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.sp-metric-text-wrap {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.sp-metric-header {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  font-family: var(--font-family-sans);
-  font-size: clamp(0.74rem, 0.86vw, 0.88rem);
-  letter-spacing: 0.03em;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.sp-metric-num {
-  font-weight: 800;
-  color: #FFFFFF;
-}
-
-.sp-metric-label {
-  font-weight: 800;
-  color: #228B22;
-}
-
-.sp-metric-detail {
-  font-size: clamp(0.66rem, 0.72vw, 0.74rem);
-  color: rgba(255, 255, 255, 0.65);
-  margin-top: 2px;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.sp-metric-divider {
-  width: 1px;
-  height: 28px;
-  background-color: rgba(255, 255, 255, 0.16);
-  flex-shrink: 0;
-}
-
-/* Keywords Row for Slide 02 */
+/* 5. Minimal Badge Pills (Clean, Perfectly Aligned, Never Overlapping) */
 .sp-keywords-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 8px 10px;
+  margin-bottom: 24px;
+  max-width: 100%;
 }
 
 .sp-keyword-pill {
   font-family: var(--font-family-sans);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 5px 12px;
   border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 180ms ease;
+}
+
+.sp-keyword-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.sp-keywords-row .sp-keyword-pill:first-child {
+  background: rgba(34, 139, 34, 0.15);
+  border-color: rgba(34, 139, 34, 0.5);
+  color: #85C27E;
 }
 
 /* 6. Slider Navigation (01 02 03 04 ━━━━ Aligned directly in same container) */
 .sp-slider-nav-aligned {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 2px;
+  gap: clamp(10px, 1.4vw, 18px);
+  margin-top: 4px;
 }
 
 .sp-nav-steps {
@@ -447,7 +347,7 @@
 }
 
 .sp-nav-progress-rail {
-  width: 110px;
+  width: 100px;
   height: 2px;
   background: rgba(255, 255, 255, 0.18);
   border-radius: 2px;
@@ -466,6 +366,38 @@
   will-change: width;
 }
 
+/* Inline Minimal Arrow Navigation Controls */
+.sp-nav-arrows-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+.sp-arrow-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.sp-arrow-nav-btn:hover {
+  background-color: #228B22;
+  border-color: #228B22;
+  transform: scale(1.06);
+}
+
+.sp-arrow-nav-btn:active {
+  transform: scale(0.95);
+}
+
 /* --------------------------------------------------------------------------
    THE CRISP GREEN DIAGONAL DIVIDER LINE
    -------------------------------------------------------------------------- */
@@ -479,44 +411,6 @@
 }
 
 /* --------------------------------------------------------------------------
-   Minimal Arrow Navigation Controls (Positioned at Bottom-Right of Hero)
-   -------------------------------------------------------------------------- */
-.sp-hero-arrows {
-  position: absolute;
-  bottom: 28px;
-  right: clamp(24px, 4vw, 56px);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 10;
-  pointer-events: auto;
-}
-
-.sp-arrow-nav-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 4px;
-  background: rgba(8, 34, 69, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 180ms ease;
-}
-
-.sp-arrow-nav-btn:hover {
-  background-color: #228B22;
-  border-color: #228B22;
-  transform: scale(1.05);
-}
-
-.sp-arrow-nav-btn:active {
-  transform: scale(0.96);
-}
-
-/* --------------------------------------------------------------------------
    RESPONSIVE DESIGN ACROSS ALL BREAKPOINTS
    (1440px, 1366px, 1280px, 1024px, 768px, 390px)
    -------------------------------------------------------------------------- */
@@ -527,17 +421,8 @@
 }
 
 @media (max-width: 1200px) {
-  .sp-left-stage {
-    clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%);
-  }
-  .sp-hero-diagonal-svg line {
-    x1: 58;
-    x2: 48;
-  }
-  .sp-showcase-products-wrap {
-    right: 20px;
-    max-width: 46vw;
+  .sp-editorial-headline {
+    font-size: clamp(2.2rem, 3.6vw, 3.4rem);
   }
 }
 
@@ -545,19 +430,8 @@
   .sp-hero-editorial {
     height: 720px;
   }
-  .sp-left-stage {
-    clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
-  }
-  .sp-hero-diagonal-svg line {
-    x1: 60;
-    x2: 50;
-  }
-  .sp-showcase-products-wrap {
-    width: auto;
-    max-width: 46vw;
-    right: 14px;
-    height: clamp(380px, 82%, 620px);
+  .sp-editorial-headline {
+    font-size: clamp(2.0rem, 3.4vw, 3.0rem);
   }
 }
 
@@ -565,28 +439,34 @@
   .sp-hero-editorial {
     height: auto;
     min-height: auto;
-    padding: 0 0 40px 0;
+    max-height: none;
+    padding: 0 0 32px 0;
   }
 
   .sp-editorial-slide {
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     height: auto;
+  }
+
+  .sp-editorial-slide.is-active {
+    display: flex;
   }
 
   .sp-left-stage {
     position: relative;
     clip-path: none;
     -webkit-clip-path: none;
-    padding: 40px 0 32px 0;
+    padding: 36px 0 28px 0;
     width: 100%;
+    height: auto;
   }
 
   .sp-left-content-inner {
     max-width: 100%;
-    padding-left: clamp(24px, 5vw, 48px);
-    padding-right: clamp(24px, 5vw, 48px);
+    padding-left: clamp(20px, 5vw, 40px);
+    padding-right: clamp(20px, 5vw, 40px);
   }
 
   .sp-hero-diagonal-svg {
@@ -596,46 +476,23 @@
   .sp-right-stage {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: clamp(320px, 52vw, 440px);
+    background-color: #082245;
   }
 
-  .sp-showcase-env {
+  .sp-hero-visual-frame {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .sp-showcase-products-wrap {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin: 0 auto;
-    width: 94%;
-    max-width: 520px;
+  .sp-hero-visual-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    aspect-ratio: auto;
-  }
-
-  .sp-showcase-products-img {
-    object-position: center bottom;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .sp-hero-arrows {
-    bottom: 16px;
-    right: 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  .sp-portfolio-metrics-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .sp-metric-divider {
-    display: none;
+    object-fit: var(--img-fit, cover);
+    object-position: var(--img-pos-mob, center center);
   }
 }
 
@@ -656,11 +513,6 @@
   .sp-right-stage {
     height: 310px;
   }
-
-  .sp-showcase-products-wrap {
-    max-width: 100%;
-    height: 100%;
-  }
 }
 
 @media (max-width: 390px) {
@@ -676,9 +528,7 @@
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .sp-headline-inner,
-  .sp-showcase-backdrop-photo,
-  .sp-slide-editorial-photo,
-  .sp-showcase-products-img,
+  .sp-hero-visual-img,
   .sp-hero-actions {
     transition: opacity 200ms ease !important;
     transform: none !important;

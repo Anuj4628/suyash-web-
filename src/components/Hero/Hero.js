@@ -8,67 +8,15 @@
 
 import gsap from 'gsap';
 import { heroSlides } from '../../data/heroSlides.js';
-import showcaseBackdropImg from '../../assets/images/hero/product-showcase-backdrop.jpg';
 import './Hero.css';
-
-function getMetricIcon(iconType) {
-  if (iconType === 'pill') {
-    return `
-      <svg class="sp-metric-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
-        <path d="m8.5 8.5 7 7"/>
-      </svg>
-    `;
-  }
-  if (iconType === 'shield') {
-    return `
-      <svg class="sp-metric-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        <path d="m9 12 2 2 4-4"/>
-      </svg>
-    `;
-  }
-  if (iconType === 'syringe') {
-    return `
-      <svg class="sp-metric-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="m18 2 4 4"/>
-        <path d="m17 7 3-3"/>
-        <path d="M19 9 8.7 19.3c-.4.4-1 .6-1.6.6H3v-4.1c0-.6.2-1.2.6-1.6L13.9 3.9"/>
-        <path d="m18 6-9.5 9.5"/>
-        <path d="m5 19-3 3"/>
-      </svg>
-    `;
-  }
-  return '';
-}
 
 export function renderHero() {
   const slidesHtml = heroSlides.map((slide, index) => {
     const isActive = index === 0;
-    const isPortfolioSlide = Boolean(slide.isShowcase || slide.portfolioSpecs);
+    const isPortfolioSlide = Boolean(slide.isShowcase);
 
     let extraLeftContent = '';
-    if (slide.portfolioSpecs) {
-      extraLeftContent = `
-        <div class="sp-portfolio-metrics-row">
-          ${slide.portfolioSpecs.map((spec, sIdx) => `
-            <div class="sp-portfolio-metric-col">
-              <div class="sp-metric-icon-wrap">
-                ${getMetricIcon(spec.icon)}
-              </div>
-              <div class="sp-metric-text-wrap">
-                <div class="sp-metric-header">
-                  <span class="sp-metric-num">${spec.num}</span>
-                  ${spec.label ? `<span class="sp-metric-label">${spec.label}</span>` : ''}
-                </div>
-                <div class="sp-metric-detail">${spec.detail}</div>
-              </div>
-            </div>
-            ${sIdx < slide.portfolioSpecs.length - 1 ? '<div class="sp-metric-divider" aria-hidden="true"></div>' : ''}
-          `).join('')}
-        </div>
-      `;
-    } else if (slide.keywords) {
+    if (slide.keywords) {
       extraLeftContent = `
         <div class="sp-keywords-row">
           ${slide.keywords.map(kw => `
@@ -88,54 +36,19 @@ export function renderHero() {
         aria-label="${index + 1} of ${heroSlides.length}: ${slide.caption}"
         aria-hidden="${!isActive}"
       >
-        <!-- RIGHT ZONE: Clinical Product Showcase / Editorial Visual Area -->
-        <div class="sp-right-stage">
-          ${isPortfolioSlide ? `
-            <!-- Clinical Laboratory Countertop Environment with Natural Lighting -->
-            <div class="sp-showcase-env">
-              <img 
-                src="${showcaseBackdropImg}" 
-                alt="" 
-                class="sp-showcase-backdrop-photo" 
-                aria-hidden="true" 
-                loading="eager"
-                width="1920"
-                height="1080"
-              />
-
-              <!-- Subtle Suyash Leaf Watermark in Far Background -->
-              <div class="sp-watermark-leaf sp-watermark-leaf-right" aria-hidden="true">
-                <svg viewBox="0 0 100 100" fill="none">
-                  <path d="M50 10C34 26 26 44 28 66c2 18 14 30 22 32 8-2 20-14 22-32 2-22-6-40-22-56z" fill="#228B22" opacity="0.12"/>
-                  <path d="M50 16c-12 14-18 29-16 47 2 15 11 25 16 27 5-2 14-12 16-27 2-18-4-33-16-47z" fill="#0B2B5C" opacity="0.08"/>
-                </svg>
-              </div>
-
-              <!-- Real Suyash Pharma Product Boxes Composition on Countertop -->
-              <div class="sp-showcase-products-wrap">
-                <img 
-                  src="${slide.image}" 
-                  alt="${slide.imageAlt}" 
-                  class="sp-showcase-products-img" 
-                  loading="eager" 
-                  width="1024" 
-                  height="903" 
-                />
-              </div>
-            </div>
-          ` : `
-            <!-- Editorial Photography for Other Slides -->
-            <div class="sp-photo-env">
-              <img 
-                src="${slide.image}" 
-                alt="${slide.imageAlt}" 
-                class="sp-slide-editorial-photo" 
-                loading="${index === 0 ? 'eager' : 'lazy'}" 
-                width="1200" 
-                height="800" 
-              />
-            </div>
-          `}
+        <!-- RIGHT ZONE: Reusable Full-Bleed Universal Visual Slot -->
+        <div class="sp-right-stage" aria-hidden="true">
+          <div class="sp-hero-visual-frame">
+            <img 
+              src="${slide.image}" 
+              alt="${slide.imageAlt}" 
+              class="sp-hero-visual-img" 
+              style="--img-pos: ${slide.imageConfig?.position || 'center center'}; --img-fit: ${slide.imageConfig?.fit || 'cover'}; --img-pos-mob: ${slide.imageConfig?.positionMobile || 'center center'};"
+              loading="${index === 0 ? 'eager' : 'lazy'}" 
+              width="1920" 
+              height="1080" 
+            />
+          </div>
         </div>
 
         <!-- LEFT ZONE: Deep Navy Branded Content Area with Slanted Edge -->
@@ -151,7 +64,7 @@ export function renderHero() {
             </svg>
           </div>
 
-          <!-- ONE SINGLE CONSISTENT CONTENT CONTAINER (Aligned to the same vertical starting line) -->
+          <!-- ONE SINGLE CONSISTENT CONTENT CONTAINER -->
           <div class="sp-left-content-inner">
             <!-- 1. Eyebrow -->
             <div class="sp-hero-eyebrow">
@@ -196,7 +109,7 @@ export function renderHero() {
               ` : ''}
             </div>
 
-            <!-- 5. Portfolio Metrics (Aligned with vertical line dividers) -->
+            <!-- 5. Portfolio Metrics / Badges -->
             ${extraLeftContent}
 
             <!-- 6. Slider Navigation (01 02 03 04 ━━━━ ALIGNED IN THE SAME CONTAINER) -->
@@ -210,13 +123,25 @@ export function renderHero() {
               <div class="sp-nav-progress-rail" aria-hidden="true">
                 <div class="sp-nav-progress-indicator" id="heroProgressFill${index}"></div>
               </div>
+              <div class="sp-nav-arrows-group">
+                <button type="button" class="sp-arrow-nav-btn sp-nav-prev-btn" aria-label="Previous slide">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"/>
+                  </svg>
+                </button>
+                <button type="button" class="sp-arrow-nav-btn sp-nav-next-btn" aria-label="Next slide">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"/>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- MATHEMATICAL SOLID GREEN DIAGONAL DIVIDER LINE -->
         <svg class="sp-hero-diagonal-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <line x1="58" y1="0" x2="48" y2="100" stroke="#228B22" stroke-width="2.6" vector-effect="non-scaling-stroke" />
+          <line x1="48" y1="0" x2="36" y2="100" stroke="#228B22" stroke-width="2.6" vector-effect="non-scaling-stroke" />
         </svg>
       </article>
     `;
@@ -233,58 +158,50 @@ export function renderHero() {
       <div class="sp-hero-track">
         ${slidesHtml}
       </div>
-
-      <!-- Minimal Arrow Controls (Positioned at bottom-right of hero away from products) -->
-      <div class="sp-hero-arrows">
-        <button type="button" class="sp-arrow-nav-btn" id="heroPrevBtn" aria-label="Previous slide">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m15 18-6-6 6-6"/>
-          </svg>
-        </button>
-        <button type="button" class="sp-arrow-nav-btn" id="heroNextBtn" aria-label="Next slide">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
     </section>
   `;
 }
 
+// Preload all slide images to prevent blank frames or layout pop-in
+function preloadAllImages() {
+  heroSlides.forEach((slide) => {
+    if (slide.image) {
+      const img = new Image();
+      img.src = slide.image;
+    }
+  });
+}
+
 export function initHeroCarousel() {
   const slides = document.querySelectorAll('.sp-editorial-slide');
-  const prevBtn = document.getElementById('heroPrevBtn');
-  const nextBtn = document.getElementById('heroNextBtn');
 
   if (!slides.length) return;
+
+  // Preload immediately on mount
+  preloadAllImages();
 
   let currentIndex = 0;
   const totalSlides = slides.length;
   const AUTOPLAY_DURATION = 6.0;
   let progressTween = null;
   let isTransitioning = false;
-  let activeInTl = null;
-  let activeOutTl = null;
+  let activeTransitionTl = null;
 
-  function animateSlideIn(index) {
+  function animateSlideEntrance(index) {
     const slide = slides[index];
     const eyebrow = slide.querySelector('.sp-hero-eyebrow');
     const headlineInners = slide.querySelectorAll('.sp-headline-inner');
     const desc = slide.querySelector('.sp-hero-desc');
     const actions = slide.querySelector('.sp-hero-actions');
-    const extraInfo = slide.querySelector('.sp-portfolio-metrics-row, .sp-keywords-row');
+    const extraInfo = slide.querySelector('.sp-keywords-row');
     const navRow = slide.querySelector('.sp-slider-nav-aligned');
-    
-    // Right side visual elements
-    const rightStage = slide.querySelector('.sp-right-stage');
-    const backdropPhoto = slide.querySelector('.sp-showcase-backdrop-photo, .sp-slide-editorial-photo');
-    const showcaseProducts = slide.querySelector('.sp-showcase-products-img');
+    const visualImg = slide.querySelector('.sp-hero-visual-img');
 
-    if (activeInTl) {
-      activeInTl.kill();
+    if (activeTransitionTl) {
+      activeTransitionTl.kill();
     }
 
-    activeInTl = gsap.timeline({
+    activeTransitionTl = gsap.timeline({
       onComplete: () => {
         isTransitioning = false;
         startAutoplay();
@@ -293,7 +210,7 @@ export function initHeroCarousel() {
 
     // 1. Eyebrow
     if (eyebrow) {
-      activeInTl.fromTo(eyebrow, 
+      activeTransitionTl.fromTo(eyebrow, 
         { opacity: 0, x: -16 }, 
         { opacity: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 
         0.05
@@ -302,7 +219,7 @@ export function initHeroCarousel() {
 
     // 2. Headline line-by-line reveal
     if (headlineInners.length) {
-      activeInTl.fromTo(headlineInners, 
+      activeTransitionTl.fromTo(headlineInners, 
         { yPercent: 110, opacity: 0 }, 
         { yPercent: 0, opacity: 1, duration: 0.75, stagger: 0.08, ease: 'power4.out' }, 
         0.1
@@ -311,7 +228,7 @@ export function initHeroCarousel() {
 
     // 3. Supporting paragraph
     if (desc) {
-      activeInTl.fromTo(desc, 
+      activeTransitionTl.fromTo(desc, 
         { opacity: 0, y: 14 }, 
         { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 
         0.28
@@ -320,16 +237,16 @@ export function initHeroCarousel() {
 
     // 4. CTA buttons
     if (actions) {
-      activeInTl.fromTo(actions, 
+      activeTransitionTl.fromTo(actions, 
         { opacity: 0, y: 12 }, 
         { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 
         0.36
       );
     }
 
-    // 5. Portfolio Metrics / Keywords
+    // 5. Portfolio Badges
     if (extraInfo) {
-      activeInTl.fromTo(extraInfo, 
+      activeTransitionTl.fromTo(extraInfo, 
         { opacity: 0, y: 12 }, 
         { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 
         0.42
@@ -338,39 +255,28 @@ export function initHeroCarousel() {
 
     // 6. Navigation Row
     if (navRow) {
-      activeInTl.fromTo(navRow,
+      activeTransitionTl.fromTo(navRow,
         { opacity: 0 },
         { opacity: 1, duration: 0.4, ease: 'power2.out' },
         0.45
       );
     }
 
-    // 7. Right side product showcase or editorial photo
-    if (backdropPhoto) {
-      activeInTl.fromTo(backdropPhoto,
+    // 7. Right side universal visual image
+    if (visualImg) {
+      activeTransitionTl.fromTo(visualImg,
         { scale: 1.04 },
-        { scale: 1.0, duration: 1.4, ease: 'power2.out' },
+        { scale: 1.0, duration: 1.3, ease: 'power2.out' },
         0.1
       );
     }
 
-    if (showcaseProducts) {
-      activeInTl.fromTo(showcaseProducts,
-        { opacity: 0, y: 22, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1.0, duration: 0.8, ease: 'power3.out' },
-        0.18
-      );
-    } else if (rightStage) {
-      activeInTl.fromTo(rightStage,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: 'power2.out' },
-        0.15
-      );
-    }
-
-    return activeInTl;
+    return activeTransitionTl;
   }
 
+  // Zero-Flash Slide Transition Architecture:
+  // Incoming slide mounts at top z-index and reveals over outgoing slide.
+  // Outgoing slide remains 100% visible underneath until incoming slide is fully settled.
   function goToSlide(targetIndex) {
     if (isTransitioning) return;
     if (targetIndex === currentIndex && slides[currentIndex].classList.contains('is-active')) {
@@ -384,23 +290,35 @@ export function initHeroCarousel() {
     const currentSlide = slides[currentIndex];
     const nextSlide = slides[normalizedIndex];
 
-    const currentHeadlineInners = currentSlide.querySelectorAll('.sp-headline-inner');
-    const currentDesc = currentSlide.querySelector('.sp-hero-desc');
-    const currentActions = currentSlide.querySelector('.sp-hero-actions');
-    const currentShowcaseProducts = currentSlide.querySelector('.sp-showcase-products-img');
-    const currentRight = currentSlide.querySelector('.sp-right-stage');
+    // Current slide remains fully visible at base z-index underneath
+    currentSlide.style.zIndex = '1';
 
-    if (activeOutTl) {
-      activeOutTl.kill();
+    // Incoming slide mounts at elevated z-index and crossfades in
+    nextSlide.classList.add('is-active');
+    nextSlide.style.zIndex = '3';
+    nextSlide.setAttribute('aria-hidden', 'false');
+
+    const nextVisual = nextSlide.querySelector('.sp-hero-visual-img');
+    const nextHeadlineInners = nextSlide.querySelectorAll('.sp-headline-inner');
+    const nextEyebrow = nextSlide.querySelector('.sp-hero-eyebrow');
+    const nextDesc = nextSlide.querySelector('.sp-hero-desc');
+    const nextActions = nextSlide.querySelector('.sp-hero-actions');
+    const nextKeywords = nextSlide.querySelector('.sp-keywords-row');
+
+    if (activeTransitionTl) {
+      activeTransitionTl.kill();
     }
 
-    activeOutTl = gsap.timeline({
+    activeTransitionTl = gsap.timeline({
       onComplete: () => {
+        // Clean up outgoing slide ONLY after incoming slide is 100% visible
         currentSlide.classList.remove('is-active');
         currentSlide.setAttribute('aria-hidden', 'true');
+        currentSlide.style.zIndex = '';
+        gsap.set(currentSlide, { clearProps: 'opacity,visibility' });
 
-        nextSlide.classList.add('is-active');
-        nextSlide.setAttribute('aria-hidden', 'false');
+        // Normalize incoming slide to standard active z-index
+        nextSlide.style.zIndex = '2';
 
         // Update step buttons across all slides to reflect active index
         document.querySelectorAll('.sp-step-btn').forEach((btn) => {
@@ -409,41 +327,73 @@ export function initHeroCarousel() {
         });
 
         currentIndex = normalizedIndex;
-        animateSlideIn(normalizedIndex);
+        isTransitioning = false;
+        startAutoplay();
       }
     });
 
-    if (currentShowcaseProducts) {
-      activeOutTl.to(currentShowcaseProducts, {
-        opacity: 0,
-        y: -10,
-        duration: 0.22,
-        ease: 'power2.in'
-      }, 0);
-    } else if (currentRight) {
-      activeOutTl.to(currentRight, { opacity: 0, duration: 0.28, ease: 'power2.in' }, 0);
+    // 1. Reveal incoming slide cleanly over outgoing slide (ZERO white flash!)
+    activeTransitionTl.fromTo(nextSlide,
+      { opacity: 0, visibility: 'visible' },
+      { opacity: 1, duration: 0.55, ease: 'power2.inOut' },
+      0
+    );
+
+    // 2. Visual Image Settle (subtle camera motion)
+    if (nextVisual) {
+      activeTransitionTl.fromTo(nextVisual,
+        { scale: 1.04 },
+        { scale: 1.0, duration: 1.3, ease: 'power2.out' },
+        0
+      );
     }
 
-    if (currentHeadlineInners.length) {
-      activeOutTl.to(currentHeadlineInners, {
-        yPercent: -75,
-        opacity: 0,
-        duration: 0.26,
-        stagger: 0.04,
-        ease: 'power3.in'
-      }, 0);
+    // 3. Eyebrow
+    if (nextEyebrow) {
+      activeTransitionTl.fromTo(nextEyebrow,
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.42, ease: 'power3.out' },
+        0.08
+      );
     }
 
-    if (currentDesc) {
-      activeOutTl.to(currentDesc, { opacity: 0, y: -10, duration: 0.2 }, 0);
+    // 4. Headline line-by-line reveal
+    if (nextHeadlineInners.length) {
+      activeTransitionTl.fromTo(nextHeadlineInners,
+        { yPercent: 105, opacity: 0 },
+        { yPercent: 0, opacity: 1, duration: 0.7, stagger: 0.06, ease: 'power4.out' },
+        0.12
+      );
     }
 
-    if (currentActions) {
-      activeOutTl.to(currentActions, { opacity: 0, y: -8, duration: 0.2 }, 0);
+    // 5. Description
+    if (nextDesc) {
+      activeTransitionTl.fromTo(nextDesc,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' },
+        0.26
+      );
+    }
+
+    // 6. Actions & Badges
+    if (nextActions) {
+      activeTransitionTl.fromTo(nextActions,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+        0.34
+      );
+    }
+
+    if (nextKeywords) {
+      activeTransitionTl.fromTo(nextKeywords,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+        0.38
+      );
     }
   }
 
-  // Exactly ONE Autoplay Timer - Runs continuously, NEVER paused by cursor
+  // Exactly ONE Autoplay Timer - Runs continuously, NEVER paused by cursor hover
   function startAutoplay() {
     stopAutoplay();
 
@@ -471,18 +421,20 @@ export function initHeroCarousel() {
     });
   }
 
-  // Button Listeners
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
+  // Button Listeners - Inline navigation arrows across all slides
+  document.querySelectorAll('.sp-nav-next-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       goToSlide(currentIndex + 1);
     });
-  }
+  });
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+  document.querySelectorAll('.sp-nav-prev-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       goToSlide(currentIndex - 1);
     });
-  }
+  });
 
   // Step Indicators (all buttons across all slides)
   document.querySelectorAll('.sp-step-btn').forEach((btn) => {
@@ -525,5 +477,5 @@ export function initHeroCarousel() {
   });
 
   // Initial Entrance Animation
-  animateSlideIn(0);
+  animateSlideEntrance(0);
 }

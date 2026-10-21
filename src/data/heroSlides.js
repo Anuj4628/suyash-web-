@@ -30,12 +30,13 @@ export const heroSlides = [
       href: "#products"
     },
     secondaryCta: null,
-    portfolioSpecs: [
-      { icon: "pill", num: "15+", label: "PRODUCTS", detail: "Care formulations" },
-      { icon: "shield", num: "ANTI-INFECTIVE", label: "FOCUS", detail: "Targeted therapy" },
-      { icon: "syringe", num: "INJECTABLE", label: "FORMULATIONS", detail: "Hospital-grade" }
-    ],
+    keywords: ["15+ Products", "Anti-Infective", "Injectable Formulations", "Hospital Grade"],
     image: suyashShowcaseImg,
+    imageConfig: {
+      fit: "cover",
+      position: "center center",
+      positionMobile: "center center"
+    },
     imageAlt: "Suyash Pharma focused healthcare formulations portfolio - SPTIK-1.5GM, SPNEM 2.0gm, Sfrome-2gm, GTVITA-SP",
     caption: "FOCUSED SOLUTIONS FOR HEALTHCARE",
     isShowcase: true
@@ -58,6 +59,11 @@ export const heroSlides = [
     secondaryCta: null,
     keywords: ["QUALITY", "CONSISTENCY", "SAFETY", "RELIABILITY"],
     image: slide2Img,
+    imageConfig: {
+      fit: "cover",
+      position: "center center",
+      positionMobile: "center center"
+    },
     imageAlt: "Pharmaceutical scientist performing quality-control analysis in advanced testing laboratory",
     caption: "QUALITY CONTROL & CONSISTENCY",
     isShowcase: false
@@ -82,6 +88,11 @@ export const heroSlides = [
       href: "#quote"
     },
     image: slide4Img,
+    imageConfig: {
+      fit: "cover",
+      position: "center center",
+      positionMobile: "center center"
+    },
     imageAlt: "Pharmaceutical leadership and healthcare partners in clinical research collaboration",
     caption: "TRUSTED HEALTHCARE PARTNERSHIP",
     isShowcase: false
@@ -106,6 +117,11 @@ export const heroSlides = [
       href: "#contact"
     },
     image: slide1Img,
+    imageConfig: {
+      fit: "cover",
+      position: "center center",
+      positionMobile: "center center"
+    },
     imageAlt: "Authentic healthcare specialist consulting attentively with patient in clean clinical office",
     caption: "HUMAN HEALTH & TRUST",
     isShowcase: false

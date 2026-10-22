@@ -28,7 +28,7 @@ export const heroSlides = [
     supportingText: "Building a focused portfolio of pharmaceutical formulations designed around evolving healthcare needs.",
     primaryCta: {
       label: "View Product Portfolio",
-      href: "#products"
+      href: "#/products"
     },
     secondaryCta: null,
     keywords: ["15+ Products", "Anti-Infective", "Injectable Formulations", "Hospital Grade"],

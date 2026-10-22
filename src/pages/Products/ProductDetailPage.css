@@ -16,7 +16,7 @@
   background-color: #F8FAF9;
   color: #082245;
   font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .sp-product-detail-main {

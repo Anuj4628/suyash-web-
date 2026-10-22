@@ -280,49 +280,51 @@
 .sp-about-stats-row {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 2.6vw, 30px);
-  padding: 20px 0;
-  border-top: 1px solid rgba(8, 34, 69, 0.18);
-  border-bottom: 1px solid rgba(8, 34, 69, 0.18);
-  margin-bottom: 22px;
+  gap: clamp(16px, 2.8vw, 32px);
+  padding: 22px 0;
+  border-top: 1.5px solid rgba(8, 34, 69, 0.2);
+  border-bottom: 1.5px solid rgba(8, 34, 69, 0.2);
+  margin-bottom: 24px;
   width: 100%;
 }
 
-.sp-stat-item {
+.sp-about-stats-row .sp-stat-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 3px;
 }
 
-.sp-stat-num {
+.sp-about-stats-row .sp-stat-num {
   font-family: var(--font-family-display);
-  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  font-size: clamp(1.28rem, 1.6vw, 1.55rem);
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: 0.02em;
-  color: #082245;
+  letter-spacing: 0.03em;
+  color: #082245; /* Deep Navy Blue with sharp contrast */
   text-transform: uppercase;
 }
 
-.sp-stat-item:first-child .sp-stat-num {
-  color: #228B22;
+.sp-about-stats-row .sp-stat-item:first-child .sp-stat-num {
+  color: #1B6A14; /* Deep Bold Brand Green */
 }
 
-.sp-stat-text {
+.sp-about-stats-row .sp-stat-text {
   font-family: var(--font-family-sans);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #334155;
-  margin-top: 4px;
+  color: #082245; /* Deep Navy with crisp contrast on mint bg */
+  margin-top: 2px;
+  line-height: 1.25;
 }
 
 /* Subtle Vertical Divider */
-.sp-stat-divider {
-  width: 1px;
-  height: 32px;
-  background-color: rgba(8, 34, 69, 0.2);
+.sp-about-stats-row .sp-stat-divider {
+  width: 1.5px;
+  height: 36px;
+  background-color: rgba(8, 34, 69, 0.25);
   flex-shrink: 0;
 }
 

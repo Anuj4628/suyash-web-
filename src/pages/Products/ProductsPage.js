@@ -13,6 +13,7 @@
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
 import { products, productCategories } from '../../data/products.js';
+import { getProductUrl } from '../../data/seoKeys.js';
 import productHeroImg from '../../assets/images/products/product-hero-qc.jpg';
 import './ProductsPage.css';
 
@@ -260,13 +261,17 @@ export function renderProductCardsHtml(productList) {
     // Centering class for 13th item in 13-item grid
     const isThirteenth = idx === 12 && productList.length === 13;
 
+    const productUrl = getProductUrl(product.slug, idx);
+
     return `
       <article 
         class="sp-catalogue-card ${isThirteenth ? 'is-centered-last' : ''}" 
         data-product-slug="${product.slug}"
+        data-product-url="${productUrl}"
         data-filter-group="${product.filterGroup}"
         tabindex="0"
         aria-label="${product.name} - ${product.generic}"
+        style="cursor: pointer;"
       >
         <!-- Top Product Number and Tag -->
         <div class="sp-card-header-row">
@@ -276,7 +281,7 @@ export function renderProductCardsHtml(productList) {
 
         <!-- Generous Product Image Stage (55-65% visual presence) -->
         <div class="sp-card-media-stage">
-          <a href="#/products/${product.slug}" class="sp-card-image-link" tabindex="-1" aria-hidden="true">
+          <a href="${productUrl}" class="sp-card-image-link" tabindex="-1" aria-hidden="true">
             <img 
               src="${product.image}" 
               alt="${product.name} packaging box - ${product.generic}" 
@@ -291,7 +296,7 @@ export function renderProductCardsHtml(productList) {
         <div class="sp-card-content-body">
           <div class="sp-card-title-group">
             <h3 class="sp-card-product-name">
-              <a href="#/products/${product.slug}" class="sp-card-title-link">
+              <a href="${productUrl}" class="sp-card-title-link">
                 ${titleHtml}
               </a>
             </h3>
@@ -306,7 +311,7 @@ export function renderProductCardsHtml(productList) {
 
           <!-- Standardized Bottom CTA -->
           <div class="sp-card-footer">
-            <a href="#/products/${product.slug}" class="sp-card-view-btn">
+            <a href="${productUrl}" class="sp-card-view-btn">
               <span>VIEW PRODUCT</span>
               <svg class="sp-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14"></path>
@@ -444,10 +449,19 @@ export function initProductsPage(routerInstance) {
     });
   });
 
-  // Micro hover interactions are smoothly handled via CSS for optimal performance and no layout jumps
   function bindCardInteractions() {
-    // All card hovers use CSS transitions: translateY(-4px) and image scale(1.03)
+    const cards = document.querySelectorAll('.sp-catalogue-card');
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        const targetUrl = card.getAttribute('data-product-url');
+        if (targetUrl) {
+          window.location.hash = targetUrl;
+        }
+      });
+    });
   }
+  bindCardInteractions();
 
   bindCardInteractions();
 }

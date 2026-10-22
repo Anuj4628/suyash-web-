@@ -14,6 +14,7 @@
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
 import { products } from '../../data/products.js';
+import { getProductUrl } from '../../data/seoKeys.js';
 import './TherapeuticSegmentsPage.css';
 
 export function renderTherapeuticSegmentsPage() {
@@ -37,8 +38,10 @@ export function renderTherapeuticSegmentsPage() {
   );
 
   const renderProductCards = (productList) => {
-    return productList.map(p => `
-      <a href="#/products/${p.slug}" class="sp-tseg-card" aria-label="${p.name} - ${p.generic}">
+    return productList.map((p, pIdx) => {
+      const productUrl = getProductUrl(p.slug, pIdx);
+      return `
+      <a href="${productUrl}" class="sp-tseg-card" aria-label="${p.name} - ${p.generic}">
         <div class="sp-tseg-card-img-wrap">
           <img 
             src="${p.image}" 
@@ -59,7 +62,8 @@ export function renderTherapeuticSegmentsPage() {
           </svg>
         </div>
       </a>
-    `).join('');
+      `;
+    }).join('');
   };
 
   return `

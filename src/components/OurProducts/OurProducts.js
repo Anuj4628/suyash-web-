@@ -13,6 +13,7 @@
  */
 
 import { products } from '../../data/products.js';
+import { getProductUrl } from '../../data/seoKeys.js';
 import './OurProducts.css';
 
 export function renderOurProducts() {
@@ -21,9 +22,10 @@ export function renderOurProducts() {
 
   const renderProductCards = () => {
     return homepageProducts.map((product, index) => {
+      const productUrl = getProductUrl(product.slug, index);
       return `
         <a 
-          href="#/products/${product.slug}" 
+          href="${productUrl}" 
           class="sp-product-card" 
           data-product-index="${index}"
           data-product-id="${product.id}"

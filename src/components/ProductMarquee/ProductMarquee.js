@@ -11,11 +11,12 @@
  */
 
 import { products } from '../../data/products.js';
+import { getProductUrl } from '../../data/seoKeys.js';
 import './ProductMarquee.css';
 
 export function renderProductMarquee() {
   const renderItemSequence = () => {
-    return products.map((product) => {
+    return products.map((product, pIdx) => {
       let contentHtml = '';
 
       if (product.isSplitColor) {
@@ -39,11 +40,13 @@ export function renderProductMarquee() {
         `;
       }
 
+      const productUrl = getProductUrl(product.slug, pIdx);
+
       return `
-        <span class="sp-marquee-item">
+        <a href="${productUrl}" class="sp-marquee-item" style="text-decoration: none; cursor: pointer;" aria-label="View ${product.name}">
           ${contentHtml}
           <span class="sp-marquee-dot" aria-hidden="true">•</span>
-        </span>
+        </a>
       `;
     }).join('');
   };

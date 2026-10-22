@@ -104,16 +104,23 @@ body {
   line-height: 1.55;
   overflow-x: clip;
   min-height: 100vh;
+  padding-top: var(--nav-height-desktop);
 }
 
-/* Ensure all anchor target sections leave space for the sticky navbar */
+@media (max-width: 880px) {
+  body {
+    padding-top: var(--nav-height-mobile);
+  }
+}
+
+/* Ensure all anchor target sections leave space for the fixed navbar */
 [id] {
-  scroll-margin-top: calc(var(--nav-height-desktop, 104px) + 20px);
+  scroll-margin-top: calc(var(--nav-height-desktop, 112px) + 24px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 880px) {
   [id] {
-    scroll-margin-top: calc(var(--nav-height-mobile, 80px) + 16px);
+    scroll-margin-top: calc(var(--nav-height-mobile, 80px) + 20px);
   }
 }
 

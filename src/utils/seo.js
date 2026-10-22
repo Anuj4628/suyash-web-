@@ -15,6 +15,7 @@
  */
 
 import { products } from '../data/products.js';
+import { formatSeoKey } from '../data/seoKeys.js';
 
 export const BASE_URL = 'https://suyashpharma.com';
 export const BRAND_NAME = 'Suyash Pharma';
@@ -283,7 +284,7 @@ export function getFaqSchema(faqs) {
 /**
  * Route-Specific SEO Dispatcher
  */
-export function applySEOForRoute(routeName, param = null) {
+export function applySEOForRoute(routeName, param = null, seoKey = null) {
   switch (routeName) {
     case 'home': {
       setPageSEO({
@@ -449,16 +450,25 @@ export function applySEOForRoute(routeName, param = null) {
         return;
       }
 
-      const productTitle = `${product.name} | ${product.generic} | Suyash Pharma`;
-      const productDesc = `${product.name} (${product.generic}) by Suyash Pharma. ${product.shortDescription || product.overview} Available in ${product.packSize}.`;
-      const productKeywords = `${product.name}, ${product.name} injection, ${product.name} pharmaceutical, ${product.name} medicine, ${product.name} India, ${product.generic}, ${product.generic} injection, ${product.generic} pharmaceutical product, ${product.strength} injection, Suyash Pharma, pharmaceutical injections India`;
+      const formattedSeo = seoKey ? formatSeoKey(seoKey) : '';
+      const productTitle = formattedSeo
+        ? `${product.name} (${product.generic}) - ${formattedSeo} | Suyash Pharma`
+        : `${product.name} | ${product.generic} | Suyash Pharma`;
+
+      const seoPhrase = formattedSeo ? formattedSeo : 'Pharmaceutical Company Maharashtra';
+      const productDesc = `${product.name} (${product.generic}) by Suyash Pharma - leading ${seoPhrase}. ${product.shortDescription || product.overview} Available in ${product.packSize}.`;
+      
+      const extraKeywords = seoKey ? `${seoKey.replace(/-/g, ' ')}, ${seoKey}, ` : '';
+      const productKeywords = `${extraKeywords}${product.name}, ${product.name} injection, ${product.name} pharmaceutical, ${product.name} medicine, ${product.name} India, ${product.generic}, ${product.generic} injection, ${product.generic} pharmaceutical product, ${product.strength} injection, Suyash Pharma, pharmaceutical injections India, pharmaceutical company maharashtra, pharma company mumbai, pharmaceutical products virar`;
+
+      const canonicalPath = seoKey ? `/products/${product.slug}/${seoKey}` : `/products/${product.slug}`;
 
       setPageSEO({
         title: productTitle,
         description: productDesc,
         keywords: productKeywords,
-        canonicalUrl: `${BASE_URL}/products/${product.slug}`,
-        ogTitle: `${product.name} — ${product.generic} | Suyash Pharma`,
+        canonicalUrl: `${BASE_URL}${canonicalPath}`,
+        ogTitle: formattedSeo ? `${product.name} — ${product.generic} | ${formattedSeo} | Suyash Pharma` : `${product.name} — ${product.generic} | Suyash Pharma`,
         ogDescription: productDesc,
         ogImage: product.image ? `${BASE_URL}${product.image}` : DEFAULT_OG_IMAGE,
         ogType: "product",
@@ -468,7 +478,7 @@ export function applySEOForRoute(routeName, param = null) {
           getBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Products", url: "/products" },
-            { name: product.name, url: `/products/${product.slug}` }
+            { name: product.name, url: canonicalPath }
           ])
         ]
       });

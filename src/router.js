@@ -25,6 +25,7 @@ import { renderTherapeuticSegmentsPage, initTherapeuticSegmentsPage } from './pa
 import { renderNotFoundPage, initNotFoundPage } from './pages/NotFound/NotFoundPage.js';
 import { products } from './data/products.js';
 import { applySEOForRoute } from './utils/seo.js';
+import { getSeoKeyForIndex } from './data/seoKeys.js';
 
 class Router {
   constructor() {
@@ -98,21 +99,66 @@ class Router {
     } else if (path === '/products') {
       this.loadProducts(anchor);
     } else if (path.startsWith('/products/')) {
-      let slug = path.replace('/products/', '').trim();
-      // Clean up common URL variations
-      slug = slug.replace(/%20/g, '-').replace(/\s+/g, '-').replace(/\/+$/, '');
-      
-      // Alias mapping if needed
-      if (slug === 'ceffto-b' || slug === 'cefftob-injection') slug = 'cefftob';
-      if (slug === 'sparazone' || slug === 'sparazone3gm') slug = 'sparazone-3gm';
-      if (slug === 'sptik' || slug === 'sptik-1.5gm') slug = 'sptik-1-5gm';
-      if (slug === 'tigrixa' || slug === 'tigrixa100') slug = 'tigrixa-100';
-      if (slug === 'sulboforte') slug = 'sulboforte-2gm';
-      if (slug === 'yspan' || slug === 'yspan40mg') slug = 'yspan-40mg';
+      const rawSub = path.replace('/products/', '').trim();
+      const cleanSub = rawSub.replace(/%20/g, '-').replace(/\s+/g, '-').replace(/\/+$/, '');
+      const segments = cleanSub.split('?')[0].split('/').filter(Boolean);
 
-      const matchedProduct = products.find(p => p.slug === slug);
+      const normalizeSlug = (s) => {
+        if (!s) return '';
+        let str = s.toLowerCase();
+        if (str === 'ceffto-b' || str === 'cefftob-injection') return 'cefftob';
+        if (str === 'sparazone' || str === 'sparazone3gm') return 'sparazone-3gm';
+        if (str === 'sptik' || str === 'sptik-1.5gm') return 'sptik-1-5gm';
+        if (str === 'tigrixa' || str === 'tigrixa100') return 'tigrixa-100';
+        if (str === 'sulboforte') return 'sulboforte-2gm';
+        if (str === 'yspan' || str === 'yspan40mg') return 'yspan-40mg';
+        return str;
+      };
+
+      let matchedProduct = null;
+      let activeSeoKey = null;
+
+      // 1. Try segment 0 as product slug
+      if (segments.length >= 1) {
+        const testSlug0 = normalizeSlug(segments[0]);
+        matchedProduct = products.find(p => p.slug === testSlug0);
+        if (matchedProduct && segments[1]) {
+          activeSeoKey = segments[1];
+        }
+      }
+
+      // 2. Try segment 1 as product slug (if segment 0 was seo key)
+      if (!matchedProduct && segments.length >= 2) {
+        const testSlug1 = normalizeSlug(segments[1]);
+        matchedProduct = products.find(p => p.slug === testSlug1);
+        if (matchedProduct) {
+          activeSeoKey = segments[0];
+        }
+      }
+
+      // 3. Try compound slug like 'cefftob-pharmaceutical-company-maharashtra'
+      if (!matchedProduct && segments.length >= 1) {
+        const fullSeg = segments[0];
+        matchedProduct = products.find(p => fullSeg.startsWith(p.slug + '-'));
+        if (matchedProduct) {
+          activeSeoKey = fullSeg.slice(matchedProduct.slug.length + 1);
+        }
+      }
+
+      // Check query param for seo key as well
+      const rawHashOrSearch = (window.location.hash || '') + (window.location.search || '');
+      const seoMatch = rawHashOrSearch.match(/[?&]seo=([^&#]+)/i);
+      if (seoMatch && seoMatch[1]) {
+        activeSeoKey = decodeURIComponent(seoMatch[1]);
+      }
+
       if (matchedProduct) {
-        this.loadProductDetail(matchedProduct.slug, anchor);
+        // If no SEO key in URL, assign the product's designated alternating SEO key
+        if (!activeSeoKey) {
+          const pIdx = products.findIndex(p => p.slug === matchedProduct.slug);
+          activeSeoKey = getSeoKeyForIndex(pIdx >= 0 ? pIdx : 0);
+        }
+        this.loadProductDetail(matchedProduct.slug, anchor, activeSeoKey);
       } else {
         this.loadNotFound();
       }
@@ -226,20 +272,24 @@ class Router {
     }
   }
 
-  loadProductDetail(slug, anchor) {
-    const pageId = 'product-detail-' + slug;
+  loadProductDetail(slug, anchor, seoKey = null) {
+    const pageId = 'product-detail-' + slug + (seoKey ? '-' + seoKey : '');
     const isNewPage = this.currentPage !== pageId;
     this.currentPage = pageId;
 
     if (isNewPage) {
       const appContainer = document.getElementById('app');
       if (appContainer) {
-        appContainer.innerHTML = renderProductDetailPage(slug);
-        initProductDetailPage(slug, this);
+        appContainer.innerHTML = renderProductDetailPage(slug, seoKey);
+        initProductDetailPage(slug, this, seoKey);
       }
     }
 
-    applySEOForRoute('product-detail', slug);
+    applySEOForRoute('product-detail', slug, seoKey);
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     if (anchor) {
       setTimeout(() => {
@@ -248,8 +298,6 @@ class Router {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, isNewPage ? 120 : 20);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 

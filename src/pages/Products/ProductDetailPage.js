@@ -24,11 +24,13 @@
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
 import { products } from '../../data/products.js';
+import { formatSeoKey, getProductUrl } from '../../data/seoKeys.js';
 import './ProductDetailPage.css';
 
-export function renderProductDetailPage(slug) {
+export function renderProductDetailPage(slug, seoKey = null) {
   // Find product by slug, fallback to first product if not found
   const product = products.find(p => p.slug === slug) || products[0];
+  const formattedSeo = seoKey ? formatSeoKey(seoKey) : '';
 
   // Resolve related products (strictly exclude current product)
   let relatedList = (product.relatedProductSlugs || [])
@@ -75,11 +77,13 @@ export function renderProductDetailPage(slug) {
     brandTitleHtml = `<span style="color:${product.color || '#082245'}; font-style:${product.isItalic ? 'italic' : 'normal'}">${product.name}</span>`;
   }
 
-  // Related products cards (strictly contained)
-  const relatedCardsHtml = relatedList.map(rel => `
+  // Related products cards (strictly contained) with alternating SEO keys
+  const relatedCardsHtml = relatedList.map((rel, rIdx) => {
+    const relUrl = getProductUrl(rel.slug, rIdx + 1);
+    return `
     <article class="sp-related-card" tabindex="0" aria-label="${rel.name} - ${rel.generic}">
       <div class="sp-related-media-box">
-        <a href="#/products/${rel.slug}" class="sp-related-img-link" tabindex="-1" aria-hidden="true">
+        <a href="${relUrl}" class="sp-related-img-link" tabindex="-1" aria-hidden="true">
           <img 
             src="${rel.image}" 
             alt="${rel.name} packaging box" 
@@ -91,12 +95,12 @@ export function renderProductDetailPage(slug) {
       <div class="sp-related-body">
         <span class="sp-related-segment">${rel.therapeuticSegment}</span>
         <h4 class="sp-related-title">
-          <a href="#/products/${rel.slug}">${rel.name}</a>
+          <a href="${relUrl}">${rel.name}</a>
         </h4>
         <p class="sp-related-generic">${rel.generic}</p>
         <p class="sp-related-desc">${rel.shortDescription}</p>
         <div class="sp-related-footer">
-          <a href="#/products/${rel.slug}" class="sp-related-view-btn">
+          <a href="${relUrl}" class="sp-related-view-btn">
             <span>VIEW PRODUCT</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14"></path>
@@ -106,7 +110,8 @@ export function renderProductDetailPage(slug) {
         </div>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 
   return `
     <div class="sp-product-detail-page-wrapper">
@@ -134,6 +139,12 @@ export function renderProductDetailPage(slug) {
               <a href="#/therapeutic-segments" class="sp-breadcrumb-category" style="text-decoration: none; color: #1B6A3E;">${product.category}</a>
               <span class="sp-breadcrumb-sep">/</span>
               <span class="sp-breadcrumb-current" aria-current="page">${product.name}</span>
+              ${formattedSeo ? `
+                <span class="sp-breadcrumb-seo-tag" style="margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #1B6A14; background: #E8F5E9; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#228B22;display:inline-block;"></span>
+                  ${formattedSeo}
+                </span>
+              ` : ''}
             </div>
           </div>
         </nav>
@@ -563,7 +574,7 @@ export function renderProductDetailPage(slug) {
  * - WhatsApp URL dispatch to 8928252638
  * - Email mailto dispatch to suyashpharma1@gmail.com
  */
-export function initProductDetailPage(slug, routerInstance) {
+export function initProductDetailPage(slug, routerInstance, seoKey = null) {
   initNavbarEvents();
   initFooter();
 

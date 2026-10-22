@@ -841,7 +841,7 @@ export function initContactPage(router) {
         dispatchWhatsAppBtn.href = waUrl;
         dispatchWhatsAppBtn.onclick = () => {
           if (modalStatusBadge && modalStatusText) {
-            modalStatusText.textContent = "YOUR REQUIREMENT IS READY TO SEND. THANK YOU FOR CONTACTING SUYASH PHARMA.";
+            modalStatusText.textContent = "YOUR REQUIREMENT IS SENT SUCCESSFULLY.";
             modalStatusBadge.classList.add('is-active-state');
           }
         };
@@ -855,7 +855,7 @@ export function initContactPage(router) {
         dispatchEmailBtn.href = emailUrl;
         dispatchEmailBtn.onclick = () => {
           if (modalStatusBadge && modalStatusText) {
-            modalStatusText.textContent = "YOUR REQUIREMENT HAS BEEN PREPARED SUCCESSFULLY. Please complete the send from your email application.";
+            modalStatusText.textContent = "YOUR REQUIREMENT IS SENT SUCCESSFULLY.";
             modalStatusBadge.classList.add('is-active-state');
           }
         };

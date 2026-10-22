@@ -542,13 +542,13 @@ export function renderProductDetailPage(slug, seoKey = null) {
               </button>
             </div>
 
-            <!-- Email Notification Feedback Notice -->
+            <!-- Email / Requirement Notification Feedback Notice -->
             <div class="sp-email-status-notice" id="emailStatusNotice" style="display: none;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B6A3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="m9 12 2 2 4-4"></path>
               </svg>
-              <span>YOUR EMAIL HAS BEEN PREPARED SUCCESSFULLY. Please complete the send from your email application.</span>
+              <span>YOUR REQUIREMENT IS SENT SUCCESSFULLY.</span>
             </div>
 
             <div class="sp-choice-footer">
@@ -710,6 +710,10 @@ Please share more information regarding this product.`;
 
       const waUrl = `https://wa.me/918928252638?text=${encodeURIComponent(waText)}`;
       window.open(waUrl, '_blank');
+
+      if (emailNotice) {
+        emailNotice.style.display = 'flex';
+      }
     });
   }
 

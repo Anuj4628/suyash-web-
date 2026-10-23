@@ -35,6 +35,11 @@
   row-gap: 52px;
 }
 
+.sp-about-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
 /* --------------------------------------------------------------------------
    LEFT COLUMN: Custom 4-Photo Asymmetric Pharmaceutical Collage
    -------------------------------------------------------------------------- */
@@ -91,6 +96,7 @@
   gap: 12px;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .sp-collage-cell {
@@ -98,6 +104,8 @@
   overflow: hidden;
   background-color: #FFFFFF;
   box-shadow: 0 4px 18px rgba(8, 34, 69, 0.08);
+  min-width: 0;
+  min-height: 0;
 }
 
 /* 1. Team Cell (Top-Left, Rounded Top-Left) */
@@ -472,104 +480,230 @@
 @media (max-width: 900px) {
   .sp-about-grid {
     grid-template-columns: 1fr;
-    row-gap: 56px;
+    row-gap: 48px;
   }
 
   .sp-about-visual-col {
     display: flex;
     justify-content: center;
+    width: 100%;
+    min-width: 0;
   }
 
   .sp-collage-wrapper {
-    max-width: 500px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .sp-about-content-col {
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   .sp-about-section {
-    padding: 68px 0;
+    padding: clamp(56px, 8vw, 76px) 0;
+  }
+
+  .sp-about-container {
+    padding-left: clamp(16px, 4vw, 24px);
+    padding-right: clamp(16px, 4vw, 24px);
+  }
+
+  .sp-about-visual-col {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sp-collage-wrapper {
+    width: 100%;
+    max-width: min(100%, 410px);
+    margin: 0 auto;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+
+  .sp-collage-grid {
+    gap: 10px;
+    width: 100%;
   }
 
   .sp-collage-tab-tl {
-    width: 90px;
-    height: 90px;
-    top: -10px;
-    left: -10px;
-    border-radius: 36px 10px 10px 10px;
+    width: 72px;
+    height: 72px;
+    top: -6px;
+    left: -4px;
+    border-radius: 28px 8px 8px 8px;
   }
 
   .sp-collage-bar-br {
-    width: 100px;
-    height: 50px;
-    bottom: -10px;
-    right: -10px;
-    border-radius: 10px 10px 36px 10px;
+    width: 80px;
+    height: 40px;
+    bottom: -6px;
+    right: -4px;
+    border-radius: 8px 8px 28px 8px;
   }
 
   .sp-collage-leaf-accent {
-    left: -14px;
-    bottom: 0;
-    transform: scale(0.85);
+    left: 0;
+    bottom: -4px;
+    transform: scale(0.8);
+    transform-origin: bottom left;
   }
 
   .sp-seal-circle {
-    width: 72px;
-    height: 72px;
+    width: 68px;
+    height: 68px;
   }
 
   .sp-seal-text {
-    font-size: 6px;
+    font-size: 5.6px;
   }
 
   .sp-seal-core svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 
   .sp-cell-team {
-    border-radius: 32px 10px 10px 10px;
+    border-radius: 28px 8px 8px 8px;
   }
 
   .sp-cell-quality {
-    border-radius: 10px 32px 10px 10px;
+    border-radius: 8px 28px 8px 8px;
   }
 
   .sp-cell-collab {
-    border-radius: 10px 10px 10px 32px;
+    border-radius: 8px 8px 8px 28px;
   }
 
   .sp-cell-products {
-    border-radius: 10px 10px 32px 10px;
+    border-radius: 8px 8px 28px 8px;
+  }
+
+  .sp-about-content-col {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .sp-about-heading {
-    font-size: 1.9rem;
+    font-size: clamp(1.68rem, 5.8vw, 2.15rem);
+    line-height: 1.12;
+    margin-bottom: 18px;
   }
 
+  .sp-about-p1,
+  .sp-about-p2 {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  /* Fluid 3-item statistics row: Each item flexes equally, never clips or breaks out */
   .sp-about-stats-row {
-    gap: 12px;
+    display: flex;
+    align-items: stretch;
     justify-content: space-between;
+    gap: 8px;
+    padding: 16px 0;
+    margin-bottom: 22px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .sp-stat-num {
-    font-size: 1.15rem;
+  .sp-about-stats-row .sp-stat-item {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
   }
 
-  .sp-stat-text {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+  .sp-about-stats-row .sp-stat-num {
+    font-size: clamp(1.05rem, 3.6vw, 1.25rem);
+    line-height: 1.1;
+    white-space: nowrap;
   }
 
+  .sp-about-stats-row .sp-stat-text {
+    font-size: clamp(0.58rem, 1.9vw, 0.66rem);
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .sp-about-stats-row .sp-stat-divider {
+    width: 1.5px;
+    height: 32px;
+    background-color: rgba(8, 34, 69, 0.25);
+    margin: auto 0;
+    flex-shrink: 0;
+  }
+
+  /* Fluid pillar chain */
+  .sp-about-pillars {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-size: clamp(0.66rem, 2.2vw, 0.74rem);
+    letter-spacing: 0.08em;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 22px;
+  }
+
+  /* Full width CTA with responsive padding & typography */
   .sp-about-actions {
     width: 100%;
   }
 
   .sp-btn-about {
     width: 100%;
+    max-width: 100%;
+    padding: 14px 18px;
+    font-size: clamp(0.78rem, 3.2vw, 0.86rem);
+    letter-spacing: 0.04em;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .sp-about-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sp-about-heading {
+    font-size: 1.6rem;
+  }
+
+  .sp-about-stats-row {
+    gap: 4px;
+  }
+
+  .sp-about-stats-row .sp-stat-num {
+    font-size: 0.98rem;
+  }
+
+  .sp-about-stats-row .sp-stat-text {
+    font-size: 0.54rem;
+    letter-spacing: 0.04em;
+  }
+
+  .sp-btn-about {
+    font-size: 0.76rem;
+    padding: 12px 14px;
   }
 }
 

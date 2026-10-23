@@ -52,7 +52,7 @@ export const heroSlides = [
       { text: "BUILT INTO", highlight: false },
       { text: "EVERY STEP.", highlight: false }
     ],
-    supportingText: "From product development to delivery, our approach is guided by consistency, quality-focused processes and responsible pharmaceutical practices.",
+    supportingText: "At Suyash Pharma, quality remains at the heart of everything we do. We focus on providing reliable pharmaceutical products with consistency, care and a strong commitment to better healthcare.",
     primaryCta: {
       label: "Discover Our Quality",
       href: "#quality"
@@ -79,7 +79,7 @@ export const heroSlides = [
       { text: "OUR", highlight: false, inline: true },
       { text: "PRIORITY.", highlight: true, inline: true }
     ],
-    supportingText: "Committed to building trusted pharmaceutical partnerships through quality-focused products, responsible practices and long-term relationships.",
+    supportingText: "We are committed to making quality healthcare solutions more accessible while earning the trust of every healthcare professional and partner we serve.",
     primaryCta: {
       label: "Partner With Us",
       href: "#contact"

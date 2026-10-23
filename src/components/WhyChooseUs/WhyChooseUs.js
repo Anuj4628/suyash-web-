@@ -17,7 +17,7 @@ export const whyChooseReasons = [
     number: "01",
     circleColor: "#082245", // Deep Navy
     title: "QUALITY-FOCUSED APPROACH",
-    description: "Our approach places quality and consistency at the centre of every pharmaceutical process, from product development to delivery."
+    description: "Our approach places quality, consistency and reliability at the centre of every pharmaceutical process, from product selection to delivery."
   },
   {
     number: "02",

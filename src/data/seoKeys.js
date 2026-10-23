@@ -51,12 +51,10 @@ export function formatSeoKey(key = '') {
 }
 
 /**
- * Builds the SEO-enhanced product URL.
+ * Builds the SEO-enhanced clean product URL.
  * @param {string} slug - Product slug (e.g. 'cefftob')
- * @param {number} index - Index for alternating SEO keys
- * @returns {string} - e.g. '#/products/cefftob/pharmaceutical-company-maharashtra'
+ * @returns {string} - e.g. '/products/cefftob'
  */
-export function getProductUrl(slug, index = 0) {
-  const seoKey = getSeoKeyForIndex(index);
-  return `#/products/${slug}/${seoKey}`;
+export function getProductUrl(slug) {
+  return `/products/${slug}`;
 }

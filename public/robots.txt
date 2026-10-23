@@ -3,6 +3,9 @@
 
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /images/products/
+Allow: /images/logo/
 Allow: /assets/
 Allow: /src/assets/
 Allow: /products/
@@ -10,6 +13,19 @@ Allow: /about
 Allow: /quality
 Allow: /therapeutic-segments
 Allow: /contact
+
+# Specific bot permissions for Google Search and Google Images
+User-agent: Googlebot
+Allow: /
+Allow: /products/
+Allow: /images/
+Allow: /images/products/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /images/products/
+Allow: /images/logo/
+Allow: /assets/
 
 # Disallow non-indexable utility endpoints
 Disallow: /404

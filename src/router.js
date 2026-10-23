@@ -36,17 +36,63 @@ class Router {
   init() {
     window.addEventListener('hashchange', () => this.handleRoute());
     window.addEventListener('popstate', () => this.handleRoute());
-    window.addEventListener('DOMContentLoaded', () => this.handleRoute());
+    
+    // Global link delegation for clean HTML5 History API navigation
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      // Skip external links, new tabs, tel:, mailto:
+      if (
+        link.target === '_blank' ||
+        href.startsWith('http://') ||
+        href.startsWith('https://') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith('javascript:') ||
+        e.ctrlKey || e.metaKey || e.shiftKey
+      ) {
+        return;
+      }
+
+      // Handle pure page anchor on the active page (e.g. #contact-form)
+      if (href.startsWith('#') && !href.startsWith('#/')) {
+        const anchorId = href.slice(1);
+        const el = document.getElementById(anchorId);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        return;
+      }
+
+      // Clean SPA navigation
+      e.preventDefault();
+      let targetPath = href;
+      if (targetPath.startsWith('#/')) {
+        targetPath = targetPath.slice(1); // '#/products' -> '/products'
+      }
+      window.history.pushState(null, '', targetPath);
+      this.handleRoute();
+    });
+
     this.handleRoute();
   }
 
   /**
-   * Resolves current route from hash or pathname
+   * Resolves current route from pathname or legacy hash
    */
   resolvePathAndAnchor() {
     const rawHash = window.location.hash || '';
+    const rawPathname = window.location.pathname.replace(/\/+$/, '') || '/';
     let path = '/';
     let anchor = null;
+
+    if (rawPathname !== '/index.html' && rawPathname !== '') {
+      path = rawPathname;
+    }
 
     if (rawHash.startsWith('#/')) {
       const parts = rawHash.slice(2).split('#');
@@ -72,12 +118,6 @@ class Router {
         path = '/';
       } else {
         anchor = target;
-      }
-    } else {
-      // Clean pathname fallback (e.g., from server rewrites or direct history state)
-      const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-      if (pathname !== '/index.html' && pathname !== '') {
-        path = pathname;
       }
     }
 

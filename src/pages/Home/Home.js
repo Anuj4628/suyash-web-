@@ -13,11 +13,8 @@ import { renderTherapeuticSegments, initTherapeuticSegments } from '../../compon
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
 import './Home.css';
 
-export function renderHomePage() {
-  const appContainer = document.getElementById('app');
-  if (!appContainer) return;
-
-  appContainer.innerHTML = `
+export function getHomePageHtml() {
+  return `
     <div class="sp-home-wrapper">
       <!-- 1. Corporate Navbar -->
       ${renderNavbar('home')}
@@ -47,6 +44,13 @@ export function renderHomePage() {
       ${renderFooter()}
     </div>
   `;
+}
+
+export function renderHomePage() {
+  const appContainer = document.getElementById('app');
+  if (!appContainer) return;
+
+  appContainer.innerHTML = getHomePageHtml();
 
   // Initialize interactive features
   initNavbarEvents();

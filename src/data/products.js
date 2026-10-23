@@ -131,7 +131,7 @@ export const products = [
     therapeuticSegment: "CRITICAL CARE",
     filterGroup: "critical-care",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
-    shortDescription: "First-in-class glycylcycline antibiotic engineered to overcome major bacterial resistance mechanisms in high-acuity infections.",
+    shortDescription: "First-in-class glycylcycline antibiotic structured to overcome major bacterial resistance mechanisms in high-acuity infections.",
     overview: "TIGRIXA-100 is an intravenous glycylcycline antibiotic structured to circumvent classic bacterial resistance mechanisms (efflux pumps and ribosomal protection) in complicated intensive care infections.",
     indications: [
       "Complicated intra-abdominal infections (cIAI)",
@@ -163,7 +163,7 @@ export const products = [
     filterGroup: "carbapenems",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Ultra-broad-spectrum 2.0gm carbapenem delivering robust bactericidal coverage in severe hospital-acquired polymicrobial infections.",
-    overview: "SPNEM™ is an ultra-broad spectrum parenteral carbapenem antibiotic engineered for critical hospital care, offering stability against beta-lactamases and rapid bactericidal penetration.",
+    overview: "SPNEM™ is an ultra-broad spectrum parenteral carbapenem antibiotic indicated for critical hospital care, offering stability against beta-lactamases and rapid bactericidal penetration.",
     indications: [
       "Severe nosocomial pneumonia and ventilator-associated infections",
       "Complicated intra-abdominal infections",
@@ -321,7 +321,7 @@ export const products = [
     therapeuticSegment: "ADVANCED CARBAPENEM",
     filterGroup: "carbapenems",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
-    shortDescription: "Targeted carbapenem and tazobactam synergy engineered for resistant ICU bacteremia and complex nosocomial infections.",
+    shortDescription: "Targeted carbapenem and tazobactam synergy structured for resistant ICU bacteremia and complex nosocomial infections.",
     overview: "SPNEM-TZ pairs the proven bactericidal breadth of Meropenem with Tazobactam to inhibit beta-lactamase hydrolysis and maintain antibacterial potency in critical care infections.",
     indications: [
       "Critical care septicemia and bacteremic episodes",

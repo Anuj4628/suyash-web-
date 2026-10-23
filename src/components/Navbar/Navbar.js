@@ -14,11 +14,11 @@ import './Navbar.css';
 
 export function renderNavbar(activePage = 'home') {
   const navItems = [
-    { label: 'Home', href: '#/', active: activePage === 'home' },
-    { label: 'About', href: '#/about', active: activePage === 'about' },
-    { label: 'Products', href: '#/products', active: activePage === 'products' },
-    { label: 'Quality', href: '#/quality', active: activePage === 'quality' },
-    { label: 'Contact', href: '#/contact', active: activePage === 'contact' },
+    { label: 'Home', href: '/', active: activePage === 'home' },
+    { label: 'About', href: '/about', active: activePage === 'about' },
+    { label: 'Products', href: '/products', active: activePage === 'products' },
+    { label: 'Quality', href: '/quality', active: activePage === 'quality' },
+    { label: 'Contact', href: '/contact', active: activePage === 'contact' },
   ];
 
   const headerHtml = `
@@ -62,7 +62,7 @@ export function renderNavbar(activePage = 'home') {
       <div class="sp-nav-container">
         <!-- 1. LEFT: Prominent Brand Logo (Original Asset, Complete with Tagline) -->
         <div class="sp-nav-col sp-nav-col-left">
-          <a href="#/" class="sp-brand" aria-label="Suyash Pharma - Home">
+          <a href="/" class="sp-brand" aria-label="Suyash Pharma - Home">
             <img 
               src="${logoUrl}" 
               alt="Suyash Pharma - Your Health, Our Priority" 
@@ -94,7 +94,7 @@ export function renderNavbar(activePage = 'home') {
 
         <!-- 3. RIGHT: Premium Get Quote CTA Button -->
         <div class="sp-nav-col sp-nav-col-right">
-          <a href="#/contact" class="sp-nav-cta" id="navGetQuoteBtn">
+          <a href="/contact" class="sp-nav-cta" id="navGetQuoteBtn">
             <span>Get Quote</span>
             <svg class="sp-nav-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14"></path>
@@ -134,7 +134,7 @@ export function renderNavbar(activePage = 'home') {
             </li>
           `).join('')}
         </ul>
-        <a href="#/contact" class="sp-nav-cta sp-mobile-cta" id="mobileGetQuoteBtn">
+        <a href="/contact" class="sp-nav-cta sp-mobile-cta" id="mobileGetQuoteBtn">
           <span>Get Quote</span>
           <svg class="sp-nav-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 12h14"></path>

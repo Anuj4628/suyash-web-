@@ -1,0 +1,99 @@
+# ==============================================================================
+# Suyash Pharma - Apache / LiteSpeed Configuration (Hostinger Production Ready)
+# Domain: https://suyashpharma.com
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Prevent direct access to sensitive files
+  RewriteRule ^(\.git|\.env|package\.json|package-lock\.json|vite\.config\.js) - [F,L]
+
+  # 3. Allow existing files and directories to be served directly
+  # (Never rewrite real images, sitemap.xml, robots.txt, CSS, JS to index.html)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 4. SPA Fallback / Clean URL Routing
+  # Rewrite all virtual page routes to index.html (or prerendered HTML if matching folder exists)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ==============================================================================
+# Browser Caching & Performance Optimization
+# ==============================================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Default expiration
+  ExpiresDefault "access plus 1 month"
+
+  # HTML, Sitemap, Robots (Always fetch fresh content)
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/plain "access plus 0 seconds"
+
+  # Images and Media (Google Images cache-friendly: 1 Year)
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # CSS and JavaScript (Hashed assets in /assets/: 1 Year)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+</IfModule>
+
+# ==============================================================================
+# GZIP / Brotli Compression
+# ==============================================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ==============================================================================
+# Security & MIME Type Headers
+# ==============================================================================
+<IfModule mod_headers.c>
+  # Protect against MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # Protect against clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Cache-Control for Vite Hashed Assets
+  <FilesMatch "\.(js|css|woff2?|ttf|png|jpe?g|webp|svg)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Cache-Control for HTML and XML
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

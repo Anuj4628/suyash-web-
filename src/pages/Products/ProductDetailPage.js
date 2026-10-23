@@ -124,11 +124,11 @@ export function renderProductDetailPage(slug, seoKey = null) {
         <nav class="sp-detail-breadcrumb-bar" aria-label="Breadcrumb">
           <div class="sp-detail-container">
             <div class="sp-breadcrumb-inner">
-              <a href="#/" class="sp-back-to-products-btn" aria-label="Suyash Pharma Homepage">
+              <a href="/" class="sp-back-to-products-btn" aria-label="Suyash Pharma Homepage">
                 <span>HOME</span>
               </a>
               <span class="sp-breadcrumb-sep">/</span>
-              <a href="#/products" class="sp-back-to-products-btn" id="backToProductsBtn">
+              <a href="/products" class="sp-back-to-products-btn" id="backToProductsBtn">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M19 12H5"></path>
                   <path d="m12 19-7-7 7-7"></path>
@@ -136,7 +136,7 @@ export function renderProductDetailPage(slug, seoKey = null) {
                 <span>ALL PRODUCTS</span>
               </a>
               <span class="sp-breadcrumb-sep">/</span>
-              <a href="#/therapeutic-segments" class="sp-breadcrumb-category" style="text-decoration: none; color: #1B6A3E;">${product.category}</a>
+              <a href="/therapeutic-segments" class="sp-breadcrumb-category" style="text-decoration: none; color: #1B6A3E;">${product.category}</a>
               <span class="sp-breadcrumb-sep">/</span>
               <span class="sp-breadcrumb-current" aria-current="page">${product.name}</span>
               ${formattedSeo ? `
@@ -413,7 +413,7 @@ export function renderProductDetailPage(slug, seoKey = null) {
 
             <!-- Internal Portfolio Navigation Actions -->
             <div class="sp-detail-nav-actions-row" style="display: flex; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
-              <a href="#/products" class="sp-detail-nav-btn sp-detail-nav-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; background-color: #082245; color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; transition: transform 0.2s, background-color 0.2s;">
+              <a href="/products" class="sp-detail-nav-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; background-color: #082245; color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; transition: transform 0.2s, background-color 0.2s;">
                 <span>EXPLORE FULL PRODUCT PORTFOLIO</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M5 12h14"></path>
@@ -421,7 +421,7 @@ export function renderProductDetailPage(slug, seoKey = null) {
                 </svg>
               </a>
 
-              <a href="#/contact" class="sp-detail-nav-btn sp-detail-nav-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; background-color: #1B6A3E; color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; transition: transform 0.2s, background-color 0.2s;">
+              <a href="/contact" class="sp-detail-nav-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; background-color: #1B6A3E; color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; transition: transform 0.2s, background-color 0.2s;">
                 <span>CONTACT SUYASH PHARMA</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M5 12h14"></path>

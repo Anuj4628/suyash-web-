@@ -55,14 +55,14 @@ export function renderFooter() {
 
           <!-- Right: Two Primary Dual CTA Buttons -->
           <div class="sp-cta-actions">
-            <a href="#/contact" class="sp-cta-btn sp-cta-btn-primary" id="ctaGetInTouchBtn">
+            <a href="/contact" class="sp-cta-btn sp-cta-btn-primary" id="ctaGetInTouchBtn">
               <span>GET IN TOUCH</span>
               <svg class="sp-btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M4.167 10h11.666m-5-5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
 
-            <a href="#/products" class="sp-cta-btn sp-cta-btn-secondary" id="ctaExploreProductsBtn">
+            <a href="/products" class="sp-cta-btn sp-cta-btn-secondary" id="ctaExploreProductsBtn">
               <span>EXPLORE PRODUCTS</span>
               <svg class="sp-btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M4.167 10h11.666m-5-5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -83,7 +83,7 @@ export function renderFooter() {
           
           <!-- COLUMN 1: BRAND (Large Original Logo, Statement, Value Line) -->
           <div class="sp-footer-col sp-footer-col-brand">
-            <a href="#/" class="sp-footer-logo-link" id="footerLogoLink" aria-label="Suyash Pharma - Return to top">
+            <a href="/" class="sp-footer-logo-link" id="footerLogoLink" aria-label="Suyash Pharma - Return to top">
               <div class="sp-footer-logo-plate">
                 <img 
                   src="${logoUrl}" 
@@ -113,12 +113,12 @@ export function renderFooter() {
           <div class="sp-footer-col sp-footer-col-links">
             <h3 class="sp-footer-heading">QUICK LINKS</h3>
             <ul class="sp-footer-nav-list" role="list">
-              <li><a href="#/" class="sp-footer-nav-link">Home</a></li>
-              <li><a href="#/about" class="sp-footer-nav-link">About Us</a></li>
-              <li><a href="#/products" class="sp-footer-nav-link">Products Portfolio</a></li>
-              <li><a href="#/therapeutic-segments" class="sp-footer-nav-link">Therapeutic Segments</a></li>
-              <li><a href="#/quality" class="sp-footer-nav-link">Quality Assurance</a></li>
-              <li><a href="#/contact" class="sp-footer-nav-link">Contact</a></li>
+              <li><a href="/" class="sp-footer-nav-link">Home</a></li>
+              <li><a href="/about" class="sp-footer-nav-link">About Us</a></li>
+              <li><a href="/products" class="sp-footer-nav-link">Products Portfolio</a></li>
+              <li><a href="/therapeutic-segments" class="sp-footer-nav-link">Therapeutic Segments</a></li>
+              <li><a href="/quality" class="sp-footer-nav-link">Quality Assurance</a></li>
+              <li><a href="/contact" class="sp-footer-nav-link">Contact</a></li>
             </ul>
           </div>
 
@@ -127,15 +127,15 @@ export function renderFooter() {
             <h3 class="sp-footer-heading">OUR FOCUS</h3>
             <div class="sp-footer-focus-list">
               <div class="sp-focus-item">
-                <a href="#/therapeutic-segments#anti-infective" class="sp-focus-title">Broad-Spectrum Antibiotics & Combination Therapy</a>
+                <a href="/therapeutic-segments#anti-infective" class="sp-focus-title">Broad-Spectrum Antibiotics & Combination Therapy</a>
                 <span class="sp-focus-tag">Hospital Critical Care</span>
               </div>
               <div class="sp-focus-item">
-                <a href="#/therapeutic-segments#gastrointestinal" class="sp-focus-title">Gastrointestinal Support</a>
+                <a href="/therapeutic-segments#gastrointestinal" class="sp-focus-title">Gastrointestinal Support</a>
                 <span class="sp-focus-tag">Gastroenterology</span>
               </div>
               <div class="sp-focus-item">
-                <a href="#/therapeutic-segments#supportive" class="sp-focus-title">Supportive & Adjunctive Therapy</a>
+                <a href="/therapeutic-segments#supportive" class="sp-focus-title">Supportive & Adjunctive Therapy</a>
                 <span class="sp-focus-tag">Nutraceutical Care</span>
               </div>
             </div>

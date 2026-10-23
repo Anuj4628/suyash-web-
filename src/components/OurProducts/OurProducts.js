@@ -99,7 +99,7 @@ export function renderOurProducts() {
           </div>
 
           <p class="sp-products-intro">
-            Explore our focused portfolio of pharmaceutical products developed around quality, reliability and evolving healthcare needs.
+            Explore our focused portfolio of pharmaceutical products structured around quality, reliability and evolving healthcare needs.
           </p>
         </header>
 
@@ -111,7 +111,7 @@ export function renderOurProducts() {
         <!-- Centered View All Products CTA -->
         <div class="sp-products-cta-wrap">
           <a 
-            href="#/products#all-products" 
+            href="/products#all-products" 
             class="sp-btn-view-all" 
             id="viewAllProductsBtn"
             role="button"

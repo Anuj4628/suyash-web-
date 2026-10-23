@@ -76,7 +76,7 @@ export function renderAbout() {
                 <div class="sp-collage-cell sp-cell-collab">
                   <img 
                     src="${collabImg}" 
-                    alt="Indian pharmaceutical research scientists reviewing clinical documents and formulation data" 
+                    alt="Pharmaceutical professionals reviewing documentation and product portfolio data" 
                     class="sp-collage-img" 
                     loading="lazy" 
                     width="1024" 
@@ -180,7 +180,7 @@ export function renderAbout() {
 
             <!-- 6. Primary CTA (Solid Suyash Green -> Deep Navy Hover) -->
             <div class="sp-about-actions">
-              <a href="#/products" class="sp-btn-about" id="aboutDiscoverBtn">
+              <a href="/products" class="sp-btn-about" id="aboutDiscoverBtn">
                 <span>DISCOVER SUYASH PHARMA</span>
                 <svg class="sp-btn-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M5 12h14"></path>

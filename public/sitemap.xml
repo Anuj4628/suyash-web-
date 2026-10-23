@@ -5,157 +5,282 @@
   <!-- Primary Brand Landing Page -->
   <url>
     <loc>https://suyashpharma.com/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>Suyash Pharma - Quality Pharmaceutical Company</image:title>
+      <image:caption>Official corporate logo of Suyash Pharma, trusted pharmaceutical portfolio company based in Nallasopara, Palghar, Maharashtra.</image:caption>
+    </image:image>
   </url>
 
   <!-- About Suyash Pharma -->
   <url>
     <loc>https://suyashpharma.com/about</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>About Suyash Pharma</image:title>
+      <image:caption>Suyash Pharma corporate overview, vision, mission, and pharmaceutical core values.</image:caption>
+    </image:image>
   </url>
 
   <!-- Complete Pharmaceutical Products Portfolio Catalogue -->
   <url>
     <loc>https://suyashpharma.com/products</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>Suyash Pharma Product Portfolio Catalogue</image:title>
+      <image:caption>Complete pharmaceutical product catalogue across critical care, carbapenems, cephalosporins, and supportive therapies.</image:caption>
+    </image:image>
   </url>
 
   <!-- Dedicated Quality Assurance & Standards Page -->
   <url>
     <loc>https://suyashpharma.com/quality</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>Suyash Pharma Quality Assurance</image:title>
+      <image:caption>Rigorous pharmaceutical quality control, regulatory compliance, and packaging integrity standards.</image:caption>
+    </image:image>
   </url>
 
   <!-- Dedicated Therapeutic Segments & Clinical Scope Page -->
   <url>
     <loc>https://suyashpharma.com/therapeutic-segments</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>Suyash Pharma Therapeutic Segments</image:title>
+      <image:caption>Critical care, anti-infectives, beta-lactamase inhibitors, and gastrointestinal therapeutics.</image:caption>
+    </image:image>
   </url>
 
   <!-- Corporate Contact & Regional Office in Nallasopara -->
   <url>
     <loc>https://suyashpharma.com/contact</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/logo/suyash-pharma-logo.png</image:loc>
+      <image:title>Contact Suyash Pharma</image:title>
+      <image:caption>Suyash Pharma official contact details and corporate inquiry office in Nallasopara East, Maharashtra.</image:caption>
+    </image:image>
   </url>
 
   <!-- ====================================================================
-       INDIVIDUAL VERIFIED PRODUCT DETAIL PAGES (ALL 13 PRODUCTS)
+       INDIVIDUAL VERIFIED PRODUCT DETAIL PAGES WITH GOOGLE IMAGE SITEMAP
        ==================================================================== -->
 
   <!-- 01. CEFFTOB™ (Ceftazidime 1000mg & Tobramycin 120mg for Injection) -->
   <url>
     <loc>https://suyashpharma.com/products/cefftob</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/cefftob-ceftazidime-tobramycin-injection.png</image:loc>
+      <image:title>CEFFTOB™ - Ceftazidime 1000mg &amp; Tobramycin 120mg for Injection</image:title>
+      <image:caption>Authentic packaging of CEFFTOB™ (Ceftazidime 1000mg &amp; Tobramycin 120mg dry powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 02. SPTIK™-1.5GM (Ceftizoxime Injection I.P. 1.5gm) -->
   <url>
     <loc>https://suyashpharma.com/products/sptik-1-5gm</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/sptik-ceftizoxime-1-5gm-injection.png</image:loc>
+      <image:title>SPTIK™-1.5GM - Ceftizoxime Injection I.P. 1.5gm</image:title>
+      <image:caption>Authentic packaging of SPTIK™-1.5GM (Ceftizoxime 1.5gm sterile powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/sptik-ceftizoxime-clinical-packaging.jpeg</image:loc>
+      <image:title>SPTIK™-1.5GM Clinical Packaging Presentation</image:title>
+      <image:caption>SPTIK™-1.5GM Ceftizoxime clinical packaging vial presentation.</image:caption>
+    </image:image>
   </url>
 
   <!-- 03. TIGRIXA-100 (Tigecycline for Injection USP 100mg Lyophilized) -->
   <url>
     <loc>https://suyashpharma.com/products/tigrixa-100</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/tigrixa-100-tigecycline-injection.png</image:loc>
+      <image:title>TIGRIXA-100 - Tigecycline for Injection USP 100mg Lyophilized</image:title>
+      <image:caption>Authentic packaging of TIGRIXA-100 (Tigecycline 100mg lyophilized powder for IV infusion) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 04. SPNEM™ (Meropenem Injection IP 2.0 gm) -->
   <url>
     <loc>https://suyashpharma.com/products/spnem</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/spnem-meropenem-2gm-injection.png</image:loc>
+      <image:title>SPNEM™ - Meropenem Injection IP 2.0 gm</image:title>
+      <image:caption>Authentic packaging of SPNEM™ (Meropenem 2.0gm parenteral carbapenem injection) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/spnem-meropenem-clinical-packaging.jpeg</image:loc>
+      <image:title>SPNEM™ Meropenem 2gm Clinical Packaging Presentation</image:title>
+      <image:caption>SPNEM™ Meropenem 2.0gm clinical packaging and vial presentation.</image:caption>
+    </image:image>
   </url>
 
   <!-- 05. GTVITA-SP (Glutathione for Injection 1200 mg/vial With Vitamin C Ampoule) -->
   <url>
     <loc>https://suyashpharma.com/products/gtvita-sp</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/gtvita-sp-glutathione-vitamin-c-injection.png</image:loc>
+      <image:title>GTVITA-SP - Glutathione for Injection 1200 mg with Vitamin C Ampoule</image:title>
+      <image:caption>Authentic packaging of GTVITA-SP (Reduced Glutathione 1200mg with Vitamin C 500mg ampoule) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/gtvita-sp-clinical-packaging.jpeg</image:loc>
+      <image:title>GTVITA-SP Glutathione with Vitamin C Clinical Presentation</image:title>
+      <image:caption>GTVITA-SP clinical dual-pack presentation showing lyophilized vial and Vitamin C solvent ampoule.</image:caption>
+    </image:image>
   </url>
 
   <!-- 06. SPARAZONE-3GM (Cefoperazone & Sulbactam for Injection 3 gm) -->
   <url>
     <loc>https://suyashpharma.com/products/sparazone-3gm</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/sparazone-3gm-cefoperazone-sulbactam-injection.png</image:loc>
+      <image:title>SPARAZONE-3GM - Cefoperazone 2gm &amp; Sulbactam 1gm for Injection 3 gm</image:title>
+      <image:caption>Authentic packaging of SPARAZONE-3GM (Cefoperazone 2gm &amp; Sulbactam 1gm for injection) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/sparazone-cefoperazone-clinical-packaging.jpeg</image:loc>
+      <image:title>SPARAZONE-3GM Clinical Packaging Presentation</image:title>
+      <image:caption>SPARAZONE-3GM Cefoperazone and Sulbactam clinical packaging presentation.</image:caption>
+    </image:image>
   </url>
 
   <!-- 07. SPNEM-SB (Meropenem & Sulbactam for Injection 750 mg) -->
   <url>
     <loc>https://suyashpharma.com/products/spnem-sb</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/spnem-sb-meropenem-sulbactam-750mg-injection.png</image:loc>
+      <image:title>SPNEM-SB - Meropenem 500mg &amp; Sulbactam 250mg for Injection 750 mg</image:title>
+      <image:caption>Authentic packaging of SPNEM-SB (Meropenem 500mg &amp; Sulbactam 250mg powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/spnem-sb-clinical-packaging.jpeg</image:loc>
+      <image:title>SPNEM-SB Clinical Packaging Presentation</image:title>
+      <image:caption>SPNEM-SB Meropenem and Sulbactam 750mg clinical packaging presentation.</image:caption>
+    </image:image>
   </url>
 
   <!-- 08. SULBOFORTE-2GM (Sulbactam for Injection 2.0 gm) -->
   <url>
     <loc>https://suyashpharma.com/products/sulboforte-2gm</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/sulboforte-2gm-sulbactam-injection.png</image:loc>
+      <image:title>SULBOFORTE-2GM - Sulbactam for Injection 2.0 gm</image:title>
+      <image:caption>Authentic packaging of SULBOFORTE-2GM (Sulbactam 2.0gm sterile powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 09. SPNEM-TZ (Meropenem & Tazobactam for Injection 1.125gm) -->
   <url>
     <loc>https://suyashpharma.com/products/spnem-tz</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/spnem-tz-meropenem-tazobactam-injection.png</image:loc>
+      <image:title>SPNEM-TZ - Meropenem 1000mg &amp; Tazobactam 125mg for Injection 1.125gm</image:title>
+      <image:caption>Authentic packaging of SPNEM-TZ (Meropenem 1000mg &amp; Tazobactam 125mg powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 10. SPNEM-SB 1.5GM (Meropenem & Sulbactam for Injection 1.5 gm) -->
   <url>
     <loc>https://suyashpharma.com/products/spnem-sb-1-5gm</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/spnem-sb-1-5gm-meropenem-sulbactam-injection.png</image:loc>
+      <image:title>SPNEM-SB 1.5GM - Meropenem 1.0gm &amp; Sulbactam 0.5gm for Injection 1.5 gm</image:title>
+      <image:caption>Authentic packaging of SPNEM-SB 1.5GM (Meropenem 1000mg &amp; Sulbactam 500mg powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 11. YSPAN-40MG (Pantoprazole for Injection 40mg) -->
   <url>
     <loc>https://suyashpharma.com/products/yspan-40mg</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/yspan-40mg-pantoprazole-injection.png</image:loc>
+      <image:title>YSPAN-40MG - Pantoprazole for Injection 40mg</image:title>
+      <image:caption>Authentic packaging of YSPAN-40MG (Pantoprazole Sodium 40mg lyophilized powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 12. Sfrome-2gm (Cefpirome Sulphate Injection IP 2000 mg) -->
   <url>
     <loc>https://suyashpharma.com/products/sfrome-2gm</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/sfrome-2gm-cefpirome-injection.png</image:loc>
+      <image:title>Sfrome-2gm - Cefpirome Sulphate Injection IP 2000 mg</image:title>
+      <image:caption>Authentic packaging of Sfrome-2gm (Cefpirome Sulphate 2000mg powder for injection) by Suyash Pharma.</image:caption>
+    </image:image>
   </url>
 
   <!-- 13. CPFOXIME-500 (Cefuroxime Axetil Tablets I.P. 500 mg) -->
   <url>
     <loc>https://suyashpharma.com/products/cpfoxime-500</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/cpfoxime-500-cefuroxime-axetil-tablets.png</image:loc>
+      <image:title>CPFOXIME-500 - Cefuroxime Axetil Tablets I.P. 500 mg</image:title>
+      <image:caption>Authentic packaging of CPFOXIME-500 (Cefuroxime Axetil 500mg film-coated tablets) by Suyash Pharma.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://suyashpharma.com/images/products/clinical/cpfoxime-cefuroxime-clinical-packaging.jpeg</image:loc>
+      <image:title>CPFOXIME-500 Clinical Packaging Presentation</image:title>
+      <image:caption>CPFOXIME-500 Cefuroxime Axetil 500mg tablets blister strip clinical packaging presentation.</image:caption>
+    </image:image>
   </url>
 
 </urlset>

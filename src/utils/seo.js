@@ -19,14 +19,30 @@ import { formatSeoKey } from '../data/seoKeys.js';
 
 export const BASE_URL = 'https://suyashpharma.com';
 export const BRAND_NAME = 'Suyash Pharma';
-export const DEFAULT_OG_IMAGE = `${BASE_URL}/assets/suyash-pharma-logo.png`;
+export const DEFAULT_OG_IMAGE = `${BASE_URL}/images/logo/suyash-pharma-logo.png`;
+
+export const PRODUCT_PUBLIC_IMAGES = {
+  "cefftob": `${BASE_URL}/images/products/cefftob-ceftazidime-tobramycin-injection.png`,
+  "sptik-1-5gm": `${BASE_URL}/images/products/sptik-ceftizoxime-1-5gm-injection.png`,
+  "tigrixa-100": `${BASE_URL}/images/products/tigrixa-100-tigecycline-injection.png`,
+  "spnem": `${BASE_URL}/images/products/spnem-meropenem-2gm-injection.png`,
+  "gtvita-sp": `${BASE_URL}/images/products/gtvita-sp-glutathione-vitamin-c-injection.png`,
+  "sparazone-3gm": `${BASE_URL}/images/products/sparazone-3gm-cefoperazone-sulbactam-injection.png`,
+  "spnem-sb": `${BASE_URL}/images/products/spnem-sb-meropenem-sulbactam-750mg-injection.png`,
+  "sulboforte-2gm": `${BASE_URL}/images/products/sulboforte-2gm-sulbactam-injection.png`,
+  "spnem-tz": `${BASE_URL}/images/products/spnem-tz-meropenem-tazobactam-injection.png`,
+  "spnem-sb-1-5gm": `${BASE_URL}/images/products/spnem-sb-1-5gm-meropenem-sulbactam-injection.png`,
+  "yspan-40mg": `${BASE_URL}/images/products/yspan-40mg-pantoprazole-injection.png`,
+  "sfrome-2gm": `${BASE_URL}/images/products/sfrome-2gm-cefpirome-injection.png`,
+  "cpfoxime-500": `${BASE_URL}/images/products/cpfoxime-500-cefuroxime-axetil-tablets.png`
+};
 
 // Verified Official Corporate Entity Data
 export const CORPORATE_ENTITY = {
   name: "Suyash Pharma",
   legalName: "Suyash Pharma",
   url: BASE_URL,
-  logo: `${BASE_URL}/assets/suyash-pharma-logo.png`,
+  logo: `${BASE_URL}/images/logo/suyash-pharma-logo.png`,
   telephone: "+91-8928252638",
   alternateTelephone: "+91-7798917108",
   email: "suyashpharma1@gmail.com",
@@ -223,17 +239,12 @@ export function getProductSchema(product) {
     "@type": "Product",
     "@id": `${BASE_URL}/products/${product.slug}#product`,
     "name": `${product.name} — ${product.generic}`,
-    "image": product.image ? (product.image.startsWith('http') ? product.image : `${BASE_URL}${product.image}`) : DEFAULT_OG_IMAGE,
+    "image": PRODUCT_PUBLIC_IMAGES[product.slug] || DEFAULT_OG_IMAGE,
     "description": product.overview || product.shortDescription,
     "sku": `SP-${product.slug.toUpperCase()}`,
     "brand": {
       "@type": "Brand",
       "name": BRAND_NAME
-    },
-    "manufacturer": {
-      "@type": "Organization",
-      "name": BRAND_NAME,
-      "url": BASE_URL
     },
     "category": product.category,
     "additionalProperty": [
@@ -309,7 +320,7 @@ export function applySEOForRoute(routeName, param = null, seoKey = null) {
     case 'about': {
       setPageSEO({
         title: "About Suyash Pharma | Pharmaceutical Company in India",
-        description: "Learn about Suyash Pharma, an Indian pharmaceutical company dedicated to purpose-driven healthcare, quality-focused medicine manufacturing, and dependable partnerships.",
+        description: "Learn about Suyash Pharma, an Indian pharmaceutical company dedicated to purpose-driven healthcare, dependable pharmaceutical solutions, and long-term partnerships.",
         keywords: "About Suyash Pharma, Suyash Pharma company, Suyash Pharma India, Indian pharmaceutical company, pharmaceutical healthcare company, pharma company Maharashtra, pharmaceutical supplier India",
         canonicalUrl: `${BASE_URL}/about`,
         ogTitle: "About Suyash Pharma | Purpose-Driven Pharmaceutical Solutions",
@@ -369,7 +380,7 @@ export function applySEOForRoute(routeName, param = null, seoKey = null) {
     case 'quality': {
       setPageSEO({
         title: "Pharmaceutical Quality | Suyash Pharma",
-        description: "Discover Suyash Pharma's pharmaceutical quality approach, comprehensive quality assurance processes, and rigorous standards from raw material to finished injectable formulations.",
+        description: "Discover Suyash Pharma's pharmaceutical quality approach, comprehensive quality assurance processes, and rigorous standards ensuring reliable, high-quality pharmaceutical products.",
         keywords: "pharmaceutical quality, pharmaceutical quality approach, quality pharmaceutical products, pharmaceutical quality assurance, pharmaceutical quality processes, quality focused pharmaceutical company, Suyash Pharma quality",
         canonicalUrl: `${BASE_URL}/quality`,
         ogTitle: "Pharmaceutical Quality Assurance | Suyash Pharma",
@@ -461,7 +472,7 @@ export function applySEOForRoute(routeName, param = null, seoKey = null) {
       const extraKeywords = seoKey ? `${seoKey.replace(/-/g, ' ')}, ${seoKey}, ` : '';
       const productKeywords = `${extraKeywords}${product.name}, ${product.name} injection, ${product.name} pharmaceutical, ${product.name} medicine, ${product.name} India, ${product.generic}, ${product.generic} injection, ${product.generic} pharmaceutical product, ${product.strength} injection, Suyash Pharma, pharmaceutical injections India, pharmaceutical company maharashtra, pharma company mumbai, pharmaceutical products virar`;
 
-      const canonicalPath = seoKey ? `/products/${product.slug}/${seoKey}` : `/products/${product.slug}`;
+      const canonicalPath = `/products/${product.slug}`;
 
       setPageSEO({
         title: productTitle,
@@ -470,7 +481,7 @@ export function applySEOForRoute(routeName, param = null, seoKey = null) {
         canonicalUrl: `${BASE_URL}${canonicalPath}`,
         ogTitle: formattedSeo ? `${product.name} — ${product.generic} | ${formattedSeo} | Suyash Pharma` : `${product.name} — ${product.generic} | Suyash Pharma`,
         ogDescription: productDesc,
-        ogImage: product.image ? `${BASE_URL}${product.image}` : DEFAULT_OG_IMAGE,
+        ogImage: PRODUCT_PUBLIC_IMAGES[product.slug] || DEFAULT_OG_IMAGE,
         ogType: "product",
         schemas: [
           getOrganizationSchema(),

@@ -186,7 +186,7 @@ export function renderTherapeuticSegmentsPage() {
 
             <div class="sp-tseg-faq-list">
               <article class="sp-tseg-faq-item">
-                <h3 class="sp-tseg-faq-q">What are the primary antibiotic formulations manufactured and supplied by Suyash Pharma?</h3>
+                <h3 class="sp-tseg-faq-q">What are the primary antibiotic formulations provided by Suyash Pharma?</h3>
                 <p class="sp-tseg-faq-a">Suyash Pharma focuses on hospital-grade injectable antibiotics including Meropenem 2.0 gm (SPNEM™), Meropenem with Sulbactam (SPNEM-SB), Meropenem with Tazobactam (SPNEM-TZ), Ceftazidime with Tobramycin (CEFFTOB™), Cefoperazone with Sulbactam (SPARAZONE-3GM), Ceftizoxime 1.5gm (SPTIK™-1.5GM), Tigecycline 100mg (TIGRIXA-100), and Cefpirome 2000mg (Sfrome-2gm).</p>
               </article>
 

@@ -62,7 +62,7 @@ export function renderContactPage() {
                     <span>GET IN TOUCH</span>
                     <span aria-hidden="true">→</span>
                   </a>
-                  <a href="#/products" class="sp-contact-btn sp-contact-btn-outline" id="heroExploreProductsBtn">
+                  <a href="/products" class="sp-contact-btn sp-contact-btn-outline" id="heroExploreProductsBtn">
                     <span>EXPLORE PRODUCTS</span>
                     <span aria-hidden="true">→</span>
                   </a>

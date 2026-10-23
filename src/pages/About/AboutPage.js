@@ -65,7 +65,7 @@ export function renderAboutPage() {
                     <span>DISCOVER OUR APPROACH</span>
                     <span class="sp-btn-arrow" aria-hidden="true">→</span>
                   </a>
-                  <a href="#/products" class="sp-about-btn sp-about-btn-outline" id="aboutHeroProductsBtn">
+                  <a href="/products" class="sp-about-btn sp-about-btn-outline" id="aboutHeroProductsBtn">
                     <span>VIEW OUR PRODUCTS</span>
                     <span class="sp-btn-arrow" aria-hidden="true">→</span>
                   </a>
@@ -115,7 +115,7 @@ export function renderAboutPage() {
               </div>
               
               <h2 class="sp-about-mv-title" id="missionVisionHeading">
-                OUR MISSION & VISION
+                OUR VISION & OUR MISSION
               </h2>
 
               <p class="sp-about-mv-desc">
@@ -123,69 +123,13 @@ export function renderAboutPage() {
               </p>
             </header>
 
-            <!-- Two Large Coordinated Premium Cards -->
+            <!-- Two Large Coordinated Premium Cards (Vision First, Mission Second) -->
             <div class="sp-about-mv-cards-grid">
               
-              <!-- CARD 01: OUR MISSION -->
-              <article class="sp-mv-card sp-reveal-item" aria-labelledby="cardMissionTitle">
+              <!-- CARD 01: OUR VISION -->
+              <article class="sp-mv-card sp-mv-card-vision sp-reveal-item" aria-labelledby="cardVisionTitle">
                 <div class="sp-mv-card-top-bar">
                   <span class="sp-mv-card-num">01</span>
-                  <span class="sp-mv-card-tag">OUR MISSION</span>
-                </div>
-
-                <h3 class="sp-mv-card-title" id="cardMissionTitle">
-                  OUR MISSION
-                </h3>
-
-                <p class="sp-mv-card-paragraph">
-                  Our mission is to build a focused pharmaceutical portfolio through quality-conscious processes, responsible practices and dependable partnerships that contribute to better healthcare.
-                </p>
-
-                <div class="sp-mv-card-divider" aria-hidden="true"></div>
-
-                <div class="sp-mv-points-list">
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">01 QUALITY-FOCUSED APPROACH</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">02 RESPONSIBLE PRACTICES</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">03 DEPENDABLE SOLUTIONS</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">04 LONG-TERM PARTNERSHIPS</span>
-                  </div>
-                </div>
-              </article>
-
-              <!-- CARD 02: OUR VISION -->
-              <article class="sp-mv-card sp-reveal-item" aria-labelledby="cardVisionTitle">
-                <div class="sp-mv-card-top-bar">
-                  <span class="sp-mv-card-num">02</span>
                   <span class="sp-mv-card-tag">OUR VISION</span>
                 </div>
 
@@ -193,49 +137,63 @@ export function renderAboutPage() {
                   OUR VISION
                 </h3>
 
-                <p class="sp-mv-card-paragraph">
-                  Our vision is to grow Suyash Pharma as a trusted pharmaceutical partner by responding responsibly to evolving healthcare needs and building long-term relationships across the healthcare ecosystem.
+                <div class="sp-mv-decor-bar" aria-hidden="true">
+                  <span class="sp-mv-decor-segment"></span>
+                  <span class="sp-mv-decor-symbol">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </span>
+                  <span class="sp-mv-decor-segment sp-mv-decor-segment-short"></span>
+                </div>
+
+                <p class="sp-mv-vision-quote">
+                  “To become a trusted and leading pharmaceutical company, committed to improving healthcare through quality, innovation, reliability, and affordable solutions. We aspire to build long-term partnerships with healthcare professionals, hospitals, and distributors while contributing to a healthier society.”
+                </p>
+              </article>
+
+              <!-- CARD 02: OUR MISSION -->
+              <article class="sp-mv-card sp-mv-card-mission sp-reveal-item" aria-labelledby="cardMissionTitle">
+                <div class="sp-mv-card-top-bar">
+                  <span class="sp-mv-card-num">02</span>
+                  <span class="sp-mv-card-tag">OUR MISSION</span>
+                </div>
+
+                <h3 class="sp-mv-card-title" id="cardMissionTitle">
+                  OUR MISSION
+                </h3>
+
+                <p class="sp-mv-mission-intro">
+                  At Suyash Pharma, our mission is to:
                 </p>
 
-                <div class="sp-mv-card-divider" aria-hidden="true"></div>
-
-                <div class="sp-mv-points-list">
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">01 TRUSTED HEALTHCARE PARTNER</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">02 FOCUSED PHARMACEUTICAL GROWTH</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">03 RESPONSIBLE DEVELOPMENT</span>
-                  </div>
-
-                  <div class="sp-mv-point-item">
-                    <span class="sp-mv-point-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="4 10 8 14 16 6"></polyline>
-                      </svg>
-                    </span>
-                    <span class="sp-mv-point-text">04 STRONGER HEALTHCARE RELATIONSHIPS</span>
-                  </div>
-                </div>
+                <ol class="sp-mv-mission-list">
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">01</span>
+                    <span class="sp-mv-mission-text">Deliver high-quality and reliable pharmaceutical products that meet stringent standards.</span>
+                  </li>
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">02</span>
+                    <span class="sp-mv-mission-text">Make essential healthcare solutions accessible and affordable.</span>
+                  </li>
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">03</span>
+                    <span class="sp-mv-mission-text">Continuously focus on innovation, quality, and excellence across our products and services.</span>
+                  </li>
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">04</span>
+                    <span class="sp-mv-mission-text">Build strong and transparent relationships with doctors, hospitals, distributors, and healthcare partners.</span>
+                  </li>
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">05</span>
+                    <span class="sp-mv-mission-text">Maintain the highest standards of integrity, responsibility, and customer satisfaction.</span>
+                  </li>
+                  <li class="sp-mv-mission-item">
+                    <span class="sp-mv-mission-num" aria-hidden="true">06</span>
+                    <span class="sp-mv-mission-text">Contribute positively to the healthcare industry and improve patient well-being.</span>
+                  </li>
+                </ol>
               </article>
 
             </div>
@@ -275,7 +233,7 @@ export function renderAboutPage() {
                   />
                 </div>
 
-                <!-- Tertiary Image: Pharmaceutical Packaging Facility -->
+                <!-- Tertiary Image: Pharmaceutical Packaging Inspection -->
                 <div class="sp-collage-tertiary">
                   <img 
                     src="${aboutPackagingImg}" 
@@ -287,11 +245,11 @@ export function renderAboutPage() {
                   />
                 </div>
 
-                <!-- Quarter Image: Research Discussion -->
+                <!-- Quarter Image: Professional Discussion -->
                 <div class="sp-collage-quarter">
                   <img 
                     src="${aboutColleaguesImg}" 
-                    alt="Indian pharmaceutical research scientists reviewing documentation" 
+                    alt="Pharmaceutical professionals reviewing documentation and quality standards" 
                     class="sp-collage-quarter-img"
                     loading="lazy"
                     width="220"

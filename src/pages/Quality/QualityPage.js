@@ -71,7 +71,7 @@ export function renderQualityPage() {
                     <span>EXPLORE OUR QUALITY APPROACH</span>
                     <span class="sp-btn-arrow" aria-hidden="true">→</span>
                   </a>
-                  <a href="#/products" class="sp-quality-btn sp-quality-btn-outline" id="heroViewProductsBtn">
+                  <a href="/products" class="sp-quality-btn sp-quality-btn-outline" id="heroViewProductsBtn">
                     <span>VIEW OUR PRODUCTS</span>
                     <span class="sp-btn-arrow" aria-hidden="true">→</span>
                   </a>
@@ -440,7 +440,7 @@ export function renderQualityPage() {
                   <div class="sp-qcollage-inset-frame">
                     <img 
                       src="${teamCollabImg}" 
-                      alt="Indian pharmaceutical scientists collaborating in clean processing facility" 
+                      alt="Pharmaceutical professionals conducting quality review and process documentation" 
                       class="sp-qcollage-inset-img"
                       loading="lazy"
                       width="260"
@@ -489,7 +489,7 @@ export function renderQualityPage() {
 
                 <!-- CTA Button to Products Page -->
                 <div class="sp-portfolio-action-row sp-reveal-item">
-                  <a href="#/products" class="sp-quality-btn sp-quality-btn-navy" id="portfolioExploreProductsBtn">
+                  <a href="/products" class="sp-quality-btn sp-quality-btn-navy" id="portfolioExploreProductsBtn">
                     <span>EXPLORE OUR PRODUCTS</span>
                     <span class="sp-btn-arrow" aria-hidden="true">→</span>
                   </a>
@@ -505,7 +505,7 @@ export function renderQualityPage() {
                   <span class="sp-showcase-subtitle">GENUINE SUYASH PHARMA PORTFOLIO</span>
                   <h3 class="sp-showcase-title">Representative Formulations From Our Catalogue</h3>
                 </div>
-                <a href="#/products" class="sp-showcase-link">
+                <a href="/products" class="sp-showcase-link">
                   <span>View All 13 Products</span>
                   <span aria-hidden="true">→</span>
                 </a>
@@ -518,7 +518,7 @@ export function renderQualityPage() {
                       <img 
                         src="${p.image}" 
                         alt="${p.name} packaging carton" 
-                        class="sp-qprod-img"
+                        class="sp-qprod-img" 
                         loading="lazy"
                         width="240"
                         height="200"
@@ -535,7 +535,7 @@ export function renderQualityPage() {
                         <span class="sp-qprod-strength">${p.strength}</span>
                       </div>
 
-                      <a href="#/products/${p.slug}" class="sp-qprod-action-btn" aria-label="View specifications for ${p.name}">
+                      <a href="/products/${p.slug}" class="sp-qprod-action-btn" aria-label="View specifications for ${p.name}">
                         <span>Product Details</span>
                         <span class="sp-btn-arrow" aria-hidden="true">→</span>
                       </a>

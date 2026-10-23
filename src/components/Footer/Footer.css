@@ -526,8 +526,8 @@
    ========================================================================== */
 .sp-floating-contact {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: calc(24px + env(safe-area-inset-right, 0px));
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -666,8 +666,8 @@
   }
 
   .sp-floating-contact {
-    bottom: 18px;
-    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    right: calc(18px + env(safe-area-inset-right, 0px));
     gap: 10px;
   }
 

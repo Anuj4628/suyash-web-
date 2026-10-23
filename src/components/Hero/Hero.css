@@ -467,36 +467,60 @@
 
 @media (max-width: 860px) {
   .sp-hero-editorial {
-    height: auto;
-    min-height: auto;
-    max-height: none;
-    padding: 0 0 32px 0;
+    height: clamp(680px, 94vh, 840px);
+    min-height: 660px;
+    max-height: 840px;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .sp-hero-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
   .sp-editorial-slide {
-    position: relative;
-    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
-    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .sp-editorial-slide.is-active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
   }
 
   .sp-left-stage {
     position: relative;
     clip-path: none;
     -webkit-clip-path: none;
-    padding: 36px 0 28px 0;
+    padding: clamp(24px, 4vw, 36px) 0 16px 0;
     width: 100%;
-    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
   }
 
   .sp-left-content-inner {
     max-width: 100%;
     padding-left: clamp(20px, 5vw, 40px);
     padding-right: clamp(20px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .sp-hero-diagonal-svg {
@@ -506,12 +530,16 @@
   .sp-right-stage {
     position: relative;
     width: 100%;
-    height: clamp(320px, 52vw, 440px);
+    flex: 0 0 clamp(260px, 38vh, 340px);
+    height: auto;
     background-color: #082245;
+    z-index: 1;
+    overflow: hidden;
   }
 
   .sp-hero-visual-frame {
-    position: relative;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
   }
@@ -528,11 +556,11 @@
   .is-portfolio-slide .sp-right-stage {
     background-color: #E8F2F9;
     background: radial-gradient(circle at 50% 50%, #F6FAFD 0%, #E7F2FA 65%, #DBECF7 100%);
-    height: clamp(320px, 62vw, 440px);
+    flex: 0 0 clamp(260px, 38vh, 340px);
   }
 
   .is-portfolio-slide .sp-hero-visual-frame {
-    padding: 16px 20px;
+    padding: clamp(10px, 2vw, 18px);
   }
 
   .is-portfolio-slide .sp-hero-visual-img {
@@ -541,43 +569,85 @@
 }
 
 @media (max-width: 480px) {
+  .sp-hero-editorial {
+    height: clamp(660px, 94vh, 760px);
+    min-height: 640px;
+    max-height: 780px;
+  }
+
+  .sp-hero-eyebrow {
+    font-size: 0.76rem;
+    margin-bottom: 12px;
+  }
+
   .sp-editorial-headline {
-    font-size: 2.1rem;
+    font-size: clamp(1.85rem, 6.2vw, 2.2rem);
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+
+  .sp-hero-desc {
+    font-size: 0.92rem;
+    line-height: 1.48;
+    margin-bottom: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .sp-hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
   }
 
   .sp-btn-hero {
-    width: 100%;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+  }
+
+  .sp-keywords-row {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .sp-keyword-pill {
+    font-size: 0.68rem;
+    padding: 4px 8px;
   }
 
   .sp-right-stage {
-    height: 310px;
+    flex: 0 0 clamp(240px, 36vh, 290px);
   }
 
   .is-portfolio-slide .sp-right-stage {
-    height: clamp(290px, 78vw, 360px);
-  }
-
-  .is-portfolio-slide .sp-hero-visual-frame {
-    padding: 10px 12px;
+    flex: 0 0 clamp(240px, 36vh, 290px);
   }
 }
 
 @media (max-width: 390px) {
+  .sp-hero-editorial {
+    height: clamp(640px, 95vh, 720px);
+    min-height: 620px;
+  }
+
   .sp-editorial-headline {
-    font-size: 1.95rem;
+    font-size: 1.75rem;
+  }
+
+  .sp-hero-desc {
+    font-size: 0.88rem;
   }
 
   .sp-right-stage {
-    height: 280px;
+    flex: 0 0 240px;
   }
 
   .is-portfolio-slide .sp-right-stage {
-    height: 280px;
+    flex: 0 0 240px;
   }
 }
 

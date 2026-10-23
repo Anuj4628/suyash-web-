@@ -187,6 +187,23 @@ export function initHeroCarousel() {
   let isTransitioning = false;
   let activeTransitionTl = null;
 
+  // Initialize all slides to clean known state (slide 0 active at zIndex 1, all others 0 & hidden)
+  slides.forEach((s, idx) => {
+    if (idx !== 0) {
+      s.classList.remove('is-active');
+      s.setAttribute('aria-hidden', 'true');
+      s.style.zIndex = '0';
+      s.style.visibility = 'hidden';
+      s.style.opacity = '0';
+    } else {
+      s.classList.add('is-active');
+      s.setAttribute('aria-hidden', 'false');
+      s.style.zIndex = '1';
+      s.style.visibility = 'visible';
+      s.style.opacity = '1';
+    }
+  });
+
   function animateSlideEntrance(index) {
     const slide = slides[index];
     const eyebrow = slide.querySelector('.sp-hero-eyebrow');
@@ -274,9 +291,10 @@ export function initHeroCarousel() {
     return activeTransitionTl;
   }
 
-  // Zero-Flash Slide Transition Architecture:
-  // Incoming slide mounts at top z-index and reveals over outgoing slide.
-  // Outgoing slide remains 100% visible underneath until incoming slide is fully settled.
+  // Strict Stacking Slide Transition Architecture:
+  // - Inactive slides are strictly hidden (opacity: 0, visibility: hidden, zIndex: 0)
+  // - Outgoing slide fades out while incoming slide fades in simultaneously
+  // - Zero slide duplication, zero flash, zero layout jump, zero ghosting of slide 3
   function goToSlide(targetIndex) {
     if (isTransitioning) return;
     if (targetIndex === currentIndex && slides[currentIndex].classList.contains('is-active')) {
@@ -290,12 +308,25 @@ export function initHeroCarousel() {
     const currentSlide = slides[currentIndex];
     const nextSlide = slides[normalizedIndex];
 
-    // Current slide remains fully visible at base z-index underneath
-    currentSlide.style.zIndex = '1';
+    // 1. Strictly hide any non-participating slides immediately
+    slides.forEach((s, idx) => {
+      if (idx !== currentIndex && idx !== normalizedIndex) {
+        s.classList.remove('is-active');
+        s.setAttribute('aria-hidden', 'true');
+        s.style.zIndex = '0';
+        s.style.visibility = 'hidden';
+        s.style.opacity = '0';
+      }
+    });
 
-    // Incoming slide mounts at elevated z-index and crossfades in
+    // 2. Set current slide as baseline underneath
+    currentSlide.style.zIndex = '1';
+    currentSlide.style.visibility = 'visible';
+    currentSlide.style.opacity = '1';
+
+    // 3. Mount next slide cleanly on top
     nextSlide.classList.add('is-active');
-    nextSlide.style.zIndex = '3';
+    nextSlide.style.zIndex = '2';
     nextSlide.setAttribute('aria-hidden', 'false');
 
     const nextVisual = nextSlide.querySelector('.sp-hero-visual-img');
@@ -311,14 +342,26 @@ export function initHeroCarousel() {
 
     activeTransitionTl = gsap.timeline({
       onComplete: () => {
-        // Clean up outgoing slide ONLY after incoming slide is 100% visible
+        // Fully deactivate outgoing slide
         currentSlide.classList.remove('is-active');
         currentSlide.setAttribute('aria-hidden', 'true');
-        currentSlide.style.zIndex = '';
-        gsap.set(currentSlide, { clearProps: 'opacity,visibility' });
+        currentSlide.style.zIndex = '0';
+        currentSlide.style.visibility = 'hidden';
+        currentSlide.style.opacity = '0';
 
-        // Normalize incoming slide to standard active z-index
-        nextSlide.style.zIndex = '2';
+        // Normalize incoming slide to standard base z-index
+        nextSlide.style.zIndex = '1';
+
+        // Strictly ensure all non-active slides remain completely hidden
+        slides.forEach((s, idx) => {
+          if (idx !== normalizedIndex) {
+            s.classList.remove('is-active');
+            s.setAttribute('aria-hidden', 'true');
+            s.style.zIndex = '0';
+            s.style.visibility = 'hidden';
+            s.style.opacity = '0';
+          }
+        });
 
         // Update step buttons across all slides to reflect active index
         document.querySelectorAll('.sp-step-btn').forEach((btn) => {
@@ -332,7 +375,12 @@ export function initHeroCarousel() {
       }
     });
 
-    // 1. Reveal incoming slide cleanly over outgoing slide (ZERO white flash!)
+    // Crossfade: outgoing slide fades out while incoming slide fades in
+    activeTransitionTl.to(currentSlide,
+      { opacity: 0, duration: 0.55, ease: 'power2.inOut' },
+      0
+    );
+
     activeTransitionTl.fromTo(nextSlide,
       { opacity: 0, visibility: 'visible' },
       { opacity: 1, duration: 0.55, ease: 'power2.inOut' },

@@ -977,6 +977,11 @@
     margin: 0 auto;
   }
 
+  .sp-about-hero-badge {
+    left: 14px;
+    bottom: 16px;
+  }
+
   .sp-about-story-grid {
     grid-template-columns: 1fr;
     gap: 48px;

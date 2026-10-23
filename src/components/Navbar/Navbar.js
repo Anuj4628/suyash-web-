@@ -188,6 +188,14 @@ export function initNavbarEvents() {
     }
   });
 
+  // Close drawer on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      setMobileMenu(false);
+      toggleBtn.focus();
+    }
+  });
+
   // Handle header elevation on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {

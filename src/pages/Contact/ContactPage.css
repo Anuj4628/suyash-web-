@@ -1357,6 +1357,11 @@
     margin: 0 auto;
   }
 
+  .sp-contact-hero-badge {
+    left: 14px;
+    bottom: 16px;
+  }
+
   .sp-contact-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;

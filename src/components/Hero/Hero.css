@@ -90,6 +90,36 @@
   transform: scale(1.015);
 }
 
+/* --------------------------------------------------------------------------
+   Product Showcase Slide (Slide 1) Dedicated Clinical Environment
+   Pure clinical lab setting, exact 2x2 product packaging, contain fit
+   -------------------------------------------------------------------------- */
+.is-portfolio-slide .sp-right-stage {
+  background-color: #E8F2F9;
+  background: radial-gradient(circle at 55% 48%, #F7FAFD 0%, #E7F2FA 55%, #DCECF7 100%);
+}
+
+.is-portfolio-slide .sp-hero-visual-frame {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(14px, 2vw, 32px) clamp(16px, 2.4vw, 40px);
+  box-sizing: border-box;
+}
+
+.is-portfolio-slide .sp-hero-visual-img {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  filter: contrast(1.02) brightness(1.0);
+}
+
 /* Subtle Brand Watermark Leaf on Navy */
 .sp-watermark-leaf {
   position: absolute;
@@ -494,6 +524,20 @@
     object-fit: var(--img-fit, cover);
     object-position: var(--img-pos-mob, center center);
   }
+
+  .is-portfolio-slide .sp-right-stage {
+    background-color: #E8F2F9;
+    background: radial-gradient(circle at 50% 50%, #F6FAFD 0%, #E7F2FA 65%, #DBECF7 100%);
+    height: clamp(320px, 62vw, 440px);
+  }
+
+  .is-portfolio-slide .sp-hero-visual-frame {
+    padding: 16px 20px;
+  }
+
+  .is-portfolio-slide .sp-hero-visual-img {
+    object-position: center center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -513,6 +557,14 @@
   .sp-right-stage {
     height: 310px;
   }
+
+  .is-portfolio-slide .sp-right-stage {
+    height: clamp(290px, 78vw, 360px);
+  }
+
+  .is-portfolio-slide .sp-hero-visual-frame {
+    padding: 10px 12px;
+  }
 }
 
 @media (max-width: 390px) {
@@ -521,6 +573,10 @@
   }
 
   .sp-right-stage {
+    height: 280px;
+  }
+
+  .is-portfolio-slide .sp-right-stage {
     height: 280px;
   }
 }

@@ -34,11 +34,11 @@ export const heroSlides = [
     keywords: ["15+ Products", "Anti-Infective", "Injectable Formulations", "Hospital Grade"],
     image: suyashShowcaseImg,
     imageConfig: {
-      fit: "cover",
+      fit: "contain",
       position: "center center",
       positionMobile: "center center"
     },
-    imageAlt: "Suyash Pharma focused healthcare formulations portfolio - SPTIK-1.5GM, SPNEM 2.0gm, Sfrome-2gm, GTVITA-SP",
+    imageAlt: "Suyash Pharma focused healthcare formulations portfolio - Cefpirome Sulphate (Strome-2gm), Meropenem (SPNEM 2.0gm), Ceftizoxime (SPTIK-1.5GM), Glutathione (GTVITA-SP)",
     caption: "FOCUSED SOLUTIONS FOR HEALTHCARE",
     isShowcase: true
   },

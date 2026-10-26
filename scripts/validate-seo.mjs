@@ -11,17 +11,17 @@ const BASE_URL = 'https://suyashpharma.com';
 const EXPECTED_PRODUCTS = [
   { slug: 'cefftob', name: 'CEFFTOB™', img: 'cefftob-ceftazidime-tobramycin-injection.png' },
   { slug: 'sptik-1-5gm', name: 'SPTIK™-1.5GM', img: 'sptik-ceftizoxime-1-5gm-injection.png' },
-  { slug: 'tigrixa-100', name: 'TIGRIXA-100', img: 'tigrixa-100-tigecycline-injection.png' },
+  { slug: 'tigrixa-100', name: 'TIGRIXA-100™', img: 'tigrixa-100-tigecycline-injection.png' },
   { slug: 'spnem', name: 'SPNEM™', img: 'spnem-meropenem-2gm-injection.png' },
-  { slug: 'gtvita-sp', name: 'GTVITA-SP', img: 'gtvita-sp-glutathione-vitamin-c-injection.png' },
-  { slug: 'sparazone-3gm', name: 'SPARAZONE-3GM', img: 'sparazone-3gm-cefoperazone-sulbactam-injection.png' },
-  { slug: 'spnem-sb', name: 'SPNEM-SB', img: 'spnem-sb-meropenem-sulbactam-750mg-injection.png' },
-  { slug: 'sulboforte-2gm', name: 'SULBOFORTE-2GM', img: 'sulboforte-2gm-sulbactam-injection.png' },
-  { slug: 'spnem-tz', name: 'SPNEM-TZ', img: 'spnem-tz-meropenem-tazobactam-injection.png' },
-  { slug: 'spnem-sb-1-5gm', name: 'SPNEM-SB 1.5GM', img: 'spnem-sb-1-5gm-meropenem-sulbactam-injection.png' },
-  { slug: 'yspan-40mg', name: 'YSPAN-40MG', img: 'yspan-40mg-pantoprazole-injection.png' },
-  { slug: 'sfrome-2gm', name: 'Sfrome-2gm', img: 'sfrome-2gm-cefpirome-injection.png' },
-  { slug: 'cpfoxime-500', name: 'CPFOXIME-500', img: 'cpfoxime-500-cefuroxime-axetil-tablets.png' }
+  { slug: 'gtvita-sp', name: 'GTVITA-SP™', img: 'gtvita-sp-glutathione-vitamin-c-injection.png' },
+  { slug: 'sparazone-3gm', name: 'SPARAZONE™-3GM', img: 'sparazone-3gm-cefoperazone-sulbactam-injection.png' },
+  { slug: 'spnem-sb', name: 'SPNEM-SB™', img: 'spnem-sb-meropenem-sulbactam-750mg-injection.png' },
+  { slug: 'sulboforte-2gm', name: 'SULBOFORTE-2GM™', img: 'sulboforte-2gm-sulbactam-injection.png' },
+  { slug: 'spnem-tz', name: 'SPNEM™-TZ', img: 'spnem-tz-meropenem-tazobactam-injection.png' },
+  { slug: 'spnem-sb-1-5gm', name: 'SPNEM-SB™ 1.5GM', img: 'spnem-sb-1-5gm-meropenem-sulbactam-injection.png' },
+  { slug: 'yspan-40mg', name: 'YSPAN™-40MG', img: 'yspan-40mg-pantoprazole-injection.png' },
+  { slug: 'sfrome-2gm', name: 'Sfrome™-2gm', img: 'sfrome-2gm-cefpirome-injection.png' },
+  { slug: 'cpfoxime-500', name: 'CPFOXIME™-500', img: 'cpfoxime-500-cefuroxime-axetil-tablets.png' }
 ];
 
 const EXPECTED_CORE_PAGES = [
@@ -76,8 +76,22 @@ if (fs.existsSync(robotsPath)) {
   const robots = fs.readFileSync(robotsPath, 'utf8');
   assert(robots.includes('Sitemap: https://suyashpharma.com/sitemap.xml'), 'robots.txt references sitemap.xml');
   assert(robots.includes('Allow: /images/products/'), 'robots.txt explicitly allows product images');
+  assert(robots.includes('Allow: /favicon.png'), 'robots.txt explicitly allows /favicon.png');
   assert(robots.includes('Googlebot-Image'), 'robots.txt explicitly grants access to Googlebot-Image');
 }
+
+// 2b. Favicon Assets Verification
+console.log('\n[2b] Checking Favicon Assets in dist/ ...');
+const favPngPath = path.join(DIST, 'favicon.png');
+assert(fs.existsSync(favPngPath), 'dist/favicon.png exists');
+if (fs.existsSync(favPngPath)) {
+  const buf = fs.readFileSync(favPngPath);
+  const width = buf.readUInt32BE(16);
+  const height = buf.readUInt32BE(20);
+  assert(width === height && width >= 96, `favicon.png is square and >= 96px (${width}x${height}px)`);
+  assert(width % 48 === 0, `favicon.png dimension (${width}px) is an exact multiple of 48px for Google Search`);
+}
+assert(fs.existsSync(path.join(DIST, 'favicon.ico')), 'dist/favicon.ico exists for legacy/fallback requests');
 
 // 3. Hostinger Configuration Verification
 console.log('\n[3] Checking Hostinger .htaccess...');
@@ -111,6 +125,7 @@ for (const page of EXPECTED_CORE_PAGES) {
     const html = fs.readFileSync(filePath, 'utf8');
     assert(html.includes(`<link rel="canonical" href="${page.url}" />`), `${page.path} has correct canonical URL (${page.url})`);
     assert(html.includes('<meta name="description" content="'), `${page.path} has meta description`);
+    assert(html.includes('<link rel="icon" type="image/png" href="/favicon.png" />'), `${page.path} has correct square /favicon.png link`);
     assert(html.includes('<meta property="og:title"'), `${page.path} has Open Graph title`);
     assert(html.includes('application/ld+json'), `${page.path} has JSON-LD schema`);
     assert(html.includes('<div id="app">'), `${page.path} has prerendered HTML content in #app`);

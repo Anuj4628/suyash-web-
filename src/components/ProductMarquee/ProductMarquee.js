@@ -10,7 +10,7 @@
  * - Smooth scroll entrance reveal
  */
 
-import { products } from '../../data/products.js';
+import { products, formatBrandName } from '../../data/products.js';
 import { getProductUrl } from '../../data/seoKeys.js';
 import './ProductMarquee.css';
 
@@ -22,20 +22,20 @@ export function renderProductMarquee() {
       if (product.isSplitColor) {
         contentHtml = `
           <span class="sp-marquee-name sp-name-split">
-            <span class="sp-split-prefix" style="color: ${product.prefixColor};">${product.prefixText}</span><span class="sp-split-suffix" style="color: ${product.suffixColor};">${product.suffixText}</span>
+            <span class="sp-split-prefix" style="color: ${product.prefixColor};">${formatBrandName(product.prefixText)}</span><span class="sp-split-suffix" style="color: ${product.suffixColor};">${product.suffixText}</span>
           </span>
         `;
       } else if (product.isBadge) {
         contentHtml = `
           <span class="sp-marquee-badge-box" style="background-color: ${product.bgColor}; border-bottom-color: ${product.borderColor};">
-            <span class="sp-marquee-name" style="color: ${product.color};">${product.name}</span>
+            <span class="sp-marquee-name" style="color: ${product.color};">${formatBrandName(product.name)}</span>
           </span>
         `;
       } else {
         const italicStyle = product.isItalic ? 'font-style: italic;' : '';
         contentHtml = `
           <span class="sp-marquee-name" style="color: ${product.color}; ${italicStyle}">
-            ${product.name}
+            ${formatBrandName(product.name)}
           </span>
         `;
       }

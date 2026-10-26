@@ -17,11 +17,16 @@ Allow: /contact
 # Specific bot permissions for Google Search and Google Images
 User-agent: Googlebot
 Allow: /
+Allow: /favicon.png
+Allow: /favicon.ico
 Allow: /products/
 Allow: /images/
 Allow: /images/products/
 
 User-agent: Googlebot-Image
+Allow: /
+Allow: /favicon.png
+Allow: /favicon.ico
 Allow: /images/
 Allow: /images/products/
 Allow: /images/logo/

@@ -23,7 +23,7 @@
 
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
-import { products } from '../../data/products.js';
+import { products, formatBrandName } from '../../data/products.js';
 import { formatSeoKey, getProductUrl } from '../../data/seoKeys.js';
 import './ProductDetailPage.css';
 
@@ -68,13 +68,13 @@ export function renderProductDetailPage(slug, seoKey = null) {
   ` : '';
 
   // Formatted brand title
-  let brandTitleHtml = product.name;
+  let brandTitleHtml = formatBrandName(product.name);
   if (product.isSplitColor) {
-    brandTitleHtml = `<span style="color:${product.prefixColor || '#111827'}">${product.prefixText || product.name}</span><span style="color:${product.suffixColor || '#1E7022'}">${product.suffixText || ''}</span>`;
+    brandTitleHtml = `<span style="color:${product.prefixColor || '#111827'}">${formatBrandName(product.prefixText || product.name)}</span><span style="color:${product.suffixColor || '#1E7022'}">${product.suffixText || ''}</span>`;
   } else if (product.isBadge) {
-    brandTitleHtml = `<span class="sp-detail-badge-title" style="background:${product.bgColor || '#1B82C7'}; color:${product.color || '#FFFFFF'}; border-color:${product.borderColor || '#E65100'}">${product.name}</span>`;
+    brandTitleHtml = `<span class="sp-detail-badge-title" style="background:${product.bgColor || '#1B82C7'}; color:${product.color || '#FFFFFF'}; border-color:${product.borderColor || '#E65100'}">${formatBrandName(product.name)}</span>`;
   } else {
-    brandTitleHtml = `<span style="color:${product.color || '#082245'}; font-style:${product.isItalic ? 'italic' : 'normal'}">${product.name}</span>`;
+    brandTitleHtml = `<span style="color:${product.color || '#082245'}; font-style:${product.isItalic ? 'italic' : 'normal'}">${formatBrandName(product.name)}</span>`;
   }
 
   // Related products cards (strictly contained) with alternating SEO keys
@@ -95,7 +95,7 @@ export function renderProductDetailPage(slug, seoKey = null) {
       <div class="sp-related-body">
         <span class="sp-related-segment">${rel.therapeuticSegment}</span>
         <h4 class="sp-related-title">
-          <a href="${relUrl}">${rel.name}</a>
+          <a href="${relUrl}">${formatBrandName(rel.name)}</a>
         </h4>
         <p class="sp-related-generic">${rel.generic}</p>
         <p class="sp-related-desc">${rel.shortDescription}</p>
@@ -138,7 +138,7 @@ export function renderProductDetailPage(slug, seoKey = null) {
               <span class="sp-breadcrumb-sep">/</span>
               <a href="/therapeutic-segments" class="sp-breadcrumb-category" style="text-decoration: none; color: #1B6A3E;">${product.category}</a>
               <span class="sp-breadcrumb-sep">/</span>
-              <span class="sp-breadcrumb-current" aria-current="page">${product.name}</span>
+              <span class="sp-breadcrumb-current" aria-current="page">${formatBrandName(product.name)}</span>
               ${formattedSeo ? `
                 <span class="sp-breadcrumb-seo-tag" style="margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #1B6A14; background: #E8F5E9; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">
                   <span style="width:6px;height:6px;border-radius:50%;background:#228B22;display:inline-block;"></span>

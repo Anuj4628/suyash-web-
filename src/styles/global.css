@@ -191,3 +191,20 @@ img {
   white-space: nowrap;
   border: 0;
 }
+
+/* ==========================================================================
+   TRADEMARK SUPERSCRIPT STYLING
+   Ensures the ™ trademark symbol is clearly visible, small, and professionally aligned
+   ========================================================================== */
+.sp-tm, sup.sp-tm {
+  font-size: 0.58em;
+  line-height: 0;
+  vertical-align: 0.45em;
+  font-weight: 700;
+  letter-spacing: normal;
+  display: inline-block;
+  margin-left: 0.08em;
+  position: relative;
+  top: -0.12em;
+}
+

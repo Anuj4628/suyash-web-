@@ -17,7 +17,7 @@
 
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
-import { products } from '../../data/products.js';
+import { products, formatBrandName } from '../../data/products.js';
 
 import heroQcImg from '../../assets/images/quality/quality-hero-qc.jpg';
 import materialsImg from '../../assets/images/quality/quality-materials-review.jpg';
@@ -527,7 +527,7 @@ export function renderQualityPage() {
                     </div>
 
                     <div class="sp-qprod-content">
-                      <h4 class="sp-qprod-name">${p.name}</h4>
+                      <h4 class="sp-qprod-name">${formatBrandName(p.name)}</h4>
                       <p class="sp-qprod-generic">${p.generic}</p>
                       
                       <div class="sp-qprod-meta">

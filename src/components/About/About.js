@@ -88,11 +88,11 @@ export function renderAbout() {
                 <div class="sp-collage-cell sp-cell-products">
                   <img 
                     src="${productsImg}" 
-                    alt="Suyash Pharma actual portfolio formulations - SPTIK, SPNEM, Sfrome, GTVITA" 
+                    alt="Suyash Pharma actual portfolio formulations - SPTIK-1.5GM, SPNEM 2.0gm, Strome-2gm, GTVITA-SP" 
                     class="sp-collage-img" 
                     loading="lazy" 
-                    width="1200" 
-                    height="800" 
+                    width="1024" 
+                    height="682" 
                   />
                 </div>
 
@@ -154,7 +154,7 @@ export function renderAbout() {
             <!-- 4. Compact Company Statistics Row (Subtle Dividers) -->
             <div class="sp-about-stats-row" role="list" aria-label="Key company highlights">
               <div class="sp-stat-item" role="listitem">
-                <span class="sp-stat-num">15+</span>
+                <span class="sp-stat-num">12+</span>
                 <span class="sp-stat-text">PHARMACEUTICAL PRODUCTS</span>
               </div>
               <div class="sp-stat-divider" aria-hidden="true"></div>

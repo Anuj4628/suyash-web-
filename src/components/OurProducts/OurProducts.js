@@ -12,7 +12,7 @@
  * - "VIEW ALL PRODUCTS" button linking directly to the main Products catalogue
  */
 
-import { products } from '../../data/products.js';
+import { products, formatBrandName } from '../../data/products.js';
 import { getProductUrl } from '../../data/seoKeys.js';
 import './OurProducts.css';
 
@@ -48,7 +48,7 @@ export function renderOurProducts() {
             <div class="sp-card-meta-top">
               <!-- Product Brand Name -->
               <h3 class="sp-card-title">
-                ${product.name}
+                ${formatBrandName(product.name)}
               </h3>
 
               <!-- Short Factual Formulation Description -->

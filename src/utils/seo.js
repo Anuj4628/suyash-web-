@@ -405,11 +405,11 @@ export function applySEOForRoute(routeName, param = null, seoKey = null) {
         },
         {
           q: "What antibiotic combinations are in the Suyash Pharma portfolio?",
-          a: "Key antibiotic formulations include Meropenem 2.0 gm (SPNEM™), Meropenem + Sulbactam (SPNEM-SB), Meropenem + Tazobactam (SPNEM-TZ), Ceftazidime + Tobramycin (CEFFTOB™), Cefoperazone + Sulbactam 3 gm (SPARAZONE-3GM), Ceftizoxime 1.5gm (SPTIK™), Tigecycline 100mg (TIGRIXA-100), and Cefpirome 2gm (Sfrome-2gm)."
+          a: "Key antibiotic formulations include Meropenem 2.0 gm (SPNEM™), Meropenem + Sulbactam (SPNEM-SB™), Meropenem + Tazobactam (SPNEM™-TZ), Ceftazidime + Tobramycin (CEFFTOB™), Cefoperazone + Sulbactam 3 gm (SPARAZONE™-3GM), Ceftizoxime 1.5gm (SPTIK™-1.5GM), Tigecycline 100mg (TIGRIXA-100™), and Cefpirome 2gm (Sfrome™-2gm)."
         },
         {
           q: "Does Suyash Pharma provide gastrointestinal injectables?",
-          a: "Yes, Suyash Pharma provides YSPAN-40MG, a parenteral lyophilized formulation of Pantoprazole Sodium 40mg for acute acid suppression."
+          a: "Yes, Suyash Pharma provides YSPAN™-40MG, a parenteral lyophilized formulation of Pantoprazole Sodium 40mg for acute acid suppression."
         }
       ];
 

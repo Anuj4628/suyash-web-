@@ -46,6 +46,20 @@ import dawa5SptikImg from '../assets/images/products/dawa/dawa5.jpeg';
 import dawa6SparazoneImg from '../assets/images/products/dawa/dawa6.jpeg';
 import dawa7CpfoximeImg from '../assets/images/products/dawa/dawa7.jpeg';
 
+/**
+ * Formats a product brand name by wrapping the ™ symbol in a styled superscript tag.
+ * Preserves existing HTML and prevents duplicate marks.
+ * 
+ * @param {string} text - Product or brand name string
+ * @returns {string} - Formatted HTML
+ */
+export function formatBrandName(text) {
+  if (!text) return '';
+  if (typeof text !== 'string') return text;
+  if (text.includes('sp-tm')) return text;
+  return text.replace(/™/g, '<sup class="sp-tm">™</sup>');
+}
+
 export const products = [
   {
     id: 1,
@@ -117,8 +131,8 @@ export const products = [
   {
     id: 3,
     productNumber: "03",
-    name: "TIGRIXA-100",
-    brandName: "TIGRIXA-100",
+    name: "TIGRIXA-100™",
+    brandName: "TIGRIXA-100™",
     slug: "tigrixa-100",
     generic: "Tigecycline for Injection USP 100mg (Lyophilized)",
     color: "#005C42",
@@ -132,7 +146,7 @@ export const products = [
     filterGroup: "critical-care",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "First-in-class glycylcycline antibiotic structured to overcome major bacterial resistance mechanisms in high-acuity infections.",
-    overview: "TIGRIXA-100 is an intravenous glycylcycline antibiotic structured to circumvent classic bacterial resistance mechanisms (efflux pumps and ribosomal protection) in complicated intensive care infections.",
+    overview: "TIGRIXA-100™ is an intravenous glycylcycline antibiotic structured to circumvent classic bacterial resistance mechanisms (efflux pumps and ribosomal protection) in complicated intensive care infections.",
     indications: [
       "Complicated intra-abdominal infections (cIAI)",
       "Complicated skin and skin structure infections (cSSSI)",
@@ -180,8 +194,8 @@ export const products = [
   {
     id: 5,
     productNumber: "05",
-    name: "GTVITA-SP",
-    brandName: "GTVITA-SP",
+    name: "GTVITA-SP™",
+    brandName: "GTVITA-SP™",
     slug: "gtvita-sp",
     generic: "Glutathione for Injection 1200 mg/vial With Vitamin C Ampoule",
     color: "#2D611A",
@@ -195,7 +209,7 @@ export const products = [
     filterGroup: "supportive",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "High-purity reduced glutathione paired with synergistic vitamin C for cellular protection, detoxification and clinical support.",
-    overview: "GTVITA-SP combines pharmaceutical-grade reduced glutathione with ascorbic acid to counteract cellular oxidative stress, support hepatic detoxification, and enhance metabolic recovery.",
+    overview: "GTVITA-SP™ combines pharmaceutical-grade reduced glutathione with ascorbic acid to counteract cellular oxidative stress, support hepatic detoxification, and enhance metabolic recovery.",
     indications: [
       "Cellular oxidative stress and free radical damage mitigation",
       "Adjunctive hepatoprotection in toxic or metabolic liver stress",
@@ -211,8 +225,8 @@ export const products = [
   {
     id: 6,
     productNumber: "06",
-    name: "SPARAZONE-3GM",
-    brandName: "SPARAZONE-3GM",
+    name: "SPARAZONE™-3GM",
+    brandName: "SPARAZONE™-3GM",
     slug: "sparazone-3gm",
     generic: "Cefoperazone & Sulbactam for Injection 3 gm",
     color: "#0A6286",
@@ -226,7 +240,7 @@ export const products = [
     filterGroup: "anti-infective",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Evidence-based 3gm optimal-dose anti-infective combination designed for superior clinical response in critical MDR infections.",
-    overview: "SPARAZONE-3GM is an evidence-based formulation following the ICMR 2022 optimal dose approach for multidrug-resistant gram-negative infections, with a nephrofriendly profile requiring no dose adjustment in CKD patients.",
+    overview: "SPARAZONE™-3GM is an evidence-based formulation following the ICMR 2022 optimal dose approach for multidrug-resistant gram-negative infections, with a nephrofriendly profile requiring no dose adjustment in CKD patients.",
     indications: [
       "Respiratory tract infections in critical care (pneumonia, bronchitis)",
       "Peritonitis, cholecystitis and complicated intra-abdominal infections",
@@ -243,8 +257,8 @@ export const products = [
   {
     id: 7,
     productNumber: "07",
-    name: "SPNEM-SB",
-    brandName: "SPNEM-SB",
+    name: "SPNEM-SB™",
+    brandName: "SPNEM-SB™",
     slug: "spnem-sb",
     generic: "Meropenem & Sulbactam for Injection 750 mg",
     color: "#095A36",
@@ -258,7 +272,7 @@ export const products = [
     filterGroup: "carbapenems",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Synergistic carbapenem and beta-lactamase inhibitor combination for hospital-acquired and ventilator-associated infections.",
-    overview: "SPNEM-SB combines Meropenem with the beta-lactamase inhibitor Sulbactam, restoring bactericidal susceptibility against pathogens producing Class A and Class C enzymes.",
+    overview: "SPNEM-SB™ combines Meropenem with the beta-lactamase inhibitor Sulbactam, restoring bactericidal susceptibility against pathogens producing Class A and Class C enzymes.",
     indications: [
       "Hospital-acquired pneumonia & Ventilator-associated pneumonia (VAP)",
       "Complicated intra-abdominal infections",
@@ -275,8 +289,8 @@ export const products = [
   {
     id: 8,
     productNumber: "08",
-    name: "SULBOFORTE-2GM",
-    brandName: "SULBOFORTE-2GM",
+    name: "SULBOFORTE-2GM™",
+    brandName: "SULBOFORTE-2GM™",
     slug: "sulboforte-2gm",
     generic: "Sulbactam for Injection 2.0 gm",
     color: "#0B627D",
@@ -290,7 +304,7 @@ export const products = [
     filterGroup: "anti-infective",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Potent irreversible beta-lactamase inhibitor designed to overcome bacterial enzyme-mediated resistance.",
-    overview: "SULBOFORTE-2GM provides targeted high-dose sulbactam therapy which irreversibly binds and inactivates beta-lactamases, demonstrating intrinsic activity against Acinetobacter baumannii.",
+    overview: "SULBOFORTE-2GM™ provides targeted high-dose sulbactam therapy which irreversibly binds and inactivates beta-lactamases, demonstrating intrinsic activity against Acinetobacter baumannii.",
     indications: [
       "Multidrug-resistant Acinetobacter baumannii infections",
       "Severe hospital-acquired and ventilator-associated pneumonia",
@@ -306,8 +320,8 @@ export const products = [
   {
     id: 9,
     productNumber: "09",
-    name: "SPNEM-TZ",
-    brandName: "SPNEM-TZ",
+    name: "SPNEM™-TZ",
+    brandName: "SPNEM™-TZ",
     slug: "spnem-tz",
     generic: "Meropenem & Tazobactam for Injection 1.125gm",
     color: "#780D21",
@@ -322,7 +336,7 @@ export const products = [
     filterGroup: "carbapenems",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Targeted carbapenem and tazobactam synergy structured for resistant ICU bacteremia and complex nosocomial infections.",
-    overview: "SPNEM-TZ pairs the proven bactericidal breadth of Meropenem with Tazobactam to inhibit beta-lactamase hydrolysis and maintain antibacterial potency in critical care infections.",
+    overview: "SPNEM™-TZ pairs the proven bactericidal breadth of Meropenem with Tazobactam to inhibit beta-lactamase hydrolysis and maintain antibacterial potency in critical care infections.",
     indications: [
       "Critical care septicemia and bacteremic episodes",
       "Severe nosocomial pneumonia",
@@ -338,8 +352,8 @@ export const products = [
   {
     id: 10,
     productNumber: "10",
-    name: "SPNEM-SB 1.5GM",
-    brandName: "SPNEM-SB 1.5GM",
+    name: "SPNEM-SB™ 1.5GM",
+    brandName: "SPNEM-SB™ 1.5GM",
     slug: "spnem-sb-1-5gm",
     generic: "Meropenem & Sulbactam for Injection 1.5 gm",
     color: "#4A0B14",
@@ -353,7 +367,7 @@ export const products = [
     filterGroup: "carbapenems",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "High-dose carbapenem-inhibitor formulation calibrated for intensive care treatment of resistant microbial profiles.",
-    overview: "SPNEM-SB 1.5GM delivers high-potency carbapenem and sulbactam concentrations for high-acuity intensive care units dealing with difficult-to-treat polymicrobial infections.",
+    overview: "SPNEM-SB™ 1.5GM delivers high-potency carbapenem and sulbactam concentrations for high-acuity intensive care units dealing with difficult-to-treat polymicrobial infections.",
     indications: [
       "Severe nosocomial pneumonia and ventilator-associated infections",
       "Complicated intra-abdominal sepsis",
@@ -370,12 +384,12 @@ export const products = [
   {
     id: 11,
     productNumber: "11",
-    name: "YSPAN-40MG",
-    brandName: "YSPAN-40MG",
+    name: "YSPAN™-40MG",
+    brandName: "YSPAN™-40MG",
     slug: "yspan-40mg",
     generic: "Pantoprazole for Injection 40mg",
     color: "#1E7022",
-    prefixText: "YSPAN",
+    prefixText: "YSPAN™",
     prefixColor: "#111827",
     suffixText: "-40MG",
     suffixColor: "#1E7022",
@@ -390,7 +404,7 @@ export const products = [
     filterGroup: "supportive",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Parenteral proton pump inhibitor providing rapid gastric acid suppression and mucosal protection in hospitalised patients.",
-    overview: "YSPAN-40MG is a parenteral formulation of pantoprazole indicated for acute acid suppression in clinical situations where oral administration is not feasible.",
+    overview: "YSPAN™-40MG is a parenteral formulation of pantoprazole indicated for acute acid suppression in clinical situations where oral administration is not feasible.",
     indications: [
       "Acute peptic ulcer bleeding and post-endoscopic therapy",
       "Severe gastroesophageal reflux disease (GERD)",
@@ -406,8 +420,8 @@ export const products = [
   {
     id: 12,
     productNumber: "12",
-    name: "Sfrome-2gm",
-    brandName: "Sfrome-2gm",
+    name: "Sfrome™-2gm",
+    brandName: "Sfrome™-2gm",
     slug: "sfrome-2gm",
     generic: "Cefpirome Sulphate Injection IP 2000 mg",
     color: "#8B1020",
@@ -422,7 +436,7 @@ export const products = [
     filterGroup: "cephalosporins",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Fourth-generation cephalosporin featuring rapid bacterial membrane penetration for acute hospital infections.",
-    overview: "Sfrome-2gm contains fourth-generation cephalosporin Cefpirome with zwitterionic molecular structure, allowing rapid outer membrane transit and high affinity for critical penicillin-binding proteins.",
+    overview: "Sfrome™-2gm contains fourth-generation cephalosporin Cefpirome with zwitterionic molecular structure, allowing rapid outer membrane transit and high affinity for critical penicillin-binding proteins.",
     indications: [
       "Complicated lower respiratory tract infections (pneumonia, pleuropneumonia)",
       "Complicated upper and lower urinary tract infections",
@@ -438,8 +452,8 @@ export const products = [
   {
     id: 13,
     productNumber: "13",
-    name: "CPFOXIME-500",
-    brandName: "CPFOXIME-500",
+    name: "CPFOXIME™-500",
+    brandName: "CPFOXIME™-500",
     slug: "cpfoxime-500",
     generic: "Cefuroxime Axetil Tablets I.P. 500 Tablets",
     color: "#084168",
@@ -453,7 +467,7 @@ export const products = [
     filterGroup: "cephalosporins",
     storage: "Store below 25°C. Protect from light & moisture. Keep out of reach of children.",
     shortDescription: "Broad-spectrum oral cephalosporin antibiotic delivering high bioavailability and dependable efficacy in outpatient care.",
-    overview: "CPFOXIME-500 is an oral bactericidal cephalosporin prodrug delivering dependable coverage across common respiratory, ENT, and urological bacterial infections.",
+    overview: "CPFOXIME™-500 is an oral bactericidal cephalosporin prodrug delivering dependable coverage across common respiratory, ENT, and urological bacterial infections.",
     indications: [
       "Respiratory tract infections (bronchitis, pneumonia)",
       "Ear, nose & throat infections (sinusitis, tonsillitis, pharyngitis, otitis media)",

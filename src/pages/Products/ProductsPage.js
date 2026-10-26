@@ -12,7 +12,7 @@
 
 import { renderNavbar, initNavbarEvents } from '../../components/Navbar/Navbar.js';
 import { renderFooter, initFooter } from '../../components/Footer/Footer.js';
-import { products, productCategories } from '../../data/products.js';
+import { products, productCategories, formatBrandName } from '../../data/products.js';
 import { getProductUrl } from '../../data/seoKeys.js';
 import productHeroImg from '../../assets/images/products/product-hero-qc.jpg';
 import './ProductsPage.css';
@@ -249,13 +249,13 @@ export function renderProductsPage() {
 export function renderProductCardsHtml(productList) {
   return productList.map((product, idx) => {
     // Exact brand styling per authentic packaging
-    let titleHtml = product.name;
+    let titleHtml = formatBrandName(product.name);
     if (product.isSplitColor) {
-      titleHtml = `<span style="color:${product.prefixColor || '#111827'}">${product.prefixText || product.name}</span><span style="color:${product.suffixColor || '#1E7022'}">${product.suffixText || ''}</span>`;
+      titleHtml = `<span style="color:${product.prefixColor || '#111827'}">${formatBrandName(product.prefixText || product.name)}</span><span style="color:${product.suffixColor || '#1E7022'}">${product.suffixText || ''}</span>`;
     } else if (product.isBadge) {
-      titleHtml = `<span class="sp-card-badge-title" style="background:${product.bgColor || '#1B82C7'}; color:${product.color || '#FFFFFF'}; border-color:${product.borderColor || '#E65100'}">${product.name}</span>`;
+      titleHtml = `<span class="sp-card-badge-title" style="background:${product.bgColor || '#1B82C7'}; color:${product.color || '#FFFFFF'}; border-color:${product.borderColor || '#E65100'}">${formatBrandName(product.name)}</span>`;
     } else {
-      titleHtml = `<span style="color:${product.color || '#082245'}; font-style:${product.isItalic ? 'italic' : 'normal'}">${product.name}</span>`;
+      titleHtml = `<span style="color:${product.color || '#082245'}; font-style:${product.isItalic ? 'italic' : 'normal'}">${formatBrandName(product.name)}</span>`;
     }
 
     // Centering class for 13th item in 13-item grid

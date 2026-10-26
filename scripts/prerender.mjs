@@ -15,6 +15,12 @@ const BASE_URL = 'https://suyashpharma.com';
 const BRAND_NAME = 'Suyash Pharma';
 const LOGO_URL = `${BASE_URL}/images/logo/suyash-pharma-logo.png`;
 
+function formatBrandName(text) {
+  if (!text) return '';
+  if (text.includes('sp-tm')) return text;
+  return text.replace(/™/g, '<sup class="sp-tm">™</sup>');
+}
+
 // Verified Official Corporate Entity Data
 const CORPORATE_ENTITY = {
   name: "Suyash Pharma",
@@ -99,7 +105,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    name: "TIGRIXA-100",
+    name: "TIGRIXA-100™",
     slug: "tigrixa-100",
     generic: "Tigecycline for Injection USP 100mg (Lyophilized)",
     composition: "Each vial contains: Tigecycline (as Tigecycline Acetate) 100 mg (Lyophilized sterile powder)",
@@ -110,9 +116,9 @@ const PRODUCTS = [
     category: "Glycylcycline Antibiotic / Critical Care",
     therapeuticSegment: "CRITICAL CARE",
     image: `${BASE_URL}/images/products/tigrixa-100-tigecycline-injection.png`,
-    imageAlt: "TIGRIXA-100 - Tigecycline for Injection USP 100mg Lyophilized packaging by Suyash Pharma",
+    imageAlt: "TIGRIXA-100™ - Tigecycline for Injection USP 100mg Lyophilized packaging by Suyash Pharma",
     shortDescription: "First-in-class glycylcycline antibiotic structured to overcome major bacterial resistance mechanisms in high-acuity infections.",
-    overview: "TIGRIXA-100 is an intravenous glycylcycline antibiotic structured to circumvent classic bacterial resistance mechanisms (efflux pumps and ribosomal protection) in complicated intensive care infections.",
+    overview: "TIGRIXA-100™ is an intravenous glycylcycline antibiotic structured to circumvent classic bacterial resistance mechanisms (efflux pumps and ribosomal protection) in complicated intensive care infections.",
     indications: [
       "Complicated intra-abdominal infections (cIAI)",
       "Complicated skin and skin structure infections (cSSSI)",
@@ -145,7 +151,7 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    name: "GTVITA-SP",
+    name: "GTVITA-SP™",
     slug: "gtvita-sp",
     generic: "Glutathione for Injection 1200 mg/vial With Vitamin C Ampoule",
     composition: "Each vial contains: Reduced Glutathione IP 1200 mg (Lyophilized Powder). Accompanied by 1 ampoule Vitamin C (Ascorbic Acid) 500 mg Injection",
@@ -156,9 +162,9 @@ const PRODUCTS = [
     category: "Master Antioxidant & Supportive Therapy",
     therapeuticSegment: "ANTIOXIDANT THERAPY",
     image: `${BASE_URL}/images/products/gtvita-sp-glutathione-vitamin-c-injection.png`,
-    imageAlt: "GTVITA-SP - Glutathione for Injection 1200 mg with Vitamin C Ampoule packaging by Suyash Pharma",
+    imageAlt: "GTVITA-SP™ - Glutathione for Injection 1200 mg with Vitamin C Ampoule packaging by Suyash Pharma",
     shortDescription: "High-purity reduced glutathione paired with synergistic vitamin C for cellular protection, detoxification and clinical support.",
-    overview: "GTVITA-SP combines pharmaceutical-grade reduced glutathione with ascorbic acid to counteract cellular oxidative stress, support hepatic detoxification, and enhance metabolic recovery.",
+    overview: "GTVITA-SP™ combines pharmaceutical-grade reduced glutathione with ascorbic acid to counteract cellular oxidative stress, support hepatic detoxification, and enhance metabolic recovery.",
     indications: [
       "Cellular oxidative stress and free radical damage mitigation",
       "Adjunctive hepatoprotection in toxic or metabolic liver stress",
@@ -168,7 +174,7 @@ const PRODUCTS = [
   },
   {
     id: 6,
-    name: "SPARAZONE-3GM",
+    name: "SPARAZONE™-3GM",
     slug: "sparazone-3gm",
     generic: "Cefoperazone & Sulbactam for Injection 3 gm",
     composition: "Each vial contains: Cefoperazone Sodium IP equivalent to Cefoperazone 2.0 gm & Sulbactam Sodium IP equivalent to Sulbactam 1.0 gm",
@@ -179,9 +185,9 @@ const PRODUCTS = [
     category: "Third-Gen Cephalosporin + Inhibitor / MDR Focus",
     therapeuticSegment: "MDR INFECTIONS",
     image: `${BASE_URL}/images/products/sparazone-3gm-cefoperazone-sulbactam-injection.png`,
-    imageAlt: "SPARAZONE-3GM - Cefoperazone & Sulbactam for Injection 3 gm packaging by Suyash Pharma",
+    imageAlt: "SPARAZONE™-3GM - Cefoperazone & Sulbactam for Injection 3 gm packaging by Suyash Pharma",
     shortDescription: "Evidence-based 3gm optimal-dose anti-infective combination designed for superior clinical response in critical MDR infections.",
-    overview: "SPARAZONE-3GM is an evidence-based formulation following the ICMR 2022 optimal dose approach for multidrug-resistant gram-negative infections, with a nephrofriendly profile requiring no dose adjustment in CKD patients.",
+    overview: "SPARAZONE™-3GM is an evidence-based formulation following the ICMR 2022 optimal dose approach for multidrug-resistant gram-negative infections, with a nephrofriendly profile requiring no dose adjustment in CKD patients.",
     indications: [
       "Respiratory tract infections in critical care (pneumonia, bronchitis)",
       "Peritonitis, cholecystitis and complicated intra-abdominal infections",
@@ -192,7 +198,7 @@ const PRODUCTS = [
   },
   {
     id: 7,
-    name: "SPNEM-SB",
+    name: "SPNEM-SB™",
     slug: "spnem-sb",
     generic: "Meropenem & Sulbactam for Injection 750 mg",
     composition: "Each vial contains: Meropenem IP 500 mg (as Meropenem) & Sulbactam IP 250 mg (as Sulbactam)",
@@ -203,9 +209,9 @@ const PRODUCTS = [
     category: "Carbapenem + Beta-Lactamase Inhibitor",
     therapeuticSegment: "CARBAPENEM COMBO",
     image: `${BASE_URL}/images/products/spnem-sb-meropenem-sulbactam-750mg-injection.png`,
-    imageAlt: "SPNEM-SB - Meropenem & Sulbactam for Injection 750 mg packaging by Suyash Pharma",
+    imageAlt: "SPNEM-SB™ - Meropenem & Sulbactam for Injection 750 mg packaging by Suyash Pharma",
     shortDescription: "Synergistic carbapenem and beta-lactamase inhibitor combination for hospital-acquired and ventilator-associated infections.",
-    overview: "SPNEM-SB combines Meropenem with the beta-lactamase inhibitor Sulbactam, restoring bactericidal susceptibility against pathogens producing Class A and Class C enzymes.",
+    overview: "SPNEM-SB™ combines Meropenem with the beta-lactamase inhibitor Sulbactam, restoring bactericidal susceptibility against pathogens producing Class A and Class C enzymes.",
     indications: [
       "Hospital-acquired pneumonia & Ventilator-associated pneumonia (VAP)",
       "Complicated intra-abdominal infections",
@@ -216,7 +222,7 @@ const PRODUCTS = [
   },
   {
     id: 8,
-    name: "SULBOFORTE-2GM",
+    name: "SULBOFORTE-2GM™",
     slug: "sulboforte-2gm",
     generic: "Sulbactam for Injection 2.0 gm",
     composition: "Each vial contains: Sulbactam for Injection 2.0 gm (Sterile powder)",
@@ -227,9 +233,9 @@ const PRODUCTS = [
     category: "Beta-Lactamase Inhibitor / Resistance Breaker",
     therapeuticSegment: "BETA-LACTAMASE INHIBITOR",
     image: `${BASE_URL}/images/products/sulboforte-2gm-sulbactam-injection.png`,
-    imageAlt: "SULBOFORTE-2GM - Sulbactam for Injection 2.0 gm packaging by Suyash Pharma",
+    imageAlt: "SULBOFORTE-2GM™ - Sulbactam for Injection 2.0 gm packaging by Suyash Pharma",
     shortDescription: "Potent irreversible beta-lactamase inhibitor designed to overcome bacterial enzyme-mediated resistance.",
-    overview: "SULBOFORTE-2GM provides targeted high-dose sulbactam therapy which irreversibly binds and inactivates beta-lactamases, demonstrating intrinsic activity against Acinetobacter baumannii.",
+    overview: "SULBOFORTE-2GM™ provides targeted high-dose sulbactam therapy which irreversibly binds and inactivates beta-lactamases, demonstrating intrinsic activity against Acinetobacter baumannii.",
     indications: [
       "Multidrug-resistant Acinetobacter baumannii infections",
       "Severe hospital-acquired and ventilator-associated pneumonia",
@@ -239,7 +245,7 @@ const PRODUCTS = [
   },
   {
     id: 9,
-    name: "SPNEM-TZ",
+    name: "SPNEM™-TZ",
     slug: "spnem-tz",
     generic: "Meropenem & Tazobactam for Injection 1.125gm",
     composition: "Each vial contains: Meropenem IP (as trihydrate) 1.000 gm, Tazobactam IP 0.125 gm",
@@ -250,9 +256,9 @@ const PRODUCTS = [
     category: "Advanced Carbapenem + Inhibitor Combination",
     therapeuticSegment: "ADVANCED CARBAPENEM",
     image: `${BASE_URL}/images/products/spnem-tz-meropenem-tazobactam-injection.png`,
-    imageAlt: "SPNEM-TZ - Meropenem & Tazobactam for Injection 1.125gm packaging by Suyash Pharma",
+    imageAlt: "SPNEM™-TZ - Meropenem & Tazobactam for Injection 1.125gm packaging by Suyash Pharma",
     shortDescription: "Targeted carbapenem and tazobactam synergy structured for resistant ICU bacteremia and complex nosocomial infections.",
-    overview: "SPNEM-TZ pairs the proven bactericidal breadth of Meropenem with Tazobactam to inhibit beta-lactamase hydrolysis and maintain antibacterial potency in critical care infections.",
+    overview: "SPNEM™-TZ pairs the proven bactericidal breadth of Meropenem with Tazobactam to inhibit beta-lactamase hydrolysis and maintain antibacterial potency in critical care infections.",
     indications: [
       "Critical care septicemia and bacteremic episodes",
       "Severe nosocomial pneumonia",
@@ -262,7 +268,7 @@ const PRODUCTS = [
   },
   {
     id: 10,
-    name: "SPNEM-SB 1.5GM",
+    name: "SPNEM-SB™ 1.5GM",
     slug: "spnem-sb-1-5gm",
     generic: "Meropenem & Sulbactam for Injection 1.5 gm",
     composition: "Each vial contains: Meropenem IP 1.0 gm, Sulbactam IP 0.5 gm (as Sterile powder)",
@@ -273,9 +279,9 @@ const PRODUCTS = [
     category: "High-Dose Carbapenem + Beta-Lactamase Inhibitor",
     therapeuticSegment: "CRITICAL CARE",
     image: `${BASE_URL}/images/products/spnem-sb-1-5gm-meropenem-sulbactam-injection.png`,
-    imageAlt: "SPNEM-SB 1.5GM - Meropenem & Sulbactam for Injection 1.5 gm packaging by Suyash Pharma",
+    imageAlt: "SPNEM-SB™ 1.5GM - Meropenem & Sulbactam for Injection 1.5 gm packaging by Suyash Pharma",
     shortDescription: "High-dose carbapenem-inhibitor formulation calibrated for intensive care treatment of resistant microbial profiles.",
-    overview: "SPNEM-SB 1.5GM delivers high-potency carbapenem and sulbactam concentrations for high-acuity intensive care units dealing with difficult-to-treat polymicrobial infections.",
+    overview: "SPNEM-SB™ 1.5GM delivers high-potency carbapenem and sulbactam concentrations for high-acuity intensive care units dealing with difficult-to-treat polymicrobial infections.",
     indications: [
       "Severe nosocomial pneumonia and ventilator-associated infections",
       "Complicated intra-abdominal sepsis",
@@ -286,7 +292,7 @@ const PRODUCTS = [
   },
   {
     id: 11,
-    name: "YSPAN-40MG",
+    name: "YSPAN™-40MG",
     slug: "yspan-40mg",
     generic: "Pantoprazole for Injection 40mg",
     composition: "Each vial contains: Pantoprazole Sodium (as Lyophilized powder) 40 mg",
@@ -297,9 +303,9 @@ const PRODUCTS = [
     category: "Proton Pump Inhibitor (Gastroenterology)",
     therapeuticSegment: "GASTROENTEROLOGY",
     image: `${BASE_URL}/images/products/yspan-40mg-pantoprazole-injection.png`,
-    imageAlt: "YSPAN-40MG - Pantoprazole for Injection 40mg packaging by Suyash Pharma",
+    imageAlt: "YSPAN™-40MG - Pantoprazole for Injection 40mg packaging by Suyash Pharma",
     shortDescription: "Parenteral proton pump inhibitor providing rapid gastric acid suppression and mucosal protection in hospitalised patients.",
-    overview: "YSPAN-40MG is a parenteral formulation of pantoprazole indicated for acute acid suppression in clinical situations where oral administration is not feasible.",
+    overview: "YSPAN™-40MG is a parenteral formulation of pantoprazole indicated for acute acid suppression in clinical situations where oral administration is not feasible.",
     indications: [
       "Acute peptic ulcer bleeding and post-endoscopic therapy",
       "Severe gastroesophageal reflux disease (GERD)",
@@ -309,7 +315,7 @@ const PRODUCTS = [
   },
   {
     id: 12,
-    name: "Sfrome-2gm",
+    name: "Sfrome™-2gm",
     slug: "sfrome-2gm",
     generic: "Cefpirome Sulphate Injection IP 2000 mg",
     composition: "Each vial contains: Cefpirome Sulphate IP equivalent to Cefpirome 2000 mg",
@@ -320,9 +326,9 @@ const PRODUCTS = [
     category: "Fourth-Generation Cephalosporin",
     therapeuticSegment: "CEPHALOSPORIN",
     image: `${BASE_URL}/images/products/sfrome-2gm-cefpirome-injection.png`,
-    imageAlt: "Sfrome-2gm - Cefpirome Sulphate Injection IP 2000 mg packaging by Suyash Pharma",
+    imageAlt: "Sfrome™-2gm - Cefpirome Sulphate Injection IP 2000 mg packaging by Suyash Pharma",
     shortDescription: "Fourth-generation cephalosporin featuring rapid bacterial membrane penetration for acute hospital infections.",
-    overview: "Sfrome-2gm contains fourth-generation cephalosporin Cefpirome with zwitterionic molecular structure, allowing rapid outer membrane transit and high affinity for critical penicillin-binding proteins.",
+    overview: "Sfrome™-2gm contains fourth-generation cephalosporin Cefpirome with zwitterionic molecular structure, allowing rapid outer membrane transit and high affinity for critical penicillin-binding proteins.",
     indications: [
       "Complicated lower respiratory tract infections (pneumonia, pleuropneumonia)",
       "Complicated upper and lower urinary tract infections",
@@ -332,7 +338,7 @@ const PRODUCTS = [
   },
   {
     id: 13,
-    name: "CPFOXIME-500",
+    name: "CPFOXIME™-500",
     slug: "cpfoxime-500",
     generic: "Cefuroxime Axetil Tablets I.P. 500 mg",
     composition: "Each film-coated tablet contains: Cefuroxime Axetil IP equivalent to Cefuroxime 500 mg",
@@ -343,9 +349,9 @@ const PRODUCTS = [
     category: "Oral Second-Generation Cephalosporin",
     therapeuticSegment: "ORAL ANTIBIOTIC",
     image: `${BASE_URL}/images/products/cpfoxime-500-cefuroxime-axetil-tablets.png`,
-    imageAlt: "CPFOXIME-500 - Cefuroxime Axetil Tablets I.P. 500 mg packaging by Suyash Pharma",
+    imageAlt: "CPFOXIME™-500 - Cefuroxime Axetil Tablets I.P. 500 mg packaging by Suyash Pharma",
     shortDescription: "Broad-spectrum oral cephalosporin antibiotic delivering high bioavailability and dependable efficacy in outpatient care.",
-    overview: "CPFOXIME-500 is an oral bactericidal cephalosporin prodrug delivering dependable coverage across common respiratory, ENT, and urological bacterial infections.",
+    overview: "CPFOXIME™-500 is an oral bactericidal cephalosporin prodrug delivering dependable coverage across common respiratory, ENT, and urological bacterial infections.",
     indications: [
       "Respiratory tract infections (bronchitis, pneumonia)",
       "Ear, nose & throat infections (sinusitis, tonsillitis, pharyngitis, otitis media)",
@@ -654,7 +660,7 @@ const PAGES = [
                 <a href="/products/${p.slug}" style="text-decoration: none; color: inherit; display: block;">
                   <img src="${p.image}" alt="${p.imageAlt}" width="300" height="240" style="width: 100%; height: 220px; object-fit: contain; margin-bottom: 16px;" loading="lazy" />
                   <span style="font-size: 11px; font-weight: 700; color: #1B6A3E; text-transform: uppercase;">${p.therapeuticSegment}</span>
-                  <h2 style="font-size: 22px; margin: 8px 0 4px; color: #082245;">${p.name}</h2>
+                  <h2 style="font-size: 22px; margin: 8px 0 4px; color: #082245;">${formatBrandName(p.name)}</h2>
                   <p style="font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 8px;">${p.generic}</p>
                   <p style="font-size: 13px; color: #6B7280; line-height: 1.5; margin-bottom: 16px;">${p.shortDescription}</p>
                   <span style="display: inline-block; padding: 8px 16px; background: #082245; color: #FFFFFF; font-size: 12px; font-weight: 700; border-radius: 6px;">VIEW DETAILS →</span>
@@ -858,7 +864,7 @@ for (const product of PRODUCTS) {
             <a href="/" style="color: #082245; text-decoration: none;">HOME</a> / 
             <a href="/products" style="color: #082245; text-decoration: none;">ALL PRODUCTS</a> / 
             <a href="/therapeutic-segments" style="color: #1B6A3E; text-decoration: none;">${product.category}</a> / 
-            <span style="color: #111827; font-weight: 700;">${product.name}</span>
+            <span style="color: #111827; font-weight: 700;">${formatBrandName(product.name)}</span>
           </nav>
 
           <article class="sp-detail-hero-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
@@ -873,14 +879,14 @@ for (const product of PRODUCTS) {
                   style="max-width: 100%; height: auto; max-height: 380px; object-fit: contain;" 
                   loading="eager" 
                 />
-                <figcaption style="margin-top: 12px; font-size: 12px; color: #6B7280;">Authentic packaging of ${product.name} by Suyash Pharma</figcaption>
+                <figcaption style="margin-top: 12px; font-size: 12px; color: #6B7280;">Authentic packaging of ${formatBrandName(product.name)} by Suyash Pharma</figcaption>
               </figure>
             </div>
 
             <!-- Product Information Column -->
             <div>
               <span style="display: inline-block; padding: 4px 12px; background: #E8F5E9; color: #1B6A3E; font-size: 12px; font-weight: 700; border-radius: 999px; margin-bottom: 8px;">${product.therapeuticSegment}</span>
-              <h1 style="font-size: 32px; color: #082245; margin: 8px 0 6px;">${product.name}</h1>
+              <h1 style="font-size: 32px; color: #082245; margin: 8px 0 6px;">${formatBrandName(product.name)}</h1>
               <p style="font-size: 18px; color: #4B5563; font-weight: 600; margin-bottom: 16px;">${product.generic}</p>
               <p style="font-size: 15px; color: #374151; line-height: 1.7; margin-bottom: 24px;">${product.overview}</p>
 
@@ -995,8 +1001,9 @@ async function runPrerender() {
   <meta name="twitter:description" content="${page.description}" />
   <meta name="twitter:image" content="${page.ogImage || LOGO_URL}" />
 
-  <!-- Preload Brand Assets -->
-  <link rel="icon" type="image/png" href="/images/logo/suyash-pharma-logo.png" />
+  <!-- Brand Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   
   <!-- Bundled Vite CSS Stylesheets -->
   ${headAssetsStr}
